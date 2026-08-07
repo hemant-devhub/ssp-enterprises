@@ -190,7 +190,7 @@ export default function ServicesSection() {
     </div>
 
     {/* EXPLORE MORE */}
-    <div className="mt-28">
+    <div className="mt-30">
       <div className="flex items-center justify-between mb-12">
         <div>
           <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
@@ -268,7 +268,7 @@ export default function ServicesSection() {
     </div>
 
     {/* OUR PROCESS */}
-    <div className="mt-28">
+    <div className="mt-30">
       <div className="text-center max-w-3xl mx-auto">
         <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
           OUR PROCESS
@@ -333,7 +333,7 @@ export default function ServicesSection() {
     </div>
 
     {/* CTA */}
-    <div className="relative mt-32 overflow-hidden rounded-[40px]">
+    <div className="relative mt-30 overflow-hidden rounded-[40px]">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B2742] via-[#163B5B] to-[#285075]" />
       {/* Grid */}
