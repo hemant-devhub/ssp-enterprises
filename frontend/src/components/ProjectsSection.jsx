@@ -21,132 +21,282 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
-  return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-[#3d6d91] border-[#cce0ed]">
-            Work of Excellence
-          </Badge>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Recent Projects
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Showcase of our successful fabrication projects across various industrial sectors, 
-            demonstrating our expertise and commitment to quality.
-          </p>
-        </div>
+return (
+  <section className="relative py-32 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100">
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeFilter === category ? "default" : "outline"}
-              onClick={() => setActiveFilter(category)}
-              className={activeFilter === category 
-                ? "bg-[#285075] hover:bg-[#285075]" 
-                : "border-gray-300 hover:border-[#3d6d91] hover:text-[#3d6d91]"
-              }
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+    {/* Background Grid */}
+    <div className="absolute inset-0 -z-10">
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card key={project.id} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden scroll-animate hover-lift`} style={{animationDelay: `${index * 0.1}s`}}>
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <Badge className="mb-2 bg-white/20 text-white border-white/30">
-                      {project.category}
-                    </Badge>
-                    <Button 
-                      size="sm" 
-                      className="bg-orange-500 hover:bg-orange-600 text-white w-full"
-                      onClick={() => window.location.href = '/contact'}
-                    >
-                      Get Similar Quote
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm text-gray-600">{project.type}</span>
-                  <Badge variant="outline" className="text-[#3d6d91] border-[#cce0ed]">
-                    {project.client}
-                  </Badge>
-                </div>
-                <p className="text-gray-600 text-sm mb-4">
-                  Professional fabrication and installation services delivered with precision and quality standards.
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full border-[#3d6d91] text-[#3d6d91] hover:bg-[#3d6d91] hover:text-white transform hover:scale-105 transition-all duration-200"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  View Details
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(40,80,117,.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(40,80,117,.15) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-        {/* Statistics */}
-        <div className="mt-20 bg-[#285075] text-white rounded-2xl p-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-[#b8d4e6]">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">200+</div>
-              <div className="text-[#b8d4e6]">Happy Clients</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-[#b8d4e6]">Expert Team</div>
-            </div>
+      <div className="absolute -left-40 top-20 w-[500px] h-[500px] bg-orange-400/20 blur-[180px] rounded-full" />
+
+      <div className="absolute right-0 bottom-0 w-[600px] h-[600px] bg-[#285075]/15 blur-[200px] rounded-full" />
+
+    </div>
+
+    <div className="container mx-auto px-6 lg:px-8">
+
+      {/* SECTION HEADER */}
+
+      <div className="text-center max-w-5xl mx-auto">
+        <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
+          OUR PORTFOLIO
+        </span>
+
+        <h2 className="mt-6 text-5xl lg:text-7xl font-bold text-slate-900 leading-tight">
+          Engineering Excellence
+          <span className="block text-[#285075]">
+            Delivered Across India
+          </span>
+        </h2>
+
+        <p className="mt-8 text-lg text-slate-600 leading-8 max-w-3xl mx-auto">
+          Explore our successful industrial fabrication,
+          erection and structural engineering projects
+          delivered with precision, safety and reliability.
+        </p>
+      </div>
+
+      {/* FEATURED PROJECT */}
+      <div className="mt-24">
+        <div className="relative overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,.18)]">
+          <img
+            src={projects[0].image}
+            alt={projects[0].title}
+            className="w-full h-[700px] object-cover transition duration-700 hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+          {/* Floating Stats */}
+          <div className="absolute top-10 left-10 bg-white rounded-3xl p-6 shadow-2xl hidden lg:block">
+            <h3 className="text-5xl font-bold text-[#285075]">
+              500+
+            </h3>
+
+            <p className="text-slate-500 mt-2">
+              Projects
+            </p>
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12 section-reveal">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Have a Project in Mind?</h3>
-          <p className="text-gray-600 mb-8">
-            Let's discuss your fabrication requirements and turn your vision into reality.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 pulse-glow hover:scale-105 transform transition-all duration-200"
-              onClick={() => window.location.href = '/quote'}
-            >
-              Get Free Quote
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-[#3d6d91] text-[#3d6d91] hover:bg-[#3d6d91] hover:text-white px-8 hover:scale-105 transform transition-all duration-200"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Start Your Project
-            </Button>
+          <div className="absolute top-10 right-10 bg-orange-500 rounded-3xl p-6 shadow-2xl text-white hidden lg:block">
+            <h3 className="text-5xl font-bold">
+              15+
+            </h3>
+
+            <p className="mt-2">
+              Years
+            </p>
+          </div>
+
+          {/* Content */}
+          <div className="absolute bottom-12 left-12 max-w-3xl">
+            <span className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium">
+              Featured Project
+            </span>
+
+            <h2 className="text-5xl lg:text-6xl font-bold text-white mt-6 leading-tight">
+              {projects[0].title}
+            </h2>
+
+            <p className="text-slate-200 mt-5 text-lg leading-8">
+              Large scale industrial fabrication and erection
+              project completed successfully with strict quality
+              standards and engineering excellence.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Button className="h-14 px-8 rounded-full bg-orange-500 hover:bg-orange-600">
+                View Project
+              </Button>
+
+              <Button
+                variant="outline"
+                className="h-14 px-8 rounded-full bg-white/10 backdrop-blur-lg border-white/20 text-white hover:bg-white hover:text-black"
+              >
+                Request Similar Quote
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* FILTERS */}
+      <div className="flex flex-wrap justify-center gap-4 mt-20 mb-16">
+        {categories.map((category) => (
+          <Button
+            key={category}
+            onClick={() => setActiveFilter(category)}
+            className={`rounded-full px-6 py-3 transition-all duration-300 ${
+              activeFilter === category
+                ? "bg-orange-500 hover:bg-orange-600 text-white shadow-xl"
+                : "bg-white border border-slate-200 text-slate-700 hover:border-orange-400 hover:text-orange-500"
+            }`}
+          >
+            {category}
+          </Button>
+        ))}
+
+      </div>
+
+      {/* PROJECTS GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {filteredProjects.map((project, index) => (
+          <Card
+            key={project.id}
+            className="
+            group
+            overflow-hidden
+            rounded-[32px]
+            border-0
+            bg-white
+            shadow-lg
+            hover:shadow-[0_30px_80px_rgba(0,0,0,.18)]
+            hover:-translate-y-4
+            transition-all
+            duration-500
+            "
+          >
+
+            <div className="relative overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="
+                w-full
+                h-80
+                object-cover
+                transition-all
+                duration-700
+                group-hover:scale-110
+                "
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+
+              <div className="absolute top-5 left-5">
+                <Badge className="bg-white/20 backdrop-blur-lg text-white border-white/20">
+                  {project.category}
+                </Badge>
+              </div>
+
+              <div className="absolute bottom-5 left-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <Button
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full"
+                  onClick={() => window.location.href="/contact"}
+                >
+                  Request Similar Project
+                </Button>
+              </div>
+            </div>
+
+            <CardContent className="p-8">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm text-slate-500">
+                  {project.type}
+                </span>
+
+                <Badge
+                  variant="outline"
+                  className="border-orange-200 text-orange-600"
+                >
+                  {project.client}
+                </Badge>
+              </div>
+
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                {project.title}
+              </h3>
+
+              <p className="text-slate-600 leading-7 mb-6">
+                Professional fabrication and industrial erection
+                services executed with precision engineering,
+                quality control and safety compliance.
+              </p>
+
+              <Button
+                variant="ghost"
+                className="p-0 text-orange-500 hover:bg-transparent"
+                onClick={() => window.location.href="/contact"}
+              >
+                View Details →
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* PORTFOLIO STATS */}
+      <div className="mt-32 rounded-[40px] overflow-hidden bg-gradient-to-r from-[#123654] to-[#285075]">
+        <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          {[
+            { number: "500+", label: "Projects Completed" },
+            { number: "200+", label: "Happy Clients" },
+            { number: "50+", label: "Expert Team" },
+            { number: "100%", label: "Quality Commitment" }
+          ].map((item) => (
+
+            <div
+              key={item.label}
+              className="py-14 text-center"
+            >
+              <h2 className="text-6xl lg:text-7xl font-bold text-orange-400">
+                {item.number}
+              </h2>
+
+              <p className="text-white mt-4">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-32 text-center">
+        <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
+          READY TO BUILD?
+        </span>
+
+        <h2 className="mt-5 text-5xl lg:text-6xl font-bold text-slate-900">
+          Let's Create Your
+          Next Industrial Project
+        </h2>
+
+        <p className="mt-6 max-w-3xl mx-auto text-slate-600 leading-8">
+          Our fabrication specialists are ready to discuss
+          your project requirements and deliver reliable
+          engineering solutions tailored to your needs.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-5 mt-10">
+          <Button
+            className="h-14 px-8 rounded-full bg-orange-500 hover:bg-orange-600"
+            onClick={() => window.location.href="/quote"}
+          >
+            Request Proposal
+          </Button>
+
+          <Button
+            variant="outline"
+            className="h-14 px-8 rounded-full"
+            onClick={() => window.location.href="/contact"}
+          >
+            Contact Team
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
   );
 };
 
