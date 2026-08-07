@@ -45,7 +45,7 @@ export default function Header() {
       {/* TOP BAR */}
       <div className="bg-[#123654] text-white">
 
-        <div className="max-w-7xl mx-auto px-6 h-11 flex justify-between items-center">
+        <div className="max-w-8xl mx-auto px-8 h-11 flex justify-between items-center">
 
           <div className="flex gap-3">
 
@@ -61,7 +61,7 @@ export default function Header() {
 
           </div>
 
-          <div className="hidden md:block text-white/70 tracking-wide">
+          <div className="hidden md:block text-white/90 tracking-wide">
             Excellence in Fabrication & Engineering
           </div>
 
@@ -77,20 +77,20 @@ export default function Header() {
             : "py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-8xl mx-auto px-8">
 
           <div
             className={`transition-all duration-500 rounded-full px-8 h-20 flex items-center justify-between ${
               scrolled
-                ? "bg-white/95 backdrop-blur-xl shadow-2xl border border-gray-200"
-                : "bg-white/20 backdrop-blur-xl border border-white/30"
+                ? "bg-white/95 backdrop-blur-xl shadow-2xl border border-gray-200 text-black"
+                : "bg-white/20 backdrop-blur-xl border border-white/30 text-white"
             }`}
           >
             {/* LOGO */}
             <a href="/">
               <img
-                src="/ssp-logo.png"
-                alt=""
+                src={scrolled ? "/ssp-logo-black.png" : "/ssp-logo-white.png"}
+                alt="Logo"
                 className="h-16 hover:scale-105 duration-300"
               />
             </a>
@@ -105,7 +105,11 @@ export default function Header() {
                     whileHover={{ y: -2 }}
                     key={item.title}
                     href={item.href}
-                    className="relative text-[15px] font-semibold text-slate-700 group"
+                    className={`relative text-[15px] font-semibold group transition-colors duration-300 ${
+                      scrolled
+                        ? "text-black hover:text-orange-500"
+                        : "text-white hover:text-orange-300"
+                    }`}
                   >
                     {item.title}
 
@@ -165,7 +169,7 @@ export default function Header() {
               <div className="flex justify-between items-center p-6 border-b">
 
                 <img
-                  src="/ssp-logo.png"
+                  src="/ssp-logo-black.png"
                   className="h-14"
                 />
 

@@ -1,342 +1,213 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Button } from "./ui/button";
+import {
+  ArrowRight,
+  Play,
+  CheckCircle2,
+  Building2,
+  Factory,
+  ShieldCheck,
+} from "lucide-react";
+
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [displayedTitle, setDisplayedTitle] = useState('');
-  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [titleComplete, setTitleComplete] = useState(false);
-  const [imageTransition, setImageTransition] = useState(false);
-  
-  const heroSlides = [
-    {
-      title: "Building The Backbone",
-      subtitle: "Of Industry", 
-      description: "SSP Fabricators - Your trusted partner for Steel Plants, Sugar Mills, Paper Mills, Power Houses and all types of customized fabrication & site works.",
-      image: "/project1.jpg",
-      bg: "from-slate-50 to-[#f5f9fc]"
-    },
-    {
-      title: "Building The Backbone",
-      subtitle: "Of Industry",
-      description: "Get Perfect Fabrication Industry - A Combination of Fast Blending Metal Fabrication with precision engineering and safety standards.",
-      image: "/project2.jpg",
-      bg: "from-[#f5f9fc] to-orange-50"
-    },
-    {
-      title: "Building The Backbone", 
-      subtitle: "Of Industry",
-      description: "Get Complete Fabrication with Modern Shapes - Excellence in heavy steel fabrication across multiple industries.",
-      image: "/project3.jpg",
-      bg: "from-orange-50 to-green-50"
-    },
-    {
-      title: "Building The Backbone",
-      subtitle: "Of Industry",
-      description: "Delivering superior quality steel fabrication solutions with cutting-edge technology and experienced workforce.",
-      image: "/project4.jpg",
-      bg: "from-green-50 to-purple-50"
-    }
-  ];
-
-  // Auto-rotate images every 3 seconds
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setImageTransition(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-        setImageTransition(false);
-      }, 500);
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  // Typing effect logic
-  useEffect(() => {
-    const currentHero = heroSlides[currentSlide];
-    let timeoutId;
-
-    if (isTyping && !isDeleting) {
-      // Typing title
-      if (displayedTitle.length < currentHero.title.length) {
-        timeoutId = setTimeout(() => {
-          setDisplayedTitle(currentHero.title.slice(0, displayedTitle.length + 1));
-        }, 100);
-      } else if (!titleComplete) {
-        setTitleComplete(true);
-        // Start typing subtitle after title is complete
-        timeoutId = setTimeout(() => {
-          if (displayedSubtitle.length < currentHero.subtitle.length) {
-            setDisplayedSubtitle(currentHero.subtitle.slice(0, displayedSubtitle.length + 1));
-          }
-        }, 200);
-      } else if (displayedSubtitle.length < currentHero.subtitle.length) {
-        // Continue typing subtitle
-        timeoutId = setTimeout(() => {
-          setDisplayedSubtitle(currentHero.subtitle.slice(0, displayedSubtitle.length + 1));
-        }, 100);
-      } else {
-        // Both title and subtitle complete, wait then start deleting
-        timeoutId = setTimeout(() => {
-          setIsDeleting(true);
-          setIsTyping(false);
-        }, 1000);
-      }
-    } else if (isDeleting) {
-      // Deleting subtitle first
-      if (displayedSubtitle.length > 0) {
-        timeoutId = setTimeout(() => {
-          setDisplayedSubtitle(displayedSubtitle.slice(0, -1));
-        }, 50);
-      } else if (displayedTitle.length > 0) {
-        // Delete title after subtitle is deleted
-        timeoutId = setTimeout(() => {
-          setDisplayedTitle(displayedTitle.slice(0, -1));
-        }, 50);
-      } else {
-        // Both deleted, reset for next slide
-        setIsDeleting(false);
-        setIsTyping(true);
-        setTitleComplete(false);
-      }
-    }
-
-    return () => clearTimeout(timeoutId);
-  }, [displayedTitle, displayedSubtitle, isTyping, isDeleting, titleComplete, currentSlide]);
-
-  const currentHero = heroSlides[currentSlide];
-
   const scrollToContact = () => {
-    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToAbout = () => {
-    document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("contact-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className={`relative min-h-screen bg-gradient-to-br ${currentHero.bg} flex items-center overflow-hidden transition-all duration-1000`}>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-[#b8d4e6] rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-60 right-32 w-24 h-24 bg-orange-200 rounded-full opacity-20 animate-bounce"></div>
-        <div className="absolute bottom-40 left-1/3 w-20 h-20 bg-green-200 rounded-full opacity-20 animate-ping"></div>
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-[#123654] to-slate-900">
+
+      {/* Grid Background */}
+
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:70px_70px]" />
       </div>
 
-      {/* Floating Particles Effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 bg-[#5a8fb3] rounded-full opacity-30 animate-float-${i % 3 + 1}`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`
-            }}
-          ></div>
-        ))}
-      </div>
-      
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <div className="inline-block bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium animate-slide-in-left">
-                Excellence in Fabrication
-              </div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight min-h-[200px]">
-                <span className="typing-text">
-                  "{displayedTitle}
-                  {isTyping && !titleComplete && <span className="typing-cursor animate-pulse">|</span>}
-                </span>
-                <span className="text-[#285075] block">
-                  {displayedSubtitle}
-                  {isTyping && titleComplete && displayedSubtitle.length < currentHero.subtitle.length && <span className="typing-cursor animate-pulse">|</span>}
-                  {isDeleting && displayedSubtitle.length > 0 && <span className="typing-cursor animate-pulse">|</span>}
-                  {displayedSubtitle.length === currentHero.subtitle.length && !isDeleting && '"'}
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed animate-fade-in animation-delay-600">
-                <strong className="text-orange-500 block mb-2">YOU THINK, WE MAKE</strong>
-                <strong className="text-gray-900">From concept to creation — SSP Fabricators delivers precision-engineered structures built for strength, safety, and performance.</strong>
-              </p>
+      {/* Glow Effects */}
+
+      <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-orange-500/20 blur-[150px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto px-6 pt-44 pb-24 relative z-10">
+
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+          {/* Left */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+
+            <div className="inline-flex items-center rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-orange-400 text-sm font-medium">
+              Excellence In Fabrication & Erection
             </div>
 
-            {/* Key Points */}
-            <div className="grid grid-cols-1 gap-4 animate-fade-in-up animation-delay-800">
-              <div className="flex items-center gap-3 hover:transform hover:scale-105 transition-transform duration-200">
-                <CheckCircle className="text-green-500 flex-shrink-0" size={24} />
-                <span className="text-gray-800 font-medium text-lg">Skilled & Certified Fabricators</span>
-              </div>
-              <div className="flex items-center gap-3 hover:transform hover:scale-105 transition-transform duration-200">
-                <CheckCircle className="text-green-500 flex-shrink-0" size={24} />
-                <span className="text-gray-800 font-medium text-lg">On-Time Project Execution</span>
-              </div>
-              <div className="flex items-center gap-3 hover:transform hover:scale-105 transition-transform duration-200">
-                <CheckCircle className="text-green-500 flex-shrink-0" size={24} />
-                <span className="text-gray-800 font-medium text-lg">End-to-End Industrial Solutions</span>
-              </div>
-            </div>
+            <h1 className="mt-8 text-5xl md:text-7xl font-bold text-white leading-tight">
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-1000">
-              <Button 
-                size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              Building India's
+
+              <span className="block text-orange-500">
+                Industrial Future
+              </span>
+
+            </h1>
+
+            <p className="mt-8 text-xl text-slate-300 leading-relaxed max-w-2xl">
+
+              SSP Enterprises delivers premium fabrication,
+              erection and industrial engineering solutions
+              for Steel Plants, Sugar Mills, Paper Mills,
+              Power Houses and heavy industrial projects.
+
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+
+              <Button
+                size="lg"
                 onClick={scrollToContact}
+                className="h-14 px-8 rounded-full bg-orange-500 hover:bg-orange-600 text-white shadow-xl"
               >
-                Contact Now
-                <ArrowRight size={20} className="ml-2 animate-pulse" />
+                Get Free Quote
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-[#285075] text-[#285075] hover:bg-[#285075] hover:text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-200"
-                onClick={scrollToAbout}
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
 
-          {/* Hero Image */}
-          <div className="relative animate-fade-in-right animation-delay-400">
-            <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-500 overflow-hidden">
-              {/* Image Container with overlay effects */}
-              <div className="relative w-full h-96 rounded-lg overflow-hidden">
-                {heroSlides.map((slide, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-all duration-1500 ease-in-out ${
-                      index === currentSlide 
-                        ? imageTransition 
-                          ? 'opacity-0 scale-110' 
-                          : 'opacity-100 scale-100'
-                        : index === (currentSlide - 1 + heroSlides.length) % heroSlides.length
-                        ? imageTransition
-                          ? 'opacity-30 scale-105'
-                          : 'opacity-0 scale-95'
-                        : 'opacity-0 scale-95'
-                    }`}
-                    style={{
-                      transform: index === currentSlide && !imageTransition 
-                        ? 'scale(1) rotate(0deg)' 
-                        : index === currentSlide && imageTransition
-                        ? 'scale(1.1) rotate(0.5deg)'
-                        : 'scale(0.95) rotate(-0.5deg)',
-                      filter: index === currentSlide && !imageTransition 
-                        ? 'blur(0px) brightness(1) saturate(1)' 
-                        : imageTransition
-                        ? 'blur(8px) brightness(0.6) saturate(1.2)'
-                        : 'blur(4px) brightness(0.5) saturate(0.8)'
-                    }}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={`Steel Fabrication Work ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Overlay gradient for smooth transitions */}
-                    <div 
-                      className={`absolute inset-0 transition-opacity duration-1500 ${
-                        index === currentSlide && imageTransition 
-                          ? 'opacity-80' 
-                          : index === currentSlide
-                          ? 'opacity-0'
-                          : 'opacity-60'
-                      }`}
-                      style={{
-                        background: index === currentSlide 
-                          ? 'linear-gradient(45deg, rgba(40, 80, 117, 0.1), rgba(249, 115, 22, 0.1))'
-                          : 'linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1))'
-                      }}
-                    ></div>
-                    
-                    {/* Shimmer effect during transitions */}
-                    {imageTransition && index === currentSlide && (
-                      <div className="absolute inset-0 shimmer opacity-20"></div>
-                    )}
-                  </div>
-                ))}
-                
-                {/* Gradient overlay for smooth transitions */}
-                <div className={`absolute inset-0 bg-gradient-to-r from-[#f5f9fc]0/10 to-orange-500/10 transition-opacity duration-1000 ${
-                  imageTransition ? 'opacity-100' : 'opacity-0'
-                }`}></div>
-              </div>
-              
-              {/* Floating Quality Badge */}
-              <div className="absolute -top-6 -right-6 bg-orange-500 text-white p-4 rounded-full shadow-xl animate-float-2 z-10">
-                <CheckCircle size={32} />
-              </div>
-              
-              {/* Animated particles overlay */}
-              <div className="absolute inset-0 pointer-events-none">
-                {[...Array(12)].map((_, i) => (
-                  <div
-                    key={i}
-                    className={`absolute rounded-full transition-all duration-1500 ${
-                      imageTransition 
-                        ? 'animate-ping opacity-80' 
-                        : 'opacity-20 animate-pulse'
-                    }`}
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      width: imageTransition ? '6px' : '2px',
-                      height: imageTransition ? '6px' : '2px',
-                      backgroundColor: imageTransition 
-                        ? `hsl(${Math.random() * 360}, 70%, 80%)` 
-                        : 'rgba(255, 255, 255, 0.6)',
-                      animationDelay: `${i * 0.15}s`,
-                      animationDuration: imageTransition ? '0.8s' : '2s'
-                    }}
-                  ></div>
-                ))}
-                
-                {/* Floating geometric shapes */}
-                {imageTransition && [...Array(6)].map((_, i) => (
-                  <div
-                    key={`shape-${i}`}
-                    className="absolute animate-float-1 opacity-30"
-                    style={{
-                      left: `${Math.random() * 90}%`,
-                      top: `${Math.random() * 90}%`,
-                      width: '8px',
-                      height: '8px',
-                      backgroundColor: i % 2 === 0 ? '#285075' : '#F97316',
-                      borderRadius: i % 3 === 0 ? '50%' : '0%',
-                      animationDelay: `${i * 0.3}s`,
-                      animationDuration: '2s'
-                    }}
-                  ></div>
-                ))}
-              </div>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-14 px-8 rounded-full border-white/20 bg-white/5 text-white hover:bg-white/10"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                View Projects
+              </Button>
+
             </div>
-          </div>
+
+            {/* Features */}
+
+            <div className="grid md:grid-cols-3 gap-5 mt-14">
+
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="text-green-400" />
+                <span>Certified Team</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="text-green-400" />
+                <span>On-Time Delivery</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="text-green-400" />
+                <span>Industrial Expertise</span>
+              </div>
+
+            </div>
+
+          </motion.div>
+
+          {/* Right */}
+
+          <motion.div
+            initial={{ opacity: 0, scale: .9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+
+            <div className="overflow-hidden rounded-[32px] border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,.4)]">
+
+              <img
+                src="/project1.jpg"
+                alt="Industrial Fabrication"
+                className="w-full h-[650px] object-cover"
+              />
+
+            </div>
+
+            {/* Stats Card */}
+
+            <div className="absolute -left-10 top-10 bg-white rounded-3xl p-6 shadow-2xl">
+
+              <h3 className="text-4xl font-bold text-[#123654]">
+                250+
+              </h3>
+
+              <p className="text-gray-500">
+                Projects Delivered
+              </p>
+
+            </div>
+
+            <div className="absolute -right-10 bottom-10 bg-orange-500 text-white rounded-3xl p-6 shadow-2xl">
+
+              <h3 className="text-4xl font-bold">
+                100%
+              </h3>
+
+              <p>Client Satisfaction</p>
+
+            </div>
+
+          </motion.div>
+
         </div>
 
-        {/* Progress Indicator */}
-        <div className="flex justify-center mt-8">
-          <div className="bg-gray-200 rounded-full h-2 w-80 overflow-hidden shadow-inner">
-            <div 
-              className="bg-gradient-to-r from-[#3d6d91] via-purple-600 to-orange-500 h-full rounded-full transition-all duration-500 relative"
-              style={{
-                width: `${((currentSlide + 1) / heroSlides.length) * 100}%`
-              }}
-            >
-              <div className="absolute inset-0 bg-white opacity-20 animate-pulse rounded-full"></div>
-            </div>
+        {/* Bottom Cards */}
+
+        <div className="grid md:grid-cols-3 gap-6 mt-20">
+
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
+
+            <Factory className="mb-4 text-orange-400" />
+
+            <h3 className="font-semibold text-xl mb-2">
+              Steel Plants
+            </h3>
+
+            <p className="text-slate-400">
+              Complete fabrication and erection solutions.
+            </p>
+
           </div>
+
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
+
+            <Building2 className="mb-4 text-orange-400" />
+
+            <h3 className="font-semibold text-xl mb-2">
+              Industrial Projects
+            </h3>
+
+            <p className="text-slate-400">
+              Customized heavy engineering structures.
+            </p>
+
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
+
+            <ShieldCheck className="mb-4 text-orange-400" />
+
+            <h3 className="font-semibold text-xl mb-2">
+              Quality Assurance
+            </h3>
+
+            <p className="text-slate-400">
+              Strict quality and safety standards.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
   );
 };
