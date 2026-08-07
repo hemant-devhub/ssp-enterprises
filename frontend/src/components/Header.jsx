@@ -1,114 +1,216 @@
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "./ui/button";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const navItems = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Services",
+    href: "/services",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+];
+
+export default function Header() {
+  const [mobile, setMobile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const scroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", scroll);
+
+    return () => window.removeEventListener("scroll", scroll);
+  }, []);
 
   return (
     <>
-      {/* Top Info Bar */}
-      <div className="bg-[#285075] text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1">
+      {/* TOP BAR */}
+      <div className="bg-[#123654] text-white">
+
+        <div className="max-w-7xl mx-auto px-6 h-11 flex justify-between items-center">
+
+          <div className="flex gap-3">
+
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-1">
               <Phone size={14} />
-              <span>+91-8700849865</span>
+              +91 8700849865
             </div>
-            <div className="flex items-center gap-1">
+
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-1">
               <Phone size={14} />
-              <span>+91-7668167061</span>
+              +91 7668167061
             </div>
+
           </div>
-          <div className="text-sm">
-            Excellence in Fabrication
+
+          <div className="hidden md:block text-white/70 tracking-wide">
+            Excellence in Fabrication & Engineering
           </div>
+
         </div>
+
       </div>
 
-      {/* Main Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-stretch justify-between py-0 h-20">
-            {/* Logo - Clickable and links to home page */}
-            <div className="flex items-center">
-              <a 
-                href="/" 
-                className="flex items-center transition-transform duration-300 hover:scale-105"
-                aria-label="Go to home page"
-              >
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_live-edit-4/artifacts/1io1mdp1_5.png" 
-                  alt="SSP Fabrication & Erection Logo" 
-                  className="h-16 w-auto object-contain cursor-pointer"
-                />
-              </a>
-            </div>
+      {/* NAVBAR */}
+      <header
+        className={`fixed top-11 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled
+            ? "py-3"
+            : "py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
 
-            {/* Desktop Navigation and CTA Button - Moved to Right */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <nav className="flex items-center space-x-8">
-                <a href="/" className="text-gray-700 hover:text-[#285075] transition-colors font-medium hover:scale-105 transform duration-200">
-                  Home
-                </a>
-                <a href="/about" className="text-gray-700 hover:text-[#285075] transition-colors font-medium hover:scale-105 transform duration-200">
-                  About Us
-                </a>
-                <a href="/services" className="text-gray-700 hover:text-[#285075] transition-colors font-medium hover:scale-105 transform duration-200">
-                  Services
-                </a>
-                <a href="/contact" className="text-gray-700 hover:text-[#285075] transition-colors font-medium hover:scale-105 transform duration-200">
-                  Contact
-                </a>
+          <div
+            className={`transition-all duration-500 rounded-full px-8 h-20 flex items-center justify-between ${
+              scrolled
+                ? "bg-white/95 backdrop-blur-xl shadow-2xl border border-gray-200"
+                : "bg-white/20 backdrop-blur-xl border border-white/30"
+            }`}
+          >
+            {/* LOGO */}
+            <a href="/">
+              <img
+                src="/ssp-logo.png"
+                alt=""
+                className="h-16 hover:scale-105 duration-300"
+              />
+            </a>
+
+            {/* DESKTOP */}
+            <div className="hidden lg:flex items-center gap-12">
+
+              <nav className="flex gap-10">
+
+                {navItems.map((item) => (
+                  <motion.a
+                    whileHover={{ y: -2 }}
+                    key={item.title}
+                    href={item.href}
+                    className="relative text-[15px] font-semibold text-slate-700 group"
+                  >
+                    {item.title}
+
+                    <span className="absolute left-0 -bottom-2 h-[3px] bg-orange-500 rounded-full w-0 transition-all duration-300 group-hover:w-full"></span>
+
+                  </motion.a>
+                ))}
+
               </nav>
-              
-              {/* CTA Button */}
-              <Button 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 pulse-glow hover:scale-105 transform transition-all duration-200"
-                onClick={() => window.location.href = '/contact'}
+
+              <Button
+                onClick={() => (window.location.href = "/contact")}
+                className="rounded-full h-12 px-7 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-[#123654] hover:to-[#285075] transition-all shadow-xl hover:scale-105"
               >
                 Get Free Quote
+
+                <ArrowRight className="ml-2 h-4 w-4" />
+
               </Button>
+
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* MOBILE */}
+
             <button
+              onClick={() => setMobile(true)}
               className="lg:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <Menu />
             </button>
           </div>
+        </div>
+      </header>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <nav className="lg:hidden pb-4 border-t">
-              <div className="flex flex-col space-y-4 pt-4">
-                <a href="/" className="text-gray-700 hover:text-[#285075] transition-colors font-medium">
-                  Home
-                </a>
-                <a href="/about" className="text-gray-700 hover:text-[#285075] transition-colors font-medium">
-                  About Us
-                </a>
-                <a href="/services" className="text-gray-700 hover:text-[#285075] transition-colors font-medium">
-                  Services
-                </a>
-                <a href="/contact" className="text-gray-700 hover:text-[#285075] transition-colors font-medium">
-                  Contact
-                </a>
-                <Button 
-                  className="bg-orange-500 hover:bg-orange-600 text-white w-fit"
-                  onClick={() => window.location.href = '/contact'}
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+
+        {mobile && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: .5 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40"
+              onClick={() => setMobile(false)}
+            />
+
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{
+                duration: .35
+              }}
+              className="fixed right-0 top-0 w-[320px] h-screen bg-white z-50 shadow-2xl"
+            >
+              <div className="flex justify-between items-center p-6 border-b">
+
+                <img
+                  src="/ssp-logo.png"
+                  className="h-14"
+                />
+
+                <button onClick={() => setMobile(false)}>
+                  <X />
+                </button>
+
+              </div>
+
+              <div className="p-6 space-y-7">
+
+                {navItems.map((item, index) => (
+                  <motion.a
+                    key={item.title}
+                    initial={{
+                      opacity: 0,
+                      x: 20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: index * .08,
+                    }}
+                    href={item.href}
+                    className="block font-semibold text-lg text-slate-700 hover:text-orange-500"
+                  >
+                    {item.title}
+                  </motion.a>
+                ))}
+
+                <Button
+                  className="w-full mt-8 rounded-full h-12 bg-orange-500 hover:bg-orange-600"
                 >
                   Get Free Quote
                 </Button>
+
               </div>
-            </nav>
-          )}
-        </div>
-      </header>
+
+            </motion.div>
+          </>
+        )}
+
+      </AnimatePresence>
     </>
   );
-};
-
-export default Header;
+}
