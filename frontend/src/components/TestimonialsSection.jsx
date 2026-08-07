@@ -162,45 +162,6 @@ const active = testimonials[current];
           ))}
         </div>
 
-        {/* Trust Stats */}
-        <div className="mt-32 rounded-[40px] overflow-hidden bg-gradient-to-r from-[#123654] to-[#285075]">
-          <div className="grid md:grid-cols-4">
-            {[
-              {
-                number:"500+",
-                label:"Projects"
-              },
-              {
-                number:"200+",
-                label:"Clients"
-              },
-              {
-                number:"15+",
-                label:"Years"
-              },
-              {
-                number:"98%",
-                label:"Retention"
-              }
-
-            ].map((item)=>(
-
-              <div
-                key={item.label}
-                className="py-14 text-center"
-              >
-                <h2 className="text-6xl font-bold text-orange-400">
-                  {item.number}
-                </h2>
-
-                <p className="text-white mt-3">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className="mt-32 text-center">
           <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
