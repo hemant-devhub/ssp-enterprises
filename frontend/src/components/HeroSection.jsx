@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-orange-500/20 blur-[150px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-44 pb-24 relative z-10">
+      <div className="max-w-8xl mx-auto px-8 pt-44 pb-24 relative z-10">
 
         <div className="grid lg:grid-cols-2 gap-20 items-center">
 
