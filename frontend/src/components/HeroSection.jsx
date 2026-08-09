@@ -21,7 +21,6 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-[#123654] to-slate-900">
 
       {/* Grid Background */}
-
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:70px_70px]" />
       </div>
@@ -36,7 +35,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* Left */}
-
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,9 +46,7 @@ const HeroSection = () => {
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-bold text-white leading-tight">
-
               Building India's
-
               <span className="block text-orange-500">
                 Industrial Future
               </span>
@@ -58,12 +54,10 @@ const HeroSection = () => {
             </h1>
 
             <p className="mt-8 text-xl text-slate-300 leading-relaxed max-w-2xl">
-
               SSP Enterprises delivers premium fabrication,
               erection and industrial engineering solutions
               for Steel Plants, Sugar Mills, Paper Mills,
               Power Houses and heavy industrial projects.
-
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10">
@@ -89,9 +83,7 @@ const HeroSection = () => {
             </div>
 
             {/* Features */}
-
             <div className="grid md:grid-cols-3 gap-5 mt-14">
-
               <div className="flex items-center gap-3 text-white">
                 <CheckCircle2 className="text-green-400" />
                 <span>Certified Team</span>
@@ -106,13 +98,11 @@ const HeroSection = () => {
                 <CheckCircle2 className="text-green-400" />
                 <span>Industrial Expertise</span>
               </div>
-
             </div>
 
           </motion.div>
 
           {/* Right */}
-
           <motion.div
             initial={{ opacity: 0, scale: .9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -121,17 +111,14 @@ const HeroSection = () => {
           >
 
             <div className="overflow-hidden rounded-[32px] border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,.4)]">
-
               <img
                 src="/project1.jpg"
                 alt="Industrial Fabrication"
                 className="w-full h-[650px] object-cover"
               />
-
             </div>
 
             {/* Stats Card */}
-
             <div className="absolute -left-10 top-10 bg-white rounded-3xl p-6 shadow-2xl">
 
               <h3 className="text-4xl font-bold text-[#123654]">

@@ -228,11 +228,11 @@ const AboutSection = () => {
                 OUR PROCESS
             </span>
 
-            <h2 className="mt-4 text-5xl font-bold text-slate-900">
+            <h2 className="mt-4 px-8 text-5xl font-bold text-slate-900">
                 From Concept To Completion
             </h2>
 
-            <p className="mt-5 text-slate-600 leading-8">
+            <p className="mt-5 px-8 text-slate-600 leading-8">
                 Every project follows a structured workflow that
                 ensures precision, quality and timely completion.
             </p>

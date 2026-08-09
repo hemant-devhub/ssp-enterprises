@@ -230,7 +230,7 @@ return (
       </div>
 
       {/* CTA */}
-      <div className="mt-30 text-center">
+      <div className="mt-32 text-center">
         <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
           READY TO BUILD?
         </span>

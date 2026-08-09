@@ -49,12 +49,12 @@ export default function Header() {
 
           <div className="flex gap-3">
 
-            <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-1">
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-2 py-1">
               <Phone size={14} />
               +91 8700849865
             </div>
 
-            <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-1">
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-2 py-1">
               <Phone size={14} />
               +91 7668167061
             </div>
@@ -73,8 +73,8 @@ export default function Header() {
       <header
         className={`fixed top-11 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "py-3"
-            : "py-6"
+            ? "py-1"
+            : "py-4"
         }`}
       >
         <div className="max-w-8xl mx-auto px-8">

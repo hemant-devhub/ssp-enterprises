@@ -190,7 +190,7 @@ export default function ServicesSection() {
     </div>
 
     {/* EXPLORE MORE */}
-    <div className="mt-30">
+    <div className="mt-32">
       <div className="flex items-center justify-between mb-12">
         <div>
           <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
@@ -268,7 +268,7 @@ export default function ServicesSection() {
     </div>
 
     {/* OUR PROCESS */}
-    <div className="mt-30">
+    <div className="mt-32">
       <div className="text-center max-w-3xl mx-auto">
         <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
           OUR PROCESS
@@ -333,7 +333,7 @@ export default function ServicesSection() {
     </div>
 
     {/* CTA */}
-    <div className="relative mt-30 overflow-hidden rounded-[40px]">
+    <div className="relative mt-32 overflow-hidden rounded-[40px]">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B2742] via-[#163B5B] to-[#285075]" />
       {/* Grid */}
@@ -349,87 +349,86 @@ export default function ServicesSection() {
       />
 
       {/* Glow */}
-      <div className="absolute -left-20 top-0 w-80 h-80 rounded-full bg-orange-500/30 blur-[120px]" />
-      <div className="absolute right-0 bottom-0 w-96 h-96 rounded-full bg-white/10 blur-[120px]" />
-      <div className="relative max-w-7xl mx-auto px-10 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT */}
-          <div>
-            <span className="uppercase tracking-[4px] text-orange-400 font-semibold">
-              START YOUR PROJECT
-            </span>
+      <div className="absolute -left-10 md:-left-20 top-0 w-48 h-48 md:w-80 md:h-80 rounded-full bg-orange-500/30 blur-[80px] md:blur-[120px]" />
+        <div className="absolute right-0 bottom-0 w-56 h-56 md:w-96 md:h-96 rounded-full bg-white/10 blur-[80px] md:blur-[120px]" />
 
-            <h2 className="mt-6 text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Let's Build
-              <br />
-              Your Next Landmark
-            </h2>
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-10 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-            <p className="mt-8 text-xl text-slate-300 leading-9 max-w-xl">
-              From heavy fabrication to complete industrial
-              erection, SSP Enterprises delivers engineering
-              excellence trusted by industries across India.
-            </p>
+            {/* LEFT */}
+            <div>
+              <span className="uppercase tracking-[3px] md:tracking-[4px] text-orange-400 font-semibold text-xs sm:text-sm">
+                START YOUR PROJECT
+              </span>
 
-            <div className="flex flex-wrap gap-5 mt-10">
-              <Button
-                className="rounded-full h-14 px-8 bg-orange-500 hover:bg-orange-600"
-                onClick={() => window.location.href="/quote"}
-              >
-                Request Proposal
-              </Button>
+              <h2 className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Let's Build
+                <br />
+                Your Next Landmark
+              </h2>
 
-              <Button
-                variant="outline"
-                className="rounded-full h-14 px-8 border-white text-white hover:bg-white hover:text-[#123654]"
-                onClick={() => window.open("tel:+918700849865")}
-              >
-                Call Now
-              </Button>
-            </div>
-          </div>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-slate-300 leading-7 md:leading-9 max-w-xl">
+                From heavy fabrication to complete industrial
+                erection, SSP Enterprises delivers engineering
+                excellence trusted by industries across India.
+              </p>
 
-          {/* RIGHT */}
-          <div className="grid grid-cols-2 gap-6">
-            {[
-              {
-                number:"250+",
-                label:"Projects"
-              },
-              {
-                number:"15+",
-                label:"Years"
-              },
-              {
-                number:"120+",
-                label:"Experts"
-              },
-              {
-                number:"100%",
-                label:"Quality"
-              }
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 mt-8 md:mt-10">
+                <Button
+                  className="w-full sm:w-auto rounded-full h-12 md:h-14 px-6 md:px-8 bg-orange-500 hover:bg-orange-600"
+                  onClick={() => (window.location.href = "/quote")}
+                >
+                  Request Proposal
+                </Button>
 
-            ].map((item)=>(
-
-              <div
-                key={item.label}
-                className="rounded-3xl bg-white/10 backdrop-blur-xl border border-white/10 p-8 text-center"
-              >
-
-                <h2 className="text-5xl font-bold text-orange-400">
-                  {item.number}
-                </h2>
-
-                <p className="text-slate-300 mt-3">
-                  {item.label}
-                </p>
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-auto rounded-full h-12 md:h-14 px-6 md:px-8 border-white text-white hover:bg-white hover:text-[#123654]"
+                  onClick={() => window.open("tel:+918700849865")}
+                >
+                  Call Now
+                </Button>
               </div>
-            ))}
+            </div>
+
+            {/* RIGHT */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+              {[
+                {
+                  number: "250+",
+                  label: "Projects",
+                },
+                {
+                  number: "15+",
+                  label: "Years",
+                },
+                {
+                  number: "120+",
+                  label: "Experts",
+                },
+                {
+                  number: "100%",
+                  label: "Quality",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-xl border border-white/10 p-5 sm:p-6 md:p-8 text-center"
+                >
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-400">
+                    {item.number}
+                  </h2>
+
+                  <p className="text-sm sm:text-base text-slate-300 mt-2 md:mt-3">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
 
           </div>
         </div>
       </div>
-    </div>
 
     </div>
     </section>
