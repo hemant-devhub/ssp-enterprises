@@ -52,6 +52,7 @@ export default function ServicesSection() {
     );
   };
 
+  if (!services?.length) return null;
   const active = services[current];
 
   return (
@@ -108,62 +109,62 @@ export default function ServicesSection() {
     {/* FEATURED CARD */}
     <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
 
-    {/* IMAGE */}
-    <div className="relative">
-      <div className="overflow-hidden rounded-[30px] shadow-2xl">
-      <img
-      src={active.image}
-      alt={active.title}
-      className="w-full h-[520px] object-cover transition-all duration-700 hover:scale-110"
-      />
-      </div>
+      {/* IMAGE */}
+      <div className="relative">
+        <div className="overflow-hidden rounded-[30px] shadow-2xl">
+        <img
+        src={active.image}
+        alt={active.title}
+        className="w-full h-[300px] sm:h-[420px] lg:h-[520px] object-cover transition-all duration-700 hover:scale-110"
+        />
+        </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent rounded-[30px]"/>
-      <div className="absolute bottom-8 left-8">
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-5 py-2 text-white inline-flex">
-        Featured Service
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent rounded-[30px]"/>
+        <div className="absolute bottom-8 left-8">
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-5 py-2 text-white inline-flex">
+          Featured Service
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* CONTENT */}
-    <div>
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-100 text-orange-500">
-        {iconMap[active.icon]}
+      {/* CONTENT */}
+      <div>
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-100 text-orange-500">
+          {iconMap[active.icon]}
+        </div>
+
+        <h3 className="mt-8 text-5xl font-bold text-slate-900">
+          {active.title}
+        </h3>
+
+        <p className="mt-8 text-lg leading-8 text-slate-600">
+          {active.description}
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          {[
+          "Industrial Expertise",
+          "Certified Engineers",
+          "Modern Equipment",
+          "Quality Assurance",
+          "Safety Standards",
+          "Pan India Projects"
+          ].map(item=>(
+          <div
+            key={item}
+            className="flex items-center gap-3"
+          >
+
+          <div className="w-2 h-2 rounded-full bg-orange-500"/>
+          <span className="text-slate-700">
+            {item}
+          </span>
+
+        </div>
+        ))}
       </div>
 
-      <h3 className="mt-8 text-5xl font-bold text-slate-900">
-        {active.title}
-      </h3>
-
-      <p className="mt-8 text-lg leading-8 text-slate-600">
-        {active.description}
-      </p>
-
-      <div className="grid grid-cols-2 gap-5 mt-10">
-        {[
-        "Industrial Expertise",
-        "Certified Engineers",
-        "Modern Equipment",
-        "Quality Assurance",
-        "Safety Standards",
-        "Pan India Projects"
-        ].map(item=>(
-        <div
-          key={item}
-          className="flex items-center gap-3"
-        >
-
-        <div className="w-2 h-2 rounded-full bg-orange-500"/>
-        <span className="text-slate-700">
-          {item}
-        </span>
-
-      </div>
-      ))}
-    </div>
-
-        <div className="flex gap-4 mt-12">
+        <div className="flex flex-wrap gap-4 mt-12">
           <Button className="rounded-full h-14 px-8 bg-orange-500 hover:bg-orange-600">
             Explore Service
             <ArrowRight className="ml-2 w-4 h-4"/>
