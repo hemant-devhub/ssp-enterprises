@@ -12,25 +12,25 @@ import {
 
 const strengths = [
   {
-    icon: <Users className="w-10 h-10 text-orange-500" />,
+    icon: <Users className="w-10 h-10 text-orange-500 group-hover:text-white" />,
     title: "Experienced Workforce",
     description:
       "Highly skilled engineers, welders and fabrication experts delivering precision work."
   },
   {
-    icon: <Award className="w-10 h-10 text-orange-500" />,
+    icon: <Award className="w-10 h-10 text-orange-500 group-hover:text-white" />,
     title: "Quality Workmanship",
     description:
       "Every project follows strict quality standards with premium finishing."
   },
   {
-    icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
+    icon: <ShieldCheck className="w-10 h-10 text-orange-500 group-hover:text-white" />,
     title: "Safety First",
     description:
       "Industry-standard safety procedures and trained manpower for every site."
   },
   {
-    icon: <Clock3 className="w-10 h-10 text-orange-500" />,
+    icon: <Clock3 className="w-10 h-10 text-orange-500 group-hover:text-white" />,
     title: "On-Time Delivery",
     description:
       "Reliable planning and execution ensure projects are completed within schedule."
