@@ -1,265 +1,408 @@
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import React, { useState } from "react";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from "lucide-react";
+import "./ContactSection.css";
 
 const ContactSection = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: "",
   });
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Mock form submission
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    console.log("Contact Form:", formData);
+
+    // Replace with your API/form submission logic
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-[#3d6d91] border-[#cce0ed]">
-            Contact Now
-          </Badge>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Get in Touch with Our Experts
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to discuss your fabrication project? Our team is here to provide you with 
-            expert consultation and competitive pricing.
-          </p>
-        </div>
+    <section className="contact-section">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name *
-                      </label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your full name"
-                        required
-                        className="border-gray-300 focus:border-[#285075] focus:ring-[#285075]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Enter your email"
-                        required
-                        className="border-gray-300 focus:border-[#285075] focus:ring-[#285075]"
-                      />
-                    </div>
-                  </div>
+      {/* Background */}
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <Input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+91 XXXXX XXXXX"
-                        required
-                        className="border-gray-300 focus:border-[#285075] focus:ring-[#285075]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <Input
-                        type="text"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        placeholder="Project inquiry"
-                        required
-                        className="border-gray-300 focus:border-[#285075] focus:ring-[#285075]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Details *
-                    </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your fabrication requirements..."
-                      rows={4}
-                      required
-                      className="border-gray-300 focus:border-[#285075] focus:ring-[#285075]"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3"
-                  >
-                    Send Message
-                    <Send size={16} className="ml-2" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Contact Details */}
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#e6f0f7] p-3 rounded-lg">
-                      <Phone className="text-[#3d6d91]" size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Phone</h4>
-                      <p className="text-gray-600">+91-8700849865</p>
-                      <p className="text-gray-600">+91-7668167061</p>
-                      <p className="text-sm text-gray-500">Mr. Sohanveer Singh Panchal</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="bg-green-100 p-3 rounded-lg">
-                      <MapPin className="text-green-600" size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Address</h4>
-                      <p className="text-gray-600">Industrial Area,<br />Delhi NCR, India</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="bg-purple-100 p-3 rounded-lg">
-                      <Clock className="text-purple-600" size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Working Hours</h4>
-                      <p className="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM</p>
-                      <p className="text-sm text-gray-500">Sunday: Closed</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Contact */}
-            <Card className="border-0 shadow-lg bg-[#285075] text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Need Immediate Assistance?</h3>
-                <p className="text-[#b8d4e6] mb-6">
-                  For urgent project inquiries or technical support, call us directly.
-                </p>
-                <Button 
-                  className="w-full bg-white text-[#285075] hover:bg-gray-100"
-                  onClick={() => window.open('tel:+918700849865')}
-                >
-                  Call Now: +91-8700849865
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* What Happens Next */}
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">What happens next?</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex gap-3">
-                    <div className="bg-[#285075] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
-                      1
-                    </div>
-                    <div>
-                      <p className="text-gray-700">
-                        You'll be contacted within a few hours by our project manager who will review your requirements.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
-                      2
-                    </div>
-                    <div>
-                      <p className="text-gray-700">
-                        Your confidentiality is important to us—we'll formalize it with a non-disclosure agreement (NDA).
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <div className="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
-                      3
-                    </div>
-                    <div>
-                      <p className="text-gray-700">
-                        Our team will share a detailed cost estimate along with project timeline and specifications.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+      <div className="contact-background">
+        <div className="contact-grid" />
+        <div className="contact-glow contact-glow-left" />
+        <div className="contact-glow contact-glow-right" />
       </div>
+
+      <div className="contact-container">
+
+        {/* ================= HEADER ================= */}
+
+        <div className="contact-heading">
+
+          <div className="contact-eyebrow">
+            <span className="contact-eyebrow-line" />
+            START A CONVERSATION
+          </div>
+
+          <div className="contact-heading-row">
+
+            <h2>
+              Let's build
+              <span>something solid.</span>
+            </h2>
+
+            <p>
+              Tell us about your fabrication, erection or industrial
+              engineering requirements. Our team will get back to you
+              with the right approach for your project.
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* ================= MAIN ================= */}
+
+        <div className="contact-main">
+
+          {/* LEFT SIDE */}
+
+          <div className="contact-info">
+
+            <div className="contact-info-top">
+
+              <span className="contact-info-label">
+                SSP FABRICATORS
+              </span>
+
+              <h3>
+                Engineering
+                <span>you can depend on.</span>
+              </h3>
+
+              <p>
+                From structural fabrication to complete industrial
+                erection, we're ready to understand your requirements
+                and help turn them into a practical execution plan.
+              </p>
+
+            </div>
+
+            {/* Contact Details */}
+
+            <div className="contact-details">
+
+              <a
+                href="tel:+918700849865"
+                className="contact-detail"
+              >
+
+                <div className="contact-detail-icon">
+                  <Phone size={19} />
+                </div>
+
+                <div>
+                  <span>CALL US</span>
+                  <strong>+91 8700849865</strong>
+                </div>
+
+                <ArrowUpRight
+                  className="contact-detail-arrow"
+                  size={18}
+                />
+
+              </a>
+
+              <a
+                href="tel:+917668167061"
+                className="contact-detail"
+              >
+
+                <div className="contact-detail-icon">
+                  <Phone size={19} />
+                </div>
+
+                <div>
+                  <span>ALTERNATE NUMBER</span>
+                  <strong>+91 7668167061</strong>
+                </div>
+
+                <ArrowUpRight
+                  className="contact-detail-arrow"
+                  size={18}
+                />
+
+              </a>
+
+              <a
+                href="mailto:info@sspfabricators.com"
+                className="contact-detail"
+              >
+
+                <div className="contact-detail-icon">
+                  <Mail size={19} />
+                </div>
+
+                <div>
+                  <span>EMAIL</span>
+                  <strong>info@sspfabricators.com</strong>
+                </div>
+
+                <ArrowUpRight
+                  className="contact-detail-arrow"
+                  size={18}
+                />
+
+              </a>
+
+              <div className="contact-detail">
+
+                <div className="contact-detail-icon">
+                  <MapPin size={19} />
+                </div>
+
+                <div>
+                  <span>LOCATION</span>
+                  <strong>Delhi, India</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Promise */}
+
+            <div className="contact-promise">
+
+              <CheckCircle2 size={19} />
+
+              <p>
+                We aim to respond to project enquiries promptly
+                and understand your requirements before proposing
+                the right solution.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT SIDE FORM */}
+
+          <div className="contact-form-wrapper">
+
+            <div className="contact-form-header">
+
+              <div>
+                <span>PROJECT ENQUIRY</span>
+
+                <h3>
+                  Tell us about your project
+                </h3>
+              </div>
+
+              <div className="contact-form-number">
+                01
+              </div>
+
+            </div>
+
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
+
+              {/* Name + Company */}
+
+              <div className="contact-form-row">
+
+                <div className="contact-field">
+
+                  <label htmlFor="name">
+                    Your Name
+                  </label>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+
+                </div>
+
+                <div className="contact-field">
+
+                  <label htmlFor="company">
+                    Company
+                  </label>
+
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    placeholder="Company name"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+
+                </div>
+
+              </div>
+
+              {/* Phone + Email */}
+
+              <div className="contact-form-row">
+
+                <div className="contact-field">
+
+                  <label htmlFor="phone">
+                    Phone Number
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+91"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+
+                </div>
+
+                <div className="contact-field">
+
+                  <label htmlFor="email">
+                    Email Address
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+
+                </div>
+
+              </div>
+
+              {/* Service */}
+
+              <div className="contact-field">
+
+                <label htmlFor="service">
+                  Required Service
+                </label>
+
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
+
+                  <option value="">
+                    Select a service
+                  </option>
+
+                  <option value="steel-plants">
+                    Steel Plants
+                  </option>
+
+                  <option value="sugar-mill">
+                    Sugar Mill
+                  </option>
+
+                  <option value="paper-mill">
+                    Paper Mill
+                  </option>
+
+                  <option value="power-house">
+                    Power House
+                  </option>
+
+                  <option value="structural-fabrication">
+                    Structural Fabrication
+                  </option>
+
+                  <option value="customized-fabrication">
+                    Customized Fabrication
+                  </option>
+
+                </select>
+
+              </div>
+
+              {/* Message */}
+
+              <div className="contact-field">
+
+                <label htmlFor="message">
+                  Project Requirements
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell us briefly about your project, location, scope or requirements..."
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+
+              </div>
+
+              {/* Submit */}
+
+              <button
+                type="submit"
+                className="contact-submit"
+              >
+
+                <span>
+                  Send Project Enquiry
+                </span>
+
+                <span className="contact-submit-icon">
+                  <Send size={18} />
+                </span>
+
+              </button>
+
+              <p className="contact-form-note">
+                By submitting this form, you agree to be contacted
+                regarding your project enquiry.
+              </p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
   );
 };

@@ -1,0 +1,550 @@
+/* =========================================================
+   CLIENTS SECTION
+========================================================= */
+
+.clients-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 80px 0;
+
+  overflow: hidden;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.clients-container {
+  width: min(1520px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.clients-top {
+  margin-bottom: 70px;
+}
+
+.clients-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #f97316;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.clients-eyebrow-line {
+  width: 40px;
+  height: 2px;
+
+  background: #f97316;
+}
+
+.clients-heading-row {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-top: 22px;
+}
+
+.clients-heading-row h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 68px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+.clients-heading-row h2 span {
+  display: block;
+
+  color: #285075;
+}
+
+.clients-heading-row p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   SHOWCASE
+========================================================= */
+
+.clients-showcase {
+  border-top: 1px solid #dbe3ea;
+
+  border-bottom: 1px solid #dbe3ea;
+}
+
+.clients-showcase-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.clients-showcase-line {
+  width: 55px;
+  height: 1px;
+
+  background: #cbd5e1;
+}
+
+/* =========================================================
+   CLIENT GRID
+========================================================= */
+
+.clients-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #dbe3ea;
+
+  border-left: 1px solid #dbe3ea;
+}
+
+.client-item {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 150px;
+
+  padding: 30px;
+
+  border-right: 1px solid #dbe3ea;
+
+  border-bottom: 1px solid #dbe3ea;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.client-item:hover {
+  background: white;
+
+  transform: translateY(-3px);
+
+  z-index: 2;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   CLIENT ICON
+========================================================= */
+
+.client-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  color: #285075;
+
+  background: #eaf1f6;
+
+  border-radius: 12px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.client-item:hover .client-icon {
+  color: white;
+
+  background: #285075;
+}
+
+/* =========================================================
+   CLIENT NAME
+========================================================= */
+
+.client-name {
+  max-width: 180px;
+
+  color: #334155;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.client-number {
+  position: absolute;
+
+  top: 20px;
+
+  right: 22px;
+
+  color: #cbd5e1;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.clients-bottom {
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 70px;
+
+  padding: 45px 50px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.06);
+}
+
+.clients-bottom-mark {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  color: white;
+
+  background: #285075;
+
+  border-radius: 50%;
+}
+
+.clients-bottom-content > span {
+  color: #f97316;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.clients-bottom-content h3 {
+  margin: 8px 0 0;
+
+  font-size: clamp(25px, 3vw, 36px);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+.clients-bottom-content h3 strong {
+  color: #285075;
+}
+
+.clients-bottom-content p {
+  max-width: 600px;
+
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.clients-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  flex-shrink: 0;
+
+  padding: 12px 12px 12px 22px;
+
+  color: white;
+
+  background: #f97316;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.clients-button svg {
+  width: 36px;
+  height: 36px;
+
+  padding: 8px;
+
+  color: #f97316;
+
+  background: white;
+
+  border-radius: 50%;
+
+  transition: transform 0.25s ease;
+}
+
+.clients-button:hover {
+  background: #ea580c;
+
+  transform: translateY(-2px);
+}
+
+.clients-button:hover svg {
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .clients-section {
+    padding: 100px 0;
+  }
+
+  .clients-heading-row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-bottom {
+    grid-template-columns: auto 1fr;
+  }
+
+  .clients-button {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .clients-section {
+    padding: 80px 0;
+  }
+
+  .clients-container {
+    width: calc(100% - 32px);
+  }
+
+  /* Header */
+
+  .clients-top {
+    margin-bottom: 45px;
+  }
+
+  .clients-eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .clients-eyebrow-line {
+    width: 28px;
+  }
+
+  .clients-heading-row {
+    gap: 20px;
+  }
+
+  .clients-heading-row h2 {
+    font-size: 38px;
+
+    line-height: 1.08;
+  }
+
+  .clients-heading-row p {
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  /* Showcase */
+
+  .clients-showcase-label {
+    padding: 15px 0;
+
+    font-size: 8px;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-item {
+    min-height: 95px;
+
+    padding: 20px;
+  }
+
+  .client-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .client-name {
+    font-size: 13px;
+  }
+
+  .client-number {
+    top: 18px;
+    right: 18px;
+  }
+
+  /* Bottom */
+
+  .clients-bottom {
+    display: block;
+
+    margin-top: 55px;
+
+    padding: 30px 22px;
+  }
+
+  .clients-bottom-mark {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 20px;
+  }
+
+  .clients-bottom-content h3 {
+    font-size: 29px;
+  }
+
+  .clients-bottom-content p {
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .clients-button {
+    margin-top: 25px;
+  }
+
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .clients-heading-row h2 {
+    font-size: 34px;
+  }
+
+  .client-item {
+    padding: 17px;
+  }
+
+  .client-name {
+    font-size: 12px;
+  }
+
+  .clients-bottom-content h3 {
+    font-size: 26px;
+  }
+
+}

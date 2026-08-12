@@ -1,309 +1,244 @@
 import React from "react";
-import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
 import {
-  ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
-  Award,
+  Factory,
   ShieldCheck,
   Users,
-  Clock3,
+  Award,
 } from "lucide-react";
-
-const strengths = [
-  {
-    icon: <Users className="w-10 h-10 text-orange-500 group-hover:text-white" />,
-    title: "Experienced Workforce",
-    description:
-      "Highly skilled engineers, welders and fabrication experts delivering precision work."
-  },
-  {
-    icon: <Award className="w-10 h-10 text-orange-500 group-hover:text-white" />,
-    title: "Quality Workmanship",
-    description:
-      "Every project follows strict quality standards with premium finishing."
-  },
-  {
-    icon: <ShieldCheck className="w-10 h-10 text-orange-500 group-hover:text-white" />,
-    title: "Safety First",
-    description:
-      "Industry-standard safety procedures and trained manpower for every site."
-  },
-  {
-    icon: <Clock3 className="w-10 h-10 text-orange-500 group-hover:text-white" />,
-    title: "On-Time Delivery",
-    description:
-      "Reliable planning and execution ensure projects are completed within schedule."
-  }
-];
+import "./AboutSection.css";
 
 const AboutSection = () => {
+  const highlights = [
+    {
+      icon: Factory,
+      title: "Industrial Expertise",
+      text: "Fabrication and erection solutions across major industrial sectors.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Safety First",
+      text: "Structured execution with safety and quality at every stage.",
+    },
+    {
+      icon: Users,
+      title: "Skilled Workforce",
+      text: "Experienced professionals equipped to handle demanding projects.",
+    },
+    {
+      icon: Award,
+      title: "Quality Driven",
+      text: "Precision workmanship with a strong focus on reliable results.",
+    },
+  ];
+
+  const stats = [
+    {
+      value: "15+",
+      label: "Years of Experience",
+    },
+    {
+      value: "500+",
+      label: "Projects Delivered",
+    },
+    {
+      value: "200+",
+      label: "Satisfied Clients",
+    },
+    {
+      value: "100%",
+      label: "Commitment to Quality",
+    },
+  ];
+
   return (
-    <section
-      id="about-section"
-      className="relative py-20 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -left-20 top-32 w-72 h-72 rounded-full bg-orange-200/20 blur-3xl"/>
-        <div className="absolute right-0 bottom-0 w-96 h-96 rounded-full bg-[#285075]/10 blur-3xl"/>
+    <section className="about-section">
+
+      {/* Decorative background */}
+
+      <div className="about-background">
+        <div className="about-grid" />
+        <div className="about-glow about-glow-left" />
+        <div className="about-glow about-glow-right" />
       </div>
 
-      <div className="max-w-8xl mx-auto px-8 relative z-10">
+      <div className="about-container">
 
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <span className="inline-flex rounded-full bg-orange-100 text-orange-600 px-5 py-2 text-sm font-semibold">
-            ABOUT SSP ENTERPRISES
-          </span>
+        {/* ================= HEADER ================= */}
 
-          <h2 className="mt-6 text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
-            Building Strong Industrial
-            <span className="block text-[#285075]">
-              Infrastructure Since Day One
-            </span>
+        <div className="about-heading">
+
+          <div className="about-eyebrow">
+            <span className="about-eyebrow-line" />
+            ABOUT SSP FABRICATORS
+          </div>
+
+          <h2>
+            Engineering strength
+            <span>built on experience.</span>
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600 leading-8">
-            SSP Enterprises is a trusted name in Fabrication &
-            Erection services delivering innovative engineering
-            solutions for Steel Plants, Sugar Mills, Paper Mills,
-            Power Houses and heavy industrial projects across India.
+          <p>
+            We deliver dependable fabrication and erection solutions
+            for demanding industrial environments — combining skilled
+            workmanship, modern processes and a commitment to safety.
           </p>
 
         </div>
 
-        {/* Main */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center mt-20">
+        {/* ================= MAIN STORY ================= */}
 
-          {/* Images */}
-          <div className="relative">
+        <div className="about-main">
 
-            <div className="rounded-[32px] overflow-hidden shadow-2xl">
+          {/* Image */}
+
+          <div className="about-image-wrapper">
+
+            <div className="about-image-frame">
+
               <img
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80"
-                className="w-full h-[620px] object-cover"
-                alt=""
+                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85"
+                alt="Industrial steel fabrication"
               />
+
+              <div className="about-image-overlay" />
+
             </div>
 
-            {/* Floating Card */}
-            <Card className="absolute -left-8 bottom-10 border-0 shadow-2xl rounded-3xl bg-white/95 backdrop-blur">
+            {/* Floating experience */}
 
-              <CardContent className="p-6">
-                <h3 className="text-5xl font-bold text-[#285075]">
-                  250+
-                </h3>
+            <div className="about-experience">
 
-                <p className="text-slate-500 mt-2">
-                  Successfully Delivered Projects
-                </p>
-              </CardContent>
+              <span className="about-experience-number">
+                15+
+              </span>
 
-            </Card>
+              <span className="about-experience-text">
+                Years of
+                <br />
+                Industry Experience
+              </span>
 
-            <Card className="absolute -right-8 top-12 border-0 shadow-2xl rounded-3xl bg-orange-500 text-white">
-
-              <CardContent className="p-6">
-                <h3 className="text-4xl font-bold">
-                  15+
-                </h3>
-
-                <p>
-                  Years Experience
-                </p>
-              </CardContent>
-
-            </Card>
+            </div>
 
           </div>
 
           {/* Content */}
-          <div>
-            <span className="text-orange-500 font-semibold uppercase tracking-[4px]">
-              WHY CHOOSE US
+
+          <div className="about-content">
+
+            <span className="about-content-label">
+              WHO WE ARE
             </span>
 
-            <h3 className="mt-4 text-4xl font-bold text-slate-900">
-              Heavy Steel Fabrication &
-              Industrial Engineering Experts
+            <h3>
+              A fabrication partner
+              <span>you can rely on.</span>
             </h3>
 
-            <p className="mt-8 text-lg text-slate-600 leading-8">
-              We combine experienced manpower, advanced fabrication
-              techniques and uncompromising quality standards to
-              deliver reliable industrial solutions.
+            <p>
+              SSP Fabricators is an experienced fabrication and erection
+              company serving the mechanical and industrial sector.
+              Our work spans sugar mills, paper mills, power houses,
+              steel plants and a wide range of structural fabrication
+              requirements.
             </p>
 
-            <p className="mt-6 text-lg text-slate-600 leading-8">
-              From concept to commissioning, our dedicated team
-              ensures every structure meets the highest standards
-              of durability, safety and performance.
+            <p>
+              From initial planning and fabrication to installation and
+              final execution, our team focuses on precision,
+              reliability and safe project delivery.
             </p>
 
-            {/* Features */}
+            {/* Highlights */}
 
-            <div className="grid sm:grid-cols-2 gap-5 mt-10">
-              {[
-                "Steel Plant Projects",
-                "Sugar Mill Fabrication",
-                "Power House Structures",
-                "Paper Mill Engineering",
-                "Professional Workforce",
-                "ISO Quality Standards",
-                "Safety Compliance",
-                "Timely Delivery"
-              ].map((item) => (
+            <div className="about-highlights">
 
-                <div
-                  key={item}
-                  className="flex items-center gap-3"
-                >
-                  <CheckCircle2 className="text-green-500 w-5 h-5"/>
-                  <span className="text-slate-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
+              {highlights.map((item) => {
 
-            </div>
+                const Icon = item.icon;
 
-            <Button className="mt-10 h-14 rounded-full bg-orange-500 hover:bg-orange-600 px-8">
-              Get Free Quote
-              <ArrowRight className="ml-2 w-4 h-4"/>
-            </Button>
+                return (
+                  <div
+                    className="about-highlight"
+                    key={item.title}
+                  >
 
-          </div>
-
-        </div>
-
-        {/* Strengths */}
-        <div className="mt-28">
-
-          <div className="text-center">
-            <span className="text-orange-500 uppercase tracking-[4px] font-semibold">
-              OUR STRENGTHS
-            </span>
-
-            <h3 className="mt-4 text-5xl font-bold text-slate-900">
-              Why Clients Trust SSP
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mt-16">
-            {strengths.map((item,index)=>(
-
-              <Card
-                key={index}
-                className="group rounded-3xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
-              >
-
-                <CardContent className="p-8">
-
-                  <div className="w-20 h-20 rounded-2xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition">
-                    <div className="group-hover:text-white">
-                      {item.icon}
+                    <div className="about-highlight-icon">
+                      <Icon size={20} />
                     </div>
+
+                    <div>
+                      <h4>{item.title}</h4>
+                      <p>{item.text}</p>
+                    </div>
+
                   </div>
+                );
+              })}
 
-                  <h4 className="mt-8 text-2xl font-bold text-slate-900">
-                    {item.title}
-                  </h4>
+            </div>
 
-                  <p className="mt-4 text-slate-600 leading-7">
-                    {item.description}
-                  </p>
+            {/* Link */}
 
-                </CardContent>
+            <a
+              href="/about"
+              className="about-link"
+            >
+              <span>Discover Our Company</span>
 
-              </Card>
-            ))}
+              <span className="about-link-icon">
+                <ArrowUpRight size={18} />
+              </span>
+            </a>
+
           </div>
+
         </div>
+
+        {/* ================= STATS ================= */}
+
+        <div className="about-stats">
+
+          {stats.map((stat, index) => (
+
+            <div
+              className="about-stat"
+              key={stat.label}
+            >
+
+              <div className="about-stat-value">
+                {stat.value}
+              </div>
+
+              <div className="about-stat-label">
+                {stat.label}
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        {/* ================= BOTTOM STATEMENT ================= */}
+
+        <div className="about-bottom">
+
+          <div className="about-bottom-mark">
+            <CheckCircle2 size={20} />
+          </div>
+
+          <p>
+            From complex industrial structures to complete fabrication
+            and erection requirements, we bring the same level of
+            discipline, safety and workmanship to every project.
+          </p>
+
+        </div>
+
       </div>
-
-    <div className="mt-32">
-        <div className="text-center max-w-3xl mx-auto">
-            <span className="text-orange-500 uppercase tracking-[4px] font-semibold">
-                OUR PROCESS
-            </span>
-
-            <h2 className="mt-4 px-8 text-5xl font-bold text-slate-900">
-                From Concept To Completion
-            </h2>
-
-            <p className="mt-5 px-8 text-slate-600 leading-8">
-                Every project follows a structured workflow that
-                ensures precision, quality and timely completion.
-            </p>
-
-        </div>
-
-        <div className="relative mt-20">
-            {/* Desktop Line */}
-            <div className="hidden lg:block absolute left-0 right-0 top-14 h-1 bg-slate-200 rounded-full">
-                <div className="w-full h-full bg-gradient-to-r from-orange-500 via-[#285075] to-orange-500 rounded-full opacity-30"/>
-            </div>
-
-            <div className="grid lg:grid-cols-6 gap-10 relative z-10 pl-10 pr-10">
-                {[
-                    {
-                        icon:"📋",
-                        title:"Consultation",
-                        desc:"Understanding client requirements and project scope."
-                    },
-                    {
-                        icon:"📐",
-                        title:"Planning",
-                        desc:"Engineering drawings and execution planning."
-                    },
-                    {
-                        icon:"⚙️",
-                        title:"Fabrication",
-                        desc:"Precision fabrication using modern equipment."
-                    },
-                    {
-                        icon:"🏗",
-                        title:"Installation",
-                        desc:"Professional erection and site execution."
-                    },
-                    {
-                        icon:"✔",
-                        title:"Inspection",
-                        desc:"Quality assurance and safety verification."
-                    },
-                    {
-                        icon:"🚀",
-                        title:"Delivery",
-                        desc:"Final handover with complete client satisfaction."
-                    }
-
-                ].map((item,index)=>(
-
-                    <div
-                        key={index}
-                        className="group text-center"
-                    >
-
-                        <div className="mx-auto w-28 h-28 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-4xl transition-all duration-500 group-hover:bg-orange-500 group-hover:scale-110">
-                            <span className="group-hover:scale-125 transition">
-                                {item.icon}
-                            </span>
-                        </div>
-
-                        <h4 className="mt-8 font-bold text-xl text-slate-900">
-                            {item.title}
-                        </h4>
-
-                        <p className="mt-3 text-slate-600 leading-7">
-                            {item.desc}
-                        </p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </div>
-
     </section>
   );
 };

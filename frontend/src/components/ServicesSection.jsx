@@ -1,437 +1,311 @@
-import React, { useEffect, useState } from "react";
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
-
+import React, { useState } from "react";
 import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
+  ArrowUpRight,
+  Factory,
+  Settings,
+  Zap,
+  Layers3,
+  Wrench,
+  FileText,
+} from "lucide-react";
+import { services } from "../mock/data";
+import "./ServicesSection.css";
+
+const iconMap = {
   Factory,
   Settings,
   FileText,
   Zap,
-  Layers,
-  Wrench
-} from "lucide-react";
-
-import { services } from "../mock/data";
-
-const iconMap = {
-  Factory: <Factory className="w-7 h-7" />,
-  Settings: <Settings className="w-7 h-7" />,
-  FileText: <FileText className="w-7 h-7" />,
-  Zap: <Zap className="w-7 h-7" />,
-  Layers: <Layers className="w-7 h-7" />,
-  Wrench: <Wrench className="w-7 h-7" />
+  Layers: Layers3,
+  Wrench,
 };
 
-export default function ServicesSection() {
+const ServicesSection = () => {
+  const [activeService, setActiveService] = useState(0);
 
-  const [current, setCurrent] = useState(0);
+  const active = services?.[activeService] || services?.[0];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === services.length - 1 ? 0 : prev + 1
-      );
-
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrent((prev) =>
-      prev === services.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? services.length - 1 : prev - 1
-    );
-  };
-
-  if (!services?.length) return null;
-  const active = services[current];
+  if (!services?.length) {
+    return null;
+  }
 
   return (
+    <section className="services-section">
 
-    <section className="relative py-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
+      {/* Background */}
 
-    <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute left-0 top-20 w-72 h-72 rounded-full bg-orange-200/20 blur-3xl"/>
-    <div className="absolute right-0 bottom-0 w-80 h-80 rounded-full bg-[#285075]/10 blur-3xl"/>
-    </div>
+      <div className="services-background">
+        <div className="services-grid" />
+        <div className="services-glow services-glow-left" />
+        <div className="services-glow services-glow-right" />
+      </div>
 
-    <div className="max-w-8xl mx-auto px-8 relative z-10">
+      <div className="services-container">
 
-    {/* HEADER */}
-    <div className="text-center">
-      <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
-      OUR SERVICES
-      </span>
+        {/* ================= HEADER ================= */}
 
-      <h2 className="mt-5 text-5xl lg:text-6xl font-bold text-slate-900">
-        Engineering Solutions
+        <div className="services-heading">
 
-        <span className="block text-[#285075]">
-        Across Every Industry
-        </span>
-      </h2>
-
-      <p className="max-w-3xl mx-auto mt-8 text-lg text-slate-600 leading-8">
-        From heavy fabrication to complete industrial erection,
-        SSP Enterprises delivers end-to-end engineering
-        solutions tailored to every client's requirements.
-      </p>
-    </div>
-
-    {/* INDUSTRY PILLS */}
-    <div className="flex flex-wrap justify-center gap-4 mt-12">
-      {services.map((item,index)=>(
-      <button
-        key={item.id}
-        onClick={()=>setCurrent(index)}
-        className={`px-6 py-3 rounded-full transition-all duration-300 font-medium
-
-        ${index===current
-        ? "bg-orange-500 text-white shadow-lg"
-        : "bg-white border border-slate-200 hover:border-orange-400 hover:text-orange-500"}
-
-        `}
-      >
-      {item.title}
-      </button>
-      ))}
-    </div>
-
-    {/* FEATURED CARD */}
-    <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
-
-      {/* IMAGE */}
-      <div className="relative">
-        <div className="overflow-hidden rounded-[30px] shadow-2xl">
-        <img
-        src={active.image}
-        alt={active.title}
-        className="w-full h-[300px] sm:h-[420px] lg:h-[520px] object-cover transition-all duration-700 hover:scale-110"
-        />
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent rounded-[30px]"/>
-        <div className="absolute bottom-8 left-8">
-          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-5 py-2 text-white inline-flex">
-          Featured Service
+          <div className="services-eyebrow">
+            <span className="services-eyebrow-line" />
+            OUR CAPABILITIES
           </div>
-        </div>
-      </div>
 
-      {/* CONTENT */}
-      <div>
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-100 text-orange-500">
-          {iconMap[active.icon]}
-        </div>
+          <div className="services-heading-row">
 
-        <h3 className="mt-8 text-5xl font-bold text-slate-900">
-          {active.title}
-        </h3>
+            <h2>
+              Built for demanding
+              <span>industrial environments.</span>
+            </h2>
 
-        <p className="mt-8 text-lg leading-8 text-slate-600">
-          {active.description}
-        </p>
+            <p>
+              From structural fabrication to complete industrial
+              erection, we provide practical engineering solutions
+              designed around quality, safety and reliable execution.
+            </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-          {[
-          "Industrial Expertise",
-          "Certified Engineers",
-          "Modern Equipment",
-          "Quality Assurance",
-          "Safety Standards",
-          "Pan India Projects"
-          ].map(item=>(
-          <div
-            key={item}
-            className="flex items-center gap-3"
-          >
-
-          <div className="w-2 h-2 rounded-full bg-orange-500"/>
-          <span className="text-slate-700">
-            {item}
-          </span>
+          </div>
 
         </div>
-        ))}
-      </div>
 
-        <div className="flex flex-wrap gap-4 mt-12">
-          <Button className="rounded-full h-14 px-8 bg-orange-500 hover:bg-orange-600">
-            Explore Service
-            <ArrowRight className="ml-2 w-4 h-4"/>
-          </Button>
+        {/* ================= SERVICE EXPLORER ================= */}
 
-          <Button
-            variant="outline"
-            className="rounded-full h-14 w-14 p-0"
-            onClick={prevSlide}
-          >
-            <ChevronLeft/>
-          </Button>
+        <div className="services-explorer">
 
-          <Button
-            variant="outline"
-            className="rounded-full h-14 w-14 p-0"
-            onClick={nextSlide}
-          >
-            <ChevronRight/>
-          </Button>
+          {/* Service List */}
 
-        </div>
-      </div>
-    </div>
+          <div className="services-list">
 
-    {/* EXPLORE MORE */}
-    <div className="mt-32">
-      <div className="flex items-center justify-between mb-12">
-        <div>
-          <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
-            EXPLORE MORE
-          </span>
+            {services.map((service, index) => {
 
-          <h2 className="text-4xl font-bold text-slate-900 mt-3">
-            Complete Engineering Solutions
-          </h2>
-        </div>
+              const Icon = iconMap[service.icon] || Factory;
 
-        <Button
-          variant="outline"
-          className="rounded-full hidden lg:flex"
-          onClick={() => window.location.href="/services"}
-        >
-          View All Services
-        </Button>
-      </div>
+              const isActive = activeService === index;
 
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {services.map((service,index)=>(
-          <Card
-            key={service.id}
-            className="
-              group
-              overflow-hidden
-              rounded-[30px]
-              border
-              border-slate-200
-              bg-white
-              shadow-lg
-              transition-all
-              duration-500
-              hover:-translate-y-4
-              hover:border-orange-400
-              hover:shadow-[0_25px_80px_rgba(0,0,0,.18)]
-              "
-          >
-            <div className="relative overflow-hidden">
+              return (
+                <button
+                  key={service.id}
+                  type="button"
+                  className={`service-item ${
+                    isActive ? "service-item-active" : ""
+                  }`}
+                  onClick={() => setActiveService(index)}
+                >
+
+                  <div className="service-item-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <div className="service-item-icon">
+                    <Icon size={20} />
+                  </div>
+
+                  <div className="service-item-content">
+                    <span>{service.title}</span>
+                  </div>
+
+                  <ArrowUpRight
+                    className="service-item-arrow"
+                    size={20}
+                  />
+
+                </button>
+              );
+            })}
+
+          </div>
+
+          {/* Featured Service */}
+
+          <div className="services-featured">
+
+            <div className="services-featured-image">
+
               <img
-                src={service.image}
-                alt={service.title}
-                className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
+                src={active.image}
+                alt={active.title}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10"/>
-              
-              <div className="absolute top-5 left-5 bg-white/15 backdrop-blur-lg rounded-xl p-3 text-white">
-                {iconMap[service.icon]}
+
+              <div className="services-featured-overlay" />
+
+              <div className="services-featured-label">
+                <span>01</span>
+                FEATURED CAPABILITY
               </div>
 
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white text-2xl font-bold">
-                  {service.title}
-                </h3>
+              <div className="services-featured-title">
+                {active.title}
               </div>
+
             </div>
 
-            <CardContent className="p-8">
-              <p className="text-slate-600 leading-7">
-                {service.description}
-              </p>
+            <div className="services-featured-content">
 
-              <Button
-                variant="ghost"
-                className="mt-6 p-0 text-orange-500 hover:bg-transparent"
-              >
-                Explore Service
-                <ArrowRight className="ml-2 w-4 h-4"/>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
+              <div>
 
-    {/* OUR PROCESS */}
-    <div className="mt-32">
-      <div className="text-center max-w-3xl mx-auto">
-        <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
-          OUR PROCESS
-        </span>
+                <span className="services-content-label">
+                  {active.type || "INDUSTRIAL SOLUTIONS"}
+                </span>
 
-        <h2 className="text-5xl font-bold text-slate-900 mt-4">
-          Engineering Excellence
-          In Every Step
-        </h2>
+                <h3>
+                  {active.title}
+                </h3>
 
-        <p className="mt-5 text-slate-600 leading-8">
-          Our workflow ensures every project is completed
-          with precision, safety and unmatched quality.
-        </p>
-      </div>
+                <p>
+                  {active.description}
+                </p>
 
-      <div className="grid lg:grid-cols-3 gap-10 mt-20">
-        {[
-          {
-            icon:<Settings className="w-10 h-10"/>,
-            title:"Structure Manufacturing",
-            color:"bg-blue-50 text-blue-600",
-            desc:"Every structural component is manufactured using precision engineering and advanced machinery."
-          },
-
-          {
-            icon:<Wrench className="w-10 h-10"/>,
-            title:"Installation & Erection",
-            color:"bg-orange-50 text-orange-600",
-            desc:"Professional installation carried out by experienced engineers following strict safety standards."
-          },
-
-          {
-            icon:<Factory className="w-10 h-10"/>,
-            title:"Maintenance Support",
-            color:"bg-green-50 text-green-600",
-            desc:"Long-term support, inspections and maintenance services for reliable industrial performance."
-          }
-
-        ].map((item,index)=>(
-          <Card
-            key={index}
-            className="rounded-[30px] border-0 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-3"
-          >
-            <CardContent className="p-10">
-              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center ${item.color}`}>
-                {item.icon}
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold text-slate-900">
-                {item.title}
-              </h3>
+              <a
+                href={
+                  active.title === "Steel Plants"
+                    ? "/steel-plants"
+                    : "/services"
+                }
+                className="services-learn-more"
+              >
 
-              <p className="mt-5 text-slate-600 leading-8">
-                {item.desc}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+                <span>Explore Service</span>
 
-    </div>
+                <span className="services-learn-more-icon">
+                  <ArrowUpRight size={18} />
+                </span>
 
-    {/* CTA */}
-    <div className="relative mt-32 overflow-hidden rounded-[40px]">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B2742] via-[#163B5B] to-[#285075]" />
-      {/* Grid */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)
-          `,
-          backgroundSize: "70px 70px"
-        }}
-      />
+              </a>
 
-      {/* Glow */}
-      <div className="absolute -left-10 md:-left-20 top-0 w-48 h-48 md:w-80 md:h-80 rounded-full bg-orange-500/30 blur-[80px] md:blur-[120px]" />
-        <div className="absolute right-0 bottom-0 w-56 h-56 md:w-96 md:h-96 rounded-full bg-white/10 blur-[80px] md:blur-[120px]" />
+            </div>
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-10 py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          </div>
 
-            {/* LEFT */}
-            <div>
-              <span className="uppercase tracking-[3px] md:tracking-[4px] text-orange-400 font-semibold text-xs sm:text-sm">
-                START YOUR PROJECT
+        </div>
+
+        {/* ================= PROCESS ================= */}
+
+        <div className="services-process">
+
+          <div className="services-process-heading">
+
+            <span className="services-eyebrow">
+              <span className="services-eyebrow-line" />
+              HOW WE WORK
+            </span>
+
+            <h3>
+              From drawing board
+              <span>to final installation.</span>
+            </h3>
+
+          </div>
+
+          <div className="services-process-list">
+
+            <div className="services-process-item">
+
+              <span className="services-process-number">
+                01
               </span>
 
-              <h2 className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Let's Build
-                <br />
-                Your Next Landmark
-              </h2>
+              <div>
+                <h4>Plan</h4>
 
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-slate-300 leading-7 md:leading-9 max-w-xl">
-                From heavy fabrication to complete industrial
-                erection, SSP Enterprises delivers engineering
-                excellence trusted by industries across India.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 mt-8 md:mt-10">
-                <Button
-                  className="w-full sm:w-auto rounded-full h-12 md:h-14 px-6 md:px-8 bg-orange-500 hover:bg-orange-600"
-                  onClick={() => (window.location.href = "/quote")}
-                >
-                  Request Proposal
-                </Button>
-
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-auto rounded-full h-12 md:h-14 px-6 md:px-8 border-white text-white hover:bg-white hover:text-[#123654]"
-                  onClick={() => window.open("tel:+918700849865")}
-                >
-                  Call Now
-                </Button>
+                <p>
+                  Understand requirements, drawings,
+                  specifications and site conditions.
+                </p>
               </div>
+
             </div>
 
-            {/* RIGHT */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
-              {[
-                {
-                  number: "250+",
-                  label: "Projects",
-                },
-                {
-                  number: "15+",
-                  label: "Years",
-                },
-                {
-                  number: "120+",
-                  label: "Experts",
-                },
-                {
-                  number: "100%",
-                  label: "Quality",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-xl border border-white/10 p-5 sm:p-6 md:p-8 text-center"
-                >
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-400">
-                    {item.number}
-                  </h2>
+            <div className="services-process-item">
 
-                  <p className="text-sm sm:text-base text-slate-300 mt-2 md:mt-3">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
+              <span className="services-process-number">
+                02
+              </span>
+
+              <div>
+                <h4>Fabricate</h4>
+
+                <p>
+                  Manufacture structural components
+                  with controlled precision and quality.
+                </p>
+              </div>
+
+            </div>
+
+            <div className="services-process-item">
+
+              <span className="services-process-number">
+                03
+              </span>
+
+              <div>
+                <h4>Erect</h4>
+
+                <p>
+                  Execute installation safely and
+                  efficiently at the project site.
+                </p>
+              </div>
+
+            </div>
+
+            <div className="services-process-item">
+
+              <span className="services-process-number">
+                04
+              </span>
+
+              <div>
+                <h4>Deliver</h4>
+
+                <p>
+                  Complete testing, finishing and
+                  project handover with confidence.
+                </p>
+              </div>
+
             </div>
 
           </div>
+
         </div>
+
+        {/* ================= BOTTOM CTA ================= */}
+
+        <div className="services-bottom">
+
+          <div>
+
+            <span>
+              HAVE A PROJECT IN MIND?
+            </span>
+
+            <h3>
+              Let's discuss what
+              <strong> we can build together.</strong>
+            </h3>
+
+          </div>
+
+          <a
+            href="/contact"
+            className="services-bottom-button"
+          >
+
+            <span>Talk to Our Team</span>
+
+            <ArrowUpRight size={19} />
+
+          </a>
+
+        </div>
+
       </div>
 
-    </div>
     </section>
   );
-}
+};
+
+export default ServicesSection;

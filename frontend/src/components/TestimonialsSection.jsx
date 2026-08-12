@@ -1,198 +1,284 @@
-import React, { useState } from 'react';
-import { Card, CardContent } from './ui/card';
-import { Button } from './ui/button';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { testimonials } from '../mock/data';
+import React, { useEffect, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Quote,
+  Star,
+} from "lucide-react";
+import { testimonials } from "../mock/data";
+import "./TestimonialsSection.css";
 
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
 
-const next = () => {
-  setCurrent((prev) =>
-    prev === testimonials.length - 1 ? 0 : prev + 1
-  );
-};
+  const activeTestimonial = testimonials?.[current];
 
-const prev = () => {
-  setCurrent((prev) =>
-    prev === 0 ? testimonials.length - 1 : prev - 1
-  );
-};
+  useEffect(() => {
+    if (!testimonials?.length) return;
 
-const active = testimonials[current];
+    const interval = setInterval(() => {
+      setCurrent((prev) =>
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!testimonials?.length) {
+    return null;
+  }
+
+  const nextTestimonial = () => {
+    setCurrent((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousTestimonial = () => {
+    setCurrent((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto">
-          <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
-            CLIENT TESTIMONIALS
-          </span>
+    <section className="testimonials-section">
 
-          <h2 className="mt-6 text-5xl lg:text-7xl font-bold text-slate-900">
-            Trusted By
-            <span className="block text-[#285075]">
-              Industry Leaders
-            </span>
-          </h2>
+      {/* ================= BACKGROUND ================= */}
 
-          <p className="mt-8 text-lg text-slate-600 leading-8">
-            Hear what our clients say about our fabrication,
-            erection and engineering expertise.
-          </p>
+      <div className="testimonials-background">
+        <div className="testimonials-grid" />
+        <div className="testimonials-glow" />
+      </div>
+
+      <div className="testimonials-container">
+
+        {/* ================= HEADER ================= */}
+
+        <div className="testimonials-heading">
+
+          <div className="testimonials-eyebrow">
+            <span className="testimonials-eyebrow-line" />
+            CLIENT EXPERIENCE
+          </div>
+
+          <div className="testimonials-heading-row">
+
+            <h2>
+              Trusted by teams
+              <span>that demand more.</span>
+            </h2>
+
+            <p>
+              Strong partnerships are built through consistent
+              communication, dependable execution and quality
+              work delivered when it matters.
+            </p>
+
+          </div>
+
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="mt-24">
-          <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-[#123654] to-[#285075] p-12 lg:p-20">
-            <Quote
-              size={90}
-              className="absolute top-10 right-10 text-white/10"
-            />
+        {/* ================= MAIN TESTIMONIAL ================= */}
 
-            <div className="max-w-4xl">
-              <div className="flex gap-1 mb-8">
-                {[...Array(active.rating)].map((_, index) => (
+        <div className="testimonials-main">
+
+          {/* Quote side */}
+
+          <div className="testimonial-featured">
+
+            <div className="testimonial-quote-icon">
+              <Quote size={30} />
+            </div>
+
+            <div className="testimonial-stars">
+
+              {[...Array(activeTestimonial.rating || 5)].map(
+                (_, index) => (
                   <Star
                     key={index}
-                    size={24}
-                    className="text-yellow-400 fill-current"
+                    size={16}
+                    fill="currentColor"
                   />
+                )
+              )}
 
-                ))}
+            </div>
+
+            <blockquote>
+              “{activeTestimonial.content}”
+            </blockquote>
+
+            <div className="testimonial-author">
+
+              <div className="testimonial-avatar">
+                {activeTestimonial.name?.charAt(0)}
               </div>
 
-              <p className="text-3xl lg:text-4xl text-white leading-relaxed font-light">
-                "{active.content}"
-              </p>
+              <div>
+                <h3>
+                  {activeTestimonial.name}
+                </h3>
 
-              <div className="mt-12 flex items-center gap-5">
-                <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xl">
-                  {active.name.charAt(0)}
-                </div>
+                <p>
+                  {activeTestimonial.designation}
+                </p>
 
-                <div>
-                  <h4 className="text-xl font-bold text-white">
-                    {active.name}
-                  </h4>
-
-                  <p className="text-slate-300">
-                    {active.designation}
-                  </p>
-
-                  <p className="text-orange-400">
-                    {active.company}
-
-                  </p>
-                </div>
+                <span>
+                  {activeTestimonial.company}
+                </span>
               </div>
+
             </div>
 
             {/* Controls */}
-            <div className="absolute bottom-10 right-10 flex gap-4">
-              <button
-                onClick={prev}
-                className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center text-white hover:bg-white/20"
-              >
-                <ChevronLeft />
-              </button>
+
+            <div className="testimonial-controls">
 
               <button
-                onClick={next}
-                className="w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center text-white hover:bg-orange-600"
+                type="button"
+                onClick={previousTestimonial}
+                aria-label="Previous testimonial"
               >
-                <ChevronRight />
+                <ArrowLeft size={18} />
               </button>
+
+              <div className="testimonial-dots">
+
+                {testimonials.map((_, index) => (
+
+                  <button
+                    key={index}
+                    type="button"
+                    aria-label={`Go to testimonial ${index + 1}`}
+                    onClick={() => setCurrent(index)}
+                    className={
+                      current === index
+                        ? "testimonial-dot testimonial-dot-active"
+                        : "testimonial-dot"
+                    }
+                  />
+
+                ))}
+
+              </div>
+
+              <button
+                type="button"
+                onClick={nextTestimonial}
+                aria-label="Next testimonial"
+              >
+                <ArrowRight size={18} />
+              </button>
+
             </div>
+
           </div>
+
+          {/* Visual side */}
+
+          <div className="testimonial-visual">
+
+            <div className="testimonial-visual-content">
+
+              <span>
+                OUR CLIENTS
+              </span>
+
+              <h3>
+                Built on
+                <strong> trust.</strong>
+              </h3>
+
+              <p>
+                Every successful project begins with a strong
+                relationship. We work closely with our clients
+                from planning through execution.
+              </p>
+
+            </div>
+
+            <div className="testimonial-visual-mark">
+              <Quote size={70} />
+            </div>
+
+          </div>
+
         </div>
 
-        {/* Additional Testimonials Row */}
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
-          {testimonials.slice(0, 3).map((testimonial) => (
-            <Card
-              key={testimonial.id}
-              className="
-              border-0
-              rounded-[32px]
-              shadow-lg
-              hover:shadow-2xl
-              hover:-translate-y-3
-              transition-all
-              duration-500
-              "
-            >
-              <CardContent className="p-8">
-                <Quote
-                  size={32}
-                  className="text-orange-500 mb-6"
-                />
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, index) => (
-                    <Star
-                      key={index}
-                      size={16}
-                      className="text-yellow-400 fill-current"
-                    />
-                  ))}
+        {/* ================= TESTIMONIAL STRIP ================= */}
+
+        {testimonials.length > 1 && (
+
+          <div className="testimonial-strip">
+
+            {testimonials.map((testimonial, index) => (
+
+              <button
+                type="button"
+                key={testimonial.id}
+                className={`testimonial-mini ${
+                  current === index
+                    ? "testimonial-mini-active"
+                    : ""
+                }`}
+                onClick={() => setCurrent(index)}
+              >
+
+                <div className="testimonial-mini-avatar">
+                  {testimonial.name?.charAt(0)}
                 </div>
 
-                <p className="text-slate-600 leading-8 mb-8">
-                  "{testimonial.content}"
-                </p>
+                <div className="testimonial-mini-info">
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#285075] text-white flex items-center justify-center font-bold">
-                    {testimonial.name.charAt(0)}
-                  </div>
+                  <strong>
+                    {testimonial.name}
+                  </strong>
 
-                  <div>
-                    <h4 className="font-bold">
-                      {testimonial.name}
-                    </h4>
+                  <span>
+                    {testimonial.company}
+                  </span>
 
-                    <p className="text-sm text-slate-500">
-                      {testimonial.company}
-                    </p>
-                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
 
-        {/* Call to Action */}
-        <div className="mt-32 text-center">
-          <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
-            WORK WITH US
-          </span>
+              </button>
 
-          <h2 className="mt-5 text-5xl lg:text-6xl font-bold text-slate-900">
-            Ready To Join
-            Our Happy Clients?
-          </h2>
+            ))}
 
-          <p className="mt-6 text-slate-600 max-w-3xl mx-auto leading-8">
-            Experience engineering excellence,
-            quality fabrication and professional
-            project execution.
-          </p>
-
-          <div className="flex justify-center gap-5 mt-10">
-            <Button className="h-14 px-8 rounded-full bg-orange-500 hover:bg-orange-600">
-              Request Proposal
-            </Button>
-
-            <Button
-              variant="outline"
-              className="h-14 px-8 rounded-full"
-            >
-              View Projects
-            </Button>
           </div>
+
+        )}
+
+        {/* ================= BOTTOM MESSAGE ================= */}
+
+        <div className="testimonials-bottom">
+
+          <div>
+
+            <span>
+              YOUR PROJECT COULD BE NEXT
+            </span>
+
+            <h3>
+              Let's build a relationship
+              <strong> that lasts.</strong>
+            </h3>
+
+          </div>
+
+          <a
+            href="/contact"
+            className="testimonials-button"
+          >
+            <span>Start a Conversation</span>
+
+            <ArrowRight size={18} />
+          </a>
+
         </div>
+
       </div>
+
     </section>
   );
 };

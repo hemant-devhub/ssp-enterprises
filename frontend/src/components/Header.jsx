@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <>
-      {/* TOP BAR */}
+      {/* TOP BAR 
       <div className="max-w-8xl mx-auto px-3 sm:px-6 lg:px-8 h-auto min-h-[44px] py-2 flex flex-col md:flex-row justify-between items-center gap-2">
 
         <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
@@ -64,13 +64,14 @@ export default function Header() {
         </div>
 
       </div>
+      */}
 
       {/* NAVBAR */}
       <header
-        className={`fixed top-11 left-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
             ? "py-1"
-            : "py-4"
+            : "py-1"
         }`}
       >
         <div className="max-w-8xl mx-auto px-8">
