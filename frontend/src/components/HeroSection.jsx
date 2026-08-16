@@ -46,9 +46,9 @@ const HeroSection = () => {
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-bold text-white leading-tight">
-              Building India's
+              BUILDING INDIA'S
               <span className="block text-orange-500">
-                Industrial Future
+                INDUSTRIAL FUTURE
               </span>
 
             </h1>

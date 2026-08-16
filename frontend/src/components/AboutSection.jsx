@@ -72,6 +72,7 @@ const AboutSection = () => {
           <div className="about-eyebrow">
             <span className="about-eyebrow-line" />
             ABOUT SSP FABRICATORS
+            <span className="about-eyebrow-line" />
           </div>
 
           <h2>
@@ -81,7 +82,7 @@ const AboutSection = () => {
 
           <p>
             We deliver dependable fabrication and erection solutions
-            for demanding industrial environments — combining skilled
+            for demanding industrial environments - combining skilled
             workmanship, modern processes and a commitment to safety.
           </p>
 
@@ -111,7 +112,7 @@ const AboutSection = () => {
             <div className="about-experience">
 
               <span className="about-experience-number">
-                15+
+                35+
               </span>
 
               <span className="about-experience-text">
@@ -138,7 +139,7 @@ const AboutSection = () => {
             </h3>
 
             <p>
-              SSP Fabricators is an experienced fabrication and erection
+              SSP Enterprises is an experienced fabrication and erection
               company serving the mechanical and industrial sector.
               Our work spans sugar mills, paper mills, power houses,
               steel plants and a wide range of structural fabrication

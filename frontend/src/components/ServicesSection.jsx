@@ -49,22 +49,19 @@ const ServicesSection = () => {
           <div className="services-eyebrow">
             <span className="services-eyebrow-line" />
             OUR CAPABILITIES
+            <span className="services-eyebrow-line" />
           </div>
 
-          <div className="services-heading-row">
+          <h2>
+            Built for demanding
+            <span>industrial environments.</span>
+          </h2>
 
-            <h2>
-              Built for demanding
-              <span>industrial environments.</span>
-            </h2>
-
-            <p>
-              From structural fabrication to complete industrial
-              erection, we provide practical engineering solutions
-              designed around quality, safety and reliable execution.
-            </p>
-
-          </div>
+          <p>
+            From structural fabrication to complete industrial
+            erection, we provide practical engineering solutions
+            designed around quality, safety and reliable execution.
+          </p>
 
         </div>
 

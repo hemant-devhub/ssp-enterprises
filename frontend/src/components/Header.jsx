@@ -42,30 +42,6 @@ export default function Header() {
 
   return (
     <>
-      {/* TOP BAR 
-      <div className="max-w-8xl mx-auto px-3 sm:px-6 lg:px-8 h-auto min-h-[44px] py-2 flex flex-col md:flex-row justify-between items-center gap-2">
-
-        <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
-
-          <div className="flex items-center whitespace-nowrap gap-1.5 sm:gap-2 bg-white/10 rounded-full px-2 sm:px-3 py-1 text-[11px] sm:text-sm">
-            <Phone size={12} className="shrink-0" />
-            <span>+91 8700849865</span>
-          </div>
-
-          <div className="flex items-center whitespace-nowrap gap-1.5 sm:gap-2 bg-white/10 rounded-full px-2 sm:px-3 py-1 text-[11px] sm:text-sm">
-            <Phone size={12} className="shrink-0" />
-            <span>+91 7668167061</span>
-          </div>
-
-        </div>
-
-        <div className="text-[11px] sm:text-sm text-center md:text-right text-white/90 tracking-wide">
-          Excellence in Fabrication & Engineering
-        </div>
-
-      </div>
-      */}
-
       {/* NAVBAR */}
       <header
         className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${
