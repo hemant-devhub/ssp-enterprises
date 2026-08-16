@@ -78,7 +78,10 @@
 ========================================================= */
 
 .services-heading {
-  margin-bottom: 75px;
+  margin-bottom: 80px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
 }
 
 .services-eyebrow {
