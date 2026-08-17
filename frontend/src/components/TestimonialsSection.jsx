@@ -60,6 +60,7 @@ const TestimonialsSection = () => {
           <div className="testimonials-eyebrow">
             <span className="testimonials-eyebrow-line" />
             CLIENT EXPERIENCE
+            <span className="testimonials-eyebrow-line" />
           </div>
 
           <div className="testimonials-heading-row">
@@ -251,7 +252,7 @@ const TestimonialsSection = () => {
 
         {/* ================= BOTTOM MESSAGE ================= */}
 
-        <div className="testimonials-bottom">
+        {/* <div className="testimonials-bottom">
 
           <div>
 
@@ -275,7 +276,7 @@ const TestimonialsSection = () => {
             <ArrowRight size={18} />
           </a>
 
-        </div>
+        </div> */}
 
       </div>
 

@@ -95,7 +95,7 @@ export default function Header() {
 
               <Button
                 onClick={() => (window.location.href = "/contact")}
-                className="rounded-full h-12 px-7 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-[#123654] hover:to-[#285075] transition-all shadow-xl hover:scale-105"
+                className="rounded-full h-12 px-7 bg-gradient-to-r from-[#B28149] to-[#ca975c] hover:from-[#123654] hover:to-[#285075] transition-all shadow-xl hover:scale-105"
               >
                 Get Free Quote
 

@@ -186,6 +186,7 @@ const ServicesSection = () => {
             <span className="services-eyebrow">
               <span className="services-eyebrow-line" />
               HOW WE WORK
+              <span className="services-eyebrow-line" />
             </span>
 
             <h3>
@@ -271,7 +272,7 @@ const ServicesSection = () => {
 
         {/* ================= BOTTOM CTA ================= */}
 
-        <div className="services-bottom">
+        {/* <div className="services-bottom">
 
           <div>
 
@@ -297,7 +298,7 @@ const ServicesSection = () => {
 
           </a>
 
-        </div>
+        </div> */}
 
       </div>
 

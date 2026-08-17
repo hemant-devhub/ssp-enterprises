@@ -56,6 +56,7 @@ const ContactSection = () => {
           <div className="contact-eyebrow">
             <span className="contact-eyebrow-line" />
             START A CONVERSATION
+            <span className="contact-eyebrow-line" />
           </div>
 
           <div className="contact-heading-row">
@@ -86,7 +87,7 @@ const ContactSection = () => {
             <div className="contact-info-top">
 
               <span className="contact-info-label">
-                SSP FABRICATORS
+                SSP ENTERPRISES
               </span>
 
               <h3>
@@ -159,7 +160,7 @@ const ContactSection = () => {
 
                 <div>
                   <span>EMAIL</span>
-                  <strong>info@sspfabricators.com</strong>
+                  <strong>info@ssp-enterprises.com</strong>
                 </div>
 
                 <ArrowUpRight

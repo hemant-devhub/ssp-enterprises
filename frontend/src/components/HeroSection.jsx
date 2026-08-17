@@ -7,8 +7,8 @@ import {
   Factory,
   ShieldCheck,
 } from "lucide-react";
-
 import { motion } from "framer-motion";
+import "./HeroSection.css";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -18,183 +18,149 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-[#123654] to-slate-900">
-
+    <section className="hero-section">
       {/* Grid Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:70px_70px]" />
+      <div className="hero-grid-background" aria-hidden="true">
+        <div className="hero-grid" />
       </div>
 
       {/* Glow Effects */}
+      <div className="hero-glow-orange" aria-hidden="true" />
+      <div className="hero-glow-blue" aria-hidden="true" />
 
-      <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-orange-500/20 blur-[150px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px]" />
-
-      <div className="max-w-8xl mx-auto px-8 pt-44 pb-24 relative z-10">
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-
+      <div className="hero-container">
+        <div className="hero-main-grid">
           {/* Left */}
           <motion.div
+            className="hero-content"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-
-            <div className="inline-flex items-center rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-orange-400 text-sm font-medium">
-              Excellence In Fabrication & Erection
+            <div className="hero-badge">
+              Excellence In Fabrication &amp; Erection
             </div>
 
-            <h1 className="mt-8 text-5xl md:text-7xl font-bold text-white leading-tight">
-              BUILDING INDIA'S
-              <span className="block text-orange-500">
+            <h1 className="hero-title">
+              BUILDING INDIA&apos;S
+              <span className="hero-title-accent">
                 INDUSTRIAL FUTURE
               </span>
-
             </h1>
 
-            <p className="mt-8 text-xl text-slate-300 leading-relaxed max-w-2xl">
+            <p className="hero-description">
               SSP Enterprises delivers premium fabrication,
               erection and industrial engineering solutions
               for Steel Plants, Sugar Mills, Paper Mills,
               Power Houses and heavy industrial projects.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-10">
-
+            <div className="hero-actions">
               <Button
                 size="lg"
                 onClick={scrollToContact}
-                className="h-14 px-8 rounded-full bg-orange-500 hover:bg-orange-600 text-white shadow-xl"
+                className="hero-button hero-button-primary"
               >
                 Get Free Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight />
               </Button>
 
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 px-8 rounded-full border-white/20 bg-white/5 text-white hover:bg-white/10"
+                className="hero-button hero-button-secondary"
               >
-                <Play className="mr-2 h-4 w-4" />
+                <Play />
                 View Projects
               </Button>
-
             </div>
 
             {/* Features */}
-            <div className="grid md:grid-cols-3 gap-5 mt-14">
-              <div className="flex items-center gap-3 text-white">
-                <CheckCircle2 className="text-green-400" />
-                <span>Certified Team</span>
+            <div className="hero-features">
+              <div className="hero-feature">
+                <CheckCircle2 className="hero-feature-icon" />
+                <span className="hero-feature-text">Certified Team</span>
               </div>
 
-              <div className="flex items-center gap-3 text-white">
-                <CheckCircle2 className="text-green-400" />
-                <span>On-Time Delivery</span>
+              <div className="hero-feature">
+                <CheckCircle2 className="hero-feature-icon" />
+                <span className="hero-feature-text">On-Time Delivery</span>
               </div>
 
-              <div className="flex items-center gap-3 text-white">
-                <CheckCircle2 className="text-green-400" />
-                <span>Industrial Expertise</span>
+              <div className="hero-feature">
+                <CheckCircle2 className="hero-feature-icon" />
+                <span className="hero-feature-text">Industrial Expertise</span>
               </div>
             </div>
-
           </motion.div>
 
           {/* Right */}
           <motion.div
-            initial={{ opacity: 0, scale: .9 }}
+            className="hero-visual"
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="relative"
           >
-
-            <div className="overflow-hidden rounded-[32px] border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,.4)]">
+            <div className="hero-image-wrapper">
               <img
                 src="/project1.jpg"
                 alt="Industrial Fabrication"
-                className="w-full h-[650px] object-cover"
+                className="hero-image"
               />
             </div>
 
-            {/* Stats Card */}
-            <div className="absolute -left-10 top-10 bg-white rounded-3xl p-6 shadow-2xl">
-
-              <h3 className="text-4xl font-bold text-[#123654]">
-                250+
-              </h3>
-
-              <p className="text-gray-500">
-                Projects Delivered
-              </p>
-
+            {/* Stats Cards */}
+            <div className="hero-stat hero-stat-left">
+              <h3 className="hero-stat-number">250+</h3>
+              <p className="hero-stat-label">Projects Delivered</p>
             </div>
 
-            <div className="absolute -right-10 bottom-10 bg-orange-500 text-white rounded-3xl p-6 shadow-2xl">
-
-              <h3 className="text-4xl font-bold">
-                100%
-              </h3>
-
-              <p>Client Satisfaction</p>
-
+            <div className="hero-stat hero-stat-right">
+              <h3 className="hero-stat-number">100%</h3>
+              <p className="hero-stat-label">Client Satisfaction</p>
             </div>
-
           </motion.div>
-
         </div>
 
         {/* Bottom Cards */}
+        <div className="hero-bottom-cards">
+          <div className="hero-bottom-card">
+            <Factory className="hero-bottom-card-icon" />
 
-        <div className="grid md:grid-cols-3 gap-6 mt-20">
-
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
-
-            <Factory className="mb-4 text-orange-400" />
-
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="hero-bottom-card-title">
               Steel Plants
             </h3>
 
-            <p className="text-slate-400">
+            <p className="hero-bottom-card-text">
               Complete fabrication and erection solutions.
             </p>
-
           </div>
 
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
+          <div className="hero-bottom-card">
+            <Building2 className="hero-bottom-card-icon" />
 
-            <Building2 className="mb-4 text-orange-400" />
-
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="hero-bottom-card-title">
               Industrial Projects
             </h3>
 
-            <p className="text-slate-400">
+            <p className="hero-bottom-card-text">
               Customized heavy engineering structures.
             </p>
-
           </div>
 
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-white">
+          <div className="hero-bottom-card">
+            <ShieldCheck className="hero-bottom-card-icon" />
 
-            <ShieldCheck className="mb-4 text-orange-400" />
-
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="hero-bottom-card-title">
               Quality Assurance
             </h3>
 
-            <p className="text-slate-400">
+            <p className="hero-bottom-card-text">
               Strict quality and safety standards.
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 };

@@ -24,6 +24,7 @@ const ClientsSection = () => {
           <div className="clients-eyebrow">
             <span className="clients-eyebrow-line" />
             OUR NETWORK
+            <span className="clients-eyebrow-line" />
           </div>
 
           <div className="clients-heading-row">
@@ -86,7 +87,7 @@ const ClientsSection = () => {
 
         {/* ================= TRUST MESSAGE ================= */}
 
-        <div className="clients-bottom">
+        {/* <div className="clients-bottom">
 
           <div className="clients-bottom-mark">
             <Building2 size={21} />
@@ -119,7 +120,7 @@ const ClientsSection = () => {
             <ArrowUpRight size={18} />
           </a>
 
-        </div>
+        </div> */}
 
       </div>
 

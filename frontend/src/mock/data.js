@@ -6,7 +6,7 @@ export const services = [
     title: "Steel Plants",
     description: "Complete fabrication and erection services for steel manufacturing plants with precision and safety standards.",
     icon: "Factory",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
     id: 2,
@@ -31,15 +31,15 @@ export const services = [
   },
   {
     id: 5,
-    title: "Sheet Metal Component",
-    description: "Manufacturing and supplying high-quality Sheet Metal Components for engineering sectors.",
+    title: "Refinery",
+    description: "Comprehensive refinery services focused on efficient operations, safety, and reliable industrial solutions.",
     icon: "Layers",
     image: "https://images.unsplash.com/photo-1565707057507-793e7237676f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
     id: 6,
-    title: "Customized Fabrication",
-    description: "All types of customized fabrication & site works tailored to your specific requirements.",
+    title: "Erection",
+    description: "Professional erection services for industrial structures, equipment, machinery, piping and safety..",
     icon: "Wrench",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   }
@@ -51,7 +51,7 @@ export const projects = [
     title: "JMC Projects Steel Plant",
     category: "Steel plants",
     type: "Industrial",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "JMC Projects (INDIA) Ltd."
   },
   {
@@ -83,7 +83,7 @@ export const projects = [
     title: "C.E.C.C Manufacturing Unit",
     category: "Customized Fabrication",
     type: "Manufacturing",
-    image: "https://images.unsplash.com/photo-1565707057507-793e7237676f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "C.E.C.C"
   },
   {

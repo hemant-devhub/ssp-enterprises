@@ -88,7 +88,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
-  color: #f97316;
+  color: #B28149;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -97,7 +97,7 @@
 .about-eyebrow-line {
   width: 42px;
   height: 2px;
-  background: #f97316;
+  background: #B28149;
 }
 
 .about-heading h2 {
@@ -128,9 +128,7 @@
 .about-main {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-
   gap: 90px;
-
   align-items: center;
 }
 
@@ -144,15 +142,10 @@
 
 .about-image-frame {
   position: relative;
-
   height: 620px;
-
   overflow: hidden;
-
   border-radius: 28px;
-
   background: #dbe4eb;
-
   box-shadow:
     0 30px 80px rgba(15, 23, 42, 0.16);
 }
@@ -160,11 +153,8 @@
 .about-image-frame img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   transition: transform 0.8s ease;
 }
 
@@ -175,7 +165,6 @@
 .about-image-overlay {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       180deg,
@@ -239,7 +228,7 @@
 
   margin-bottom: 18px;
 
-  color: #f97316;
+  color: #B28149;
 
   font-size: 12px;
   font-weight: 700;
@@ -366,12 +355,12 @@
 }
 
 .about-link:hover {
-  color: #f97316;
+  color: #B28149;
 }
 
 .about-link:hover .about-link-icon {
   transform: rotate(45deg);
-  background: #f97316;
+  background: #B28149;
 }
 
 /* =========================================================
@@ -432,27 +421,22 @@
 
 .about-bottom {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 16px;
-  max-width: 850px;
   margin: 30px auto 0;
   text-align: center;
 }
 
 .about-bottom-mark {
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 38px;
   height: 38px;
-
   color: #16a34a;
-
   background: #dcfce7;
-
   border-radius: 50%;
 }
 
@@ -490,7 +474,7 @@
   }
 
   .about-experience {
-    right: 25px;
+    right: -20px !important;
   }
 
 }
@@ -502,7 +486,7 @@
 @media (max-width: 640px) {
 
   .about-section {
-    padding: 80px 0 70px;
+    padding: 50px 0 40px;
   }
 
   .about-container {
@@ -577,13 +561,19 @@
 
   .about-content h3 {
     font-size: 32px;
+    text-align: center;
   }
 
   .about-content > p {
     margin-top: 18px;
-
     font-size: 14px;
     line-height: 1.8;
+    text-align: center;
+  }
+
+  .about-content span {
+    display: flex;
+    justify-content: center;
   }
 
   /* Highlights */
@@ -605,15 +595,15 @@
 
   .about-link {
     margin-top: 32px;
+    display: flex;
+    justify-content: center;
   }
 
   /* Stats */
 
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
-
-    margin-top: 75px;
-
+    margin-top: 40px;
     padding: 30px 0;
   }
 

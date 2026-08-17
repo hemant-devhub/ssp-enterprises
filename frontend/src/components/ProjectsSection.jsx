@@ -80,6 +80,7 @@ const ProjectsSection = () => {
           <div className="projects-eyebrow">
             <span className="projects-eyebrow-line" />
             SELECTED PROJECTS
+            <span className="projects-eyebrow-line" />
           </div>
 
           <div className="projects-heading-row">
@@ -313,7 +314,7 @@ const ProjectsSection = () => {
 
         {/* ================= BOTTOM CTA ================= */}
 
-        <div className="projects-bottom">
+        {/* <div className="projects-bottom">
 
           <div>
 
@@ -339,7 +340,7 @@ const ProjectsSection = () => {
 
           </a>
 
-        </div>
+        </div> */}
 
       </div>
 
