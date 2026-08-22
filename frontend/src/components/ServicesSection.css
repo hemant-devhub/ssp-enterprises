@@ -468,9 +468,9 @@
   color: #285075;
 }
 
-.services-process-eyebrow-line {
+.services-process-eyebrow {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
