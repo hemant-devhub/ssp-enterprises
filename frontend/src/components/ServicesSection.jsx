@@ -184,9 +184,9 @@ const ServicesSection = () => {
           <div className="services-process-heading">
 
             <span className="services-eyebrow">
-              <span className="services-eyebrow-line" />
+              <span className="services-process-eyebrow-line" />
               HOW WE WORK
-              <span className="services-eyebrow-line" />
+              <span className="services-process-eyebrow-line" />
             </span>
 
             <h3>

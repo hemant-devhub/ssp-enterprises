@@ -468,17 +468,22 @@
   color: #285075;
 }
 
-.services-process-heading > span {
-  text-align: left !important;
+.services-process-eyebrow-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: #B28149;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
 }
 
 .services-process-list {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 0;
-
   border-top: 1px solid #e2e8f0;
   border-left: 1px solid #e2e8f0;
 }
