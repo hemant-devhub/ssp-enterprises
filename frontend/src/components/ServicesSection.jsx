@@ -43,13 +43,12 @@ const ServicesSection = () => {
       <div className="services-container">
 
         {/* ================= HEADER ================= */}
-
         <div className="services-heading">
 
           <div className="services-eyebrow">
-            <span className="services-eyebrow-line" />
+            <span className="services-eyebrow-line"/>
             OUR CAPABILITIES
-            <span className="services-eyebrow-line" />
+            <span className="services-eyebrow-line"/>
           </div>
 
           <h2>
@@ -66,7 +65,6 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= SERVICE EXPLORER ================= */}
-
         <div className="services-explorer">
 
           {/* Service List */}
@@ -178,7 +176,6 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= PROCESS ================= */}
-
         <div className="services-process">
 
           <div className="services-process-heading">
