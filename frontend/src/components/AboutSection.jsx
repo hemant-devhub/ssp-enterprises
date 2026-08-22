@@ -35,15 +35,15 @@ const AboutSection = () => {
 
   const stats = [
     {
-      value: "15+",
+      value: "35+",
       label: "Years of Experience",
     },
     {
-      value: "500+",
+      value: "250+",
       label: "Projects Delivered",
     },
     {
-      value: "200+",
+      value: "250+",
       label: "Satisfied Clients",
     },
     {
@@ -71,7 +71,7 @@ const AboutSection = () => {
 
           <div className="about-eyebrow">
             <span className="about-eyebrow-line" />
-            ABOUT SSP FABRICATORS
+            ABOUT SSP ENTERPRISES
             <span className="about-eyebrow-line" />
           </div>
 
@@ -134,8 +134,8 @@ const AboutSection = () => {
             </span>
 
             <h3>
-              A fabrication partner
-              <span>you can rely on.</span>
+              A Fabrication Partner
+              <span>You Can Rely On.</span>
             </h3>
 
             <p>

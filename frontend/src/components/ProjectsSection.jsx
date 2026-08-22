@@ -312,36 +312,6 @@ const ProjectsSection = () => {
 
         </div>
 
-        {/* ================= BOTTOM CTA ================= */}
-
-        {/* <div className="projects-bottom">
-
-          <div>
-
-            <span>
-              HAVE AN INDUSTRIAL PROJECT?
-            </span>
-
-            <h3>
-              Tell us what you need.
-              <strong> We'll help build it.</strong>
-            </h3>
-
-          </div>
-
-          <a
-            href="/quote"
-            className="projects-bottom-button"
-          >
-
-            <span>Request a Quote</span>
-
-            <ArrowUpRight size={19} />
-
-          </a>
-
-        </div> */}
-
       </div>
 
     </section>

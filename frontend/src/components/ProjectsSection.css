@@ -91,31 +91,23 @@
   display: flex;
   align-items: center;
   gap: 12px;
-
   color: #B28149;
-
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 0.2em;
 }
 
 .projects-eyebrow-line {
   width: 40px;
   height: 2px;
-
   background: #B28149;
 }
 
 .projects-heading-row {
   display: grid;
-
   grid-template-columns: 1.1fr 0.9fr;
-
   gap: 80px;
-
   align-items: end;
-
   margin-top: 22px;
 }
 
@@ -778,7 +770,6 @@
 
   .projects-heading-row {
     grid-template-columns: 1fr;
-
     gap: 25px;
   }
 

@@ -24,7 +24,7 @@ export const services = [
   },
   {
     id: 4,
-    title: "Power House",
+    title: "Power Plant",
     description: "Robust fabrication solutions for power generation facilities and electrical infrastructure.",
     icon: "Zap",
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
@@ -38,6 +38,13 @@ export const services = [
   },
   {
     id: 6,
+    title: "Fabrication",
+    description: "Professional erection services for industrial structures, equipment, machinery, piping and safety..",
+    icon: "Building",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 7,
     title: "Erection",
     description: "Professional erection services for industrial structures, equipment, machinery, piping and safety..",
     icon: "Wrench",

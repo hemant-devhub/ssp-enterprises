@@ -86,7 +86,7 @@
 
 .services-eyebrow {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
