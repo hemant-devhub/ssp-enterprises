@@ -468,7 +468,7 @@
   color: #285075;
 }
 
-.services-process-heading span {
+.services-process-heading > span {
   text-align: left !important;
 }
 
