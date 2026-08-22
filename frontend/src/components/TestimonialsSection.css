@@ -94,34 +94,26 @@
 .testimonials-eyebrow-line {
   width: 40px;
   height: 2px;
-
   background: #B28149;
 }
 
 .testimonials-heading-row {
   display: grid;
-
   grid-template-columns: 1.1fr 0.9fr;
-
   gap: 80px;
-
-  align-items: end;
-
+  align-items: center;
   margin-top: 22px;
 }
 
 .testimonials-heading h2 {
   margin: 0;
-
   font-size: clamp(44px, 5vw, 70px);
   line-height: 1.05;
-
   letter-spacing: -0.045em;
 }
 
 .testimonials-heading h2 span {
   display: block;
-
   color: #285075;
 }
 
@@ -343,57 +335,39 @@
 
 .testimonial-visual {
   position: relative;
-
   display: flex;
-  flex-direction: column;
-
-  justify-content: flex-end;
-
+  justify-content: left;
   min-height: 520px;
-
   overflow: hidden;
-
   padding: 55px;
-
   background:
     linear-gradient(
       145deg,
       #0f2e49,
       #285075
     );
-
   color: white;
 }
 
 .testimonial-visual::before {
   content: "";
-
   position: absolute;
-
   width: 420px;
   height: 420px;
-
   right: -150px;
   top: -150px;
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   border-radius: 50%;
 }
 
 .testimonial-visual::after {
   content: "";
-
   position: absolute;
-
   width: 280px;
   height: 280px;
-
   right: -80px;
   top: -80px;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   border-radius: 50%;
 }
 
@@ -439,22 +413,21 @@
 
 .testimonial-visual-mark {
   position: absolute;
-
-  top: 45px;
+  bottom: 40px;
   right: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 105px;
-  height: 105px;
-
+  width: 120px;
+  height: 120px;
   color: rgba(255, 255, 255, 0.16);
-
   border: 1px solid rgba(255, 255, 255, 0.15);
-
   border-radius: 50%;
+  transform: rotate(-8deg);
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
 }
 
 /* =========================================================
@@ -759,7 +732,6 @@
   .testimonial-visual-mark {
     width: 75px;
     height: 75px;
-
     top: 25px;
     right: 25px;
   }

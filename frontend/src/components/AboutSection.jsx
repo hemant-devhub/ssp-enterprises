@@ -56,7 +56,6 @@ const AboutSection = () => {
     <section className="about-section">
 
       {/* Decorative background */}
-
       <div className="about-background">
         <div className="about-grid" />
         <div className="about-glow about-glow-left" />
@@ -66,7 +65,6 @@ const AboutSection = () => {
       <div className="about-container">
 
         {/* ================= HEADER ================= */}
-
         <div className="about-heading">
 
           <div className="about-eyebrow">
@@ -76,8 +74,8 @@ const AboutSection = () => {
           </div>
 
           <h2>
-            Engineering strength
-            <span>built on experience.</span>
+            Engineering Strength
+            <span>Built On Experience.</span>
           </h2>
 
           <p>
@@ -89,7 +87,6 @@ const AboutSection = () => {
         </div>
 
         {/* ================= MAIN STORY ================= */}
-
         <div className="about-main">
 
           {/* Image */}

@@ -10,12 +10,13 @@ import "./ProjectsSection.css";
 
 const categories = [
   "Show All",
-  "Steel plants",
+  "Steel Plants",
   "Sugar Mill",
   "Paper Mill",
-  "Power House",
-  "Structural fabrication",
-  "Customized Fabrication",
+  "Power Plant",
+  "Refinary",
+  "Fabrication",
+  "Erection",
 ];
 
 const ProjectsSection = () => {
@@ -64,7 +65,6 @@ const ProjectsSection = () => {
     <section className="projects-section">
 
       {/* ================= BACKGROUND ================= */}
-
       <div className="projects-background">
         <div className="projects-grid" />
         <div className="projects-glow projects-glow-left" />
@@ -74,7 +74,6 @@ const ProjectsSection = () => {
       <div className="projects-container">
 
         {/* ================= HEADER ================= */}
-
         <div className="projects-heading">
 
           <div className="projects-eyebrow">
@@ -86,8 +85,8 @@ const ProjectsSection = () => {
           <div className="projects-heading-row">
 
             <h2>
-              Work that speaks
-              <span>for itself.</span>
+              Work That Speaks
+              <span>For Itself.</span>
             </h2>
 
             <p>
@@ -128,7 +127,6 @@ const ProjectsSection = () => {
         </div>
 
         {/* ================= FEATURED PROJECT ================= */}
-
         {featuredProject && (
 
           <div className="projects-featured">
@@ -231,8 +229,7 @@ const ProjectsSection = () => {
         )}
 
         {/* ================= PROJECT LIST ================= */}
-
-        <div className="projects-list-header">
+        {/* <div className="projects-list-header">
 
           <div>
             <span>
@@ -310,8 +307,7 @@ const ProjectsSection = () => {
 
           ))}
 
-        </div>
-
+        </div> */}
       </div>
 
     </section>

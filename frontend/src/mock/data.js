@@ -56,7 +56,7 @@ export const projects = [
   {
     id: 1,
     title: "JMC Projects Steel Plant",
-    category: "Steel plants",
+    category: "Steel Plants",
     type: "Industrial",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "JMC Projects (INDIA) Ltd."
@@ -72,7 +72,7 @@ export const projects = [
   {
     id: 3,
     title: "SEC Power House Project",
-    category: "Power House",
+    category: "Power Plant",
     type: "Infrastructure",
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "SEC Pvt. Ltd."
@@ -80,7 +80,7 @@ export const projects = [
   {
     id: 4,
     title: "G.D.C.L Industrial Complex",
-    category: "Structural fabrication",
+    category: "Refinary",
     type: "Industrial",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "G.D.C.L"
@@ -88,15 +88,15 @@ export const projects = [
   {
     id: 5,
     title: "C.E.C.C Manufacturing Unit",
-    category: "Customized Fabrication",
+    category: "Fabrication",
     type: "Manufacturing",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "C.E.C.C"
   },
   {
     id: 6,
-    title: "Industrial Paper Mill",
-    category: "Paper Mill",
+    title: "Industrial Erection",
+    category: "Erection",
     type: "Industrial",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "Industrial Partner"

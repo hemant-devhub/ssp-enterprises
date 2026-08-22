@@ -66,8 +66,8 @@ const TestimonialsSection = () => {
           <div className="testimonials-heading-row">
 
             <h2>
-              Trusted by teams
-              <span>that demand more.</span>
+              Trusted By Teams
+              <span>That Demand More.</span>
             </h2>
 
             <p>
@@ -81,7 +81,6 @@ const TestimonialsSection = () => {
         </div>
 
         {/* ================= MAIN TESTIMONIAL ================= */}
-
         <div className="testimonials-main">
 
           {/* Quote side */}
@@ -249,34 +248,6 @@ const TestimonialsSection = () => {
           </div>
 
         )}
-
-        {/* ================= BOTTOM MESSAGE ================= */}
-
-        {/* <div className="testimonials-bottom">
-
-          <div>
-
-            <span>
-              YOUR PROJECT COULD BE NEXT
-            </span>
-
-            <h3>
-              Let's build a relationship
-              <strong> that lasts.</strong>
-            </h3>
-
-          </div>
-
-          <a
-            href="/contact"
-            className="testimonials-button"
-          >
-            <span>Start a Conversation</span>
-
-            <ArrowRight size={18} />
-          </a>
-
-        </div> */}
 
       </div>
 

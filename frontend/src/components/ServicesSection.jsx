@@ -52,8 +52,8 @@ const ServicesSection = () => {
           </div>
 
           <h2>
-            Built for demanding
-            <span>industrial environments.</span>
+            Built For Demanding
+            <span>Industrial Environments.</span>
           </h2>
 
           <p>
@@ -68,7 +68,6 @@ const ServicesSection = () => {
         <div className="services-explorer">
 
           {/* Service List */}
-
           <div className="services-list">
 
             {services.map((service, index) => {
@@ -187,8 +186,8 @@ const ServicesSection = () => {
             </span>
 
             <h3>
-              From drawing board
-              <span>to final installation.</span>
+              From Drawing Board
+              <span>To Final Installation.</span>
             </h3>
 
           </div>
@@ -219,7 +218,7 @@ const ServicesSection = () => {
               </span>
 
               <div>
-                <h4>Fabricate</h4>
+                <h4>Fabrication</h4>
 
                 <p>
                   Manufacture structural components
@@ -236,7 +235,7 @@ const ServicesSection = () => {
               </span>
 
               <div>
-                <h4>Erect</h4>
+                <h4>Erection</h4>
 
                 <p>
                   Execute installation safely and
@@ -266,36 +265,6 @@ const ServicesSection = () => {
           </div>
 
         </div>
-
-        {/* ================= BOTTOM CTA ================= */}
-
-        {/* <div className="services-bottom">
-
-          <div>
-
-            <span>
-              HAVE A PROJECT IN MIND?
-            </span>
-
-            <h3>
-              Let's discuss what
-              <strong> we can build together.</strong>
-            </h3>
-
-          </div>
-
-          <a
-            href="/contact"
-            className="services-bottom-button"
-          >
-
-            <span>Talk to Our Team</span>
-
-            <ArrowUpRight size={19} />
-
-          </a>
-
-        </div> */}
 
       </div>
 
