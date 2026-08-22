@@ -86,7 +86,7 @@
 
 .services-eyebrow {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
@@ -466,6 +466,10 @@
 .services-process-heading h3 span {
   display: block;
   color: #285075;
+}
+
+.services-process-heading span {
+  text-align: left !important;
 }
 
 .services-process-list {
