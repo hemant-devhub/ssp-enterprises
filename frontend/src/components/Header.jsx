@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
+import { useLocation } from "react-router-dom";
 
 const navItems = [
   {
@@ -30,6 +31,10 @@ export default function Header() {
   const [mobile, setMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+
   useEffect(() => {
     const scroll = () => {
       setScrolled(window.scrollY > 40);
@@ -40,12 +45,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", scroll);
   }, []);
 
+  useEffect(() => {
+    setMobile(false);
+  }, [location.pathname]);
+
+  const showWhiteHeader = !isHome || scrolled;
+
   return (
     <>
       {/* NAVBAR */}
       <header
         className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
+          showWhiteHeader
             ? "py-1"
             : "py-1"
         }`}
@@ -54,7 +65,7 @@ export default function Header() {
 
           <div
             className={`transition-all duration-500 rounded-full px-8 h-20 flex items-center justify-between ${
-              scrolled
+              showWhiteHeader
                 ? "bg-white/95 backdrop-blur-xl shadow-2xl border border-gray-200 text-black"
                 : "bg-white/20 backdrop-blur-xl border border-white/30 text-white"
             }`}
@@ -62,7 +73,11 @@ export default function Header() {
             {/* LOGO */}
             <a href="/">
               <img
-                src={scrolled ? "/ssp-logo-black.png" : "/ssp-logo-white.png"}
+                src={
+                  showWhiteHeader
+                  ? "/ssp-logo-black.png"
+                  : "/ssp-logo-white.png"
+                }
                 alt="Logo"
                 className="h-16 hover:scale-105 duration-300"
               />
@@ -79,7 +94,7 @@ export default function Header() {
                     key={item.title}
                     href={item.href}
                     className={`relative text-[15px] font-semibold group transition-colors duration-300 ${
-                      scrolled
+                      showWhiteHeader
                         ? "text-black hover:text-orange-500"
                         : "text-white hover:text-orange-300"
                     }`}
