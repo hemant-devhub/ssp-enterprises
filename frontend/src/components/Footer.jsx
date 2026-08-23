@@ -1,122 +1,198 @@
-import React from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React from "react";
+import {
+  Phone,
+  MapPin,
+  Clock,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
+import "./Footer.css";
+
+const services = [
+  "Steel Plants",
+  "Sugar Mill",
+  "Paper Mill",
+  "Power House",
+  "Sheet Metal Fabrication",
+  "Customized Fabrication",
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+  { label: "Projects", href: "#" },
+  { label: "Get Quote", href: "#" },
+];
+
+const clients = [
+  "JMC Projects (INDIA) Ltd.",
+  "B.E.C Ltd.",
+  "SEC Pvt. Ltd.",
+  "G.D.C.L",
+  "C.E.C.C",
+];
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "#",
+    icon: Facebook,
+  },
+  {
+    label: "Twitter",
+    href: "#",
+    icon: Twitter,
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    icon: Linkedin,
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: Instagram,
+  },
+];
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">SSP Fabricators</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-orange-500">YOU THINK, WE MAKE</strong><br />
-              Leading fabrication company providing Steel Plants, Sugar Mills, Paper Mills, 
-              Power Houses and customized fabrication services with excellence.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-[#3d6d91] p-2 rounded-full hover:bg-[#2f5a75] transition-colors">
-                <Facebook size={16} />
-              </a>
-              <a href="#" className="bg-[#5a8fb3] p-2 rounded-full hover:bg-[#f5f9fc]0 transition-colors">
-                <Twitter size={16} />
-              </a>
-              <a href="#" className="bg-[#285075] p-2 rounded-full hover:bg-[#285075] transition-colors">
-                <Linkedin size={16} />
-              </a>
-              <a href="#" className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition-colors">
-                <Instagram size={16} />
-              </a>
-            </div>
-          </div>
+    <footer className="site-footer">
+      <div className="footer-main">
+        <div className="footer-container">
+          <div className="footer-grid">
+            {/* Company Info */}
+            <section className="footer-column footer-company">
+              <h2 className="footer-title">SSP Enterprisess</h2>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Steel Plants</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Sugar Mill</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Paper Mill</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Power House</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Sheet Metal Fabrication</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Customized Fabrication</a></li>
-            </ul>
-          </div>
+              <p className="footer-description">
+                <strong className="footer-highlight">
+                  YOU THINK, WE MAKE
+                </strong>
+                <br />
+                Leading fabrication company providing Steel Plants, Sugar
+                Mills, Paper Mills, Power Houses and customized fabrication
+                services with excellence.
+              </p>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><a href="/" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Projects</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Get Quote</a></li>
-            </ul>
-          </div>
+              <div className="footer-socials" aria-label="Social media links">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    className="social-link"
+                    aria-label={`Visit SSP Enterprisess on ${label}`}
+                  >
+                    <Icon size={18} strokeWidth={2} />
+                  </a>
+                ))}
+              </div>
+            </section>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Phone className="text-orange-500 flex-shrink-0 mt-1" size={16} />
-                <div>
-                  <p className="text-gray-300">+91-8700849865</p>
-                  <p className="text-gray-300">+91-7668167061</p>
-                  <p className="text-sm text-gray-400">Mr. Sohanveer Singh Panchal</p>
+            {/* Services */}
+            <section className="footer-column">
+              <h2 className="footer-title">Our Services</h2>
+
+              <ul className="footer-links">
+                {services.map((service) => (
+                  <li key={service}>
+                    <a href="#">{service}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Quick Links */}
+            <section className="footer-column">
+              <h2 className="footer-title">Quick Links</h2>
+
+              <ul className="footer-links">
+                {quickLinks.map(({ label, href }) => (
+                  <li key={label}>
+                    <a href={href}>{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Contact */}
+            <section className="footer-column">
+              <h2 className="footer-title">Contact Info</h2>
+
+              <div className="contact-list">
+                <div className="contact-item">
+                  <Phone className="contact-icon" size={19} />
+
+                  <div className="contact-content">
+                    <a href="tel:+918700849865">+91-8700849865</a>
+                    <a href="tel:+917668167061">+91-7668167061</a>
+                    <span className="contact-note">
+                      Mr. Sohanveer Singh Panchal
+                    </span>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <MapPin className="contact-icon" size={19} />
+
+                  <div className="contact-content">
+                    <span>
+                      Industrial Area,
+                      <br />
+                      Delhi NCR, India
+                    </span>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <Clock className="contact-icon" size={19} />
+
+                  <div className="contact-content">
+                    <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
+                    <span className="contact-note">Sunday: Closed</span>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <MapPin className="text-orange-500 flex-shrink-0 mt-1" size={16} />
-                <p className="text-gray-300">Industrial Area,<br />Delhi NCR, India</p>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <Clock className="text-orange-500 flex-shrink-0 mt-1" size={16} />
-                <div>
-                  <p className="text-gray-300">Mon-Sat: 9:00 AM - 6:00 PM</p>
-                  <p className="text-sm text-gray-400">Sunday: Closed</p>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
-        </div>
 
-        {/* Clients Section */}
-        <div className="mt-12 pt-8 border-t border-gray-700">
-          <h3 className="text-xl font-bold mb-6 text-center">Our Valued Clients</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <span className="text-sm font-medium">JMC Projects (INDIA) Ltd.</span>
-            <span className="text-sm font-medium">B.E.C Ltd.</span>
-            <span className="text-sm font-medium">SEC Pvt. Ltd.</span>
-            <span className="text-sm font-medium">G.D.C.L</span>
-            <span className="text-sm font-medium">C.E.C.C</span>
-          </div>
+          {/* Clients */}
+          <section className="clients-section">
+            <h2 className="clients-title">Our Valued Clients</h2>
+
+            <div className="clients-list">
+              {clients.map((client) => (
+                <span className="client-name" key={client}>
+                  {client}
+                </span>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-gray-800 border-t border-gray-700">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 SSP Fabricators. All rights reserved. | Proprietor: Mr. Sohanveer Singh Panchal
-            </p>
-            <div className="flex items-center gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </a>
-              <div className="text-sm text-gray-400">
-                <span className="text-orange-500 font-bold">Excellence</span> in Fabrication
-              </div>
-            </div>
+      <div className="footer-bottom">
+        <div className="footer-container footer-bottom-inner">
+          <p className="copyright">
+            © {currentYear} SSP Enterprises. All rights reserved.
+            <span className="copyright-separator">|</span>
+            Proprietor: Mr. Sohanveer Singh Panchal
+          </p>
+
+          <div className="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+
+            <span className="footer-tagline">
+              <strong>Excellence</strong> in Fabrication
+            </span>
           </div>
         </div>
       </div>
