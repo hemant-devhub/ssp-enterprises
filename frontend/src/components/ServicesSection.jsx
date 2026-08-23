@@ -32,7 +32,7 @@ const ServicesSection = () => {
   return (
     <section className="services-section">
 
-      {/* Background */}s
+      {/* Background */}
       <div className="services-background">
         <div className="services-grid" />
         <div className="services-glow services-glow-left" />
