@@ -399,7 +399,7 @@
 @media (max-width: 640px) {
 
   .clients-section {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   .clients-container {
@@ -407,15 +407,16 @@
   }
 
   /* Header */
-
   .clients-top {
     margin-bottom: 45px;
+    text-align: center;
   }
 
   .clients-eyebrow {
-    font-size: 10px;
-
+    font-size: 11px;
     letter-spacing: 0.15em;
+    display: flex;
+    justify-content: center;
   }
 
   .clients-eyebrow-line {
@@ -428,22 +429,19 @@
 
   .clients-heading-row h2 {
     font-size: 38px;
-
     line-height: 1.08;
   }
 
   .clients-heading-row p {
     font-size: 14px;
-
     line-height: 1.75;
   }
 
   /* Showcase */
-
   .clients-showcase-label {
     padding: 15px 0;
-
-    font-size: 8px;
+    font-size: 9px;
+    justify-content: center;
   }
 
   .clients-grid {
@@ -452,7 +450,6 @@
 
   .client-item {
     min-height: 95px;
-
     padding: 20px;
   }
 

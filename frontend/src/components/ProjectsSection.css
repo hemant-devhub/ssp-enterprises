@@ -794,7 +794,7 @@
 @media (max-width: 640px) {
 
   .projects-section {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   .projects-container {
@@ -802,14 +802,16 @@
   }
 
   /* Header */
-
   .projects-heading {
     margin-bottom: 38px;
+    text-align: center;
   }
 
   .projects-eyebrow {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.15em;
+    display: flex;
+    justify-content: center;
   }
 
   .projects-eyebrow-line {

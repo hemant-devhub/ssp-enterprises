@@ -644,7 +644,7 @@
 @media (max-width: 640px) {
 
   .testimonials-section {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   .testimonials-container {
@@ -652,14 +652,16 @@
   }
 
   /* Header */
-
   .testimonials-heading {
     margin-bottom: 40px;
+    text-align: center;
   }
 
   .testimonials-eyebrow {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.15em;
+    display: flex;
+    justify-content: center;
   }
 
   .testimonials-eyebrow-line {

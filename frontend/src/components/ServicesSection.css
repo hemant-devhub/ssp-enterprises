@@ -110,6 +110,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 80px;
   align-items: center;
+  text-align: left;
 }
 
 .service-heading-row h2 {
@@ -708,8 +709,8 @@
     line-height: 1.08;
   }
 
-  .services-heading-row > p {
-    font-size: 15px;
+  .services-heading-row p {
+    font-size: 14px;
     line-height: 1.75;
   }
 
@@ -802,8 +803,8 @@
   /* Process */
   .services-process {
     display: block;
-    margin-top: 60px;
-    padding-top: 60px;
+    margin-top: 50px;
+    padding-top: 50px;
   }
 
   .services-process-eyebrow {

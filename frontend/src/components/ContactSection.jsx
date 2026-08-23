@@ -215,10 +215,6 @@ const ContactSection = () => {
                 </h3>
               </div>
 
-              <div className="contact-form-number">
-                01
-              </div>
-
             </div>
 
             <form

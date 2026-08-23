@@ -572,7 +572,7 @@
 @media (max-width: 640px) {
 
   .contact-section {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   .contact-container {
@@ -580,15 +580,16 @@
   }
 
   /* Header */
-
   .contact-heading {
     margin-bottom: 42px;
+    text-align: center;
   }
 
   .contact-eyebrow {
-    font-size: 10px;
-
+    font-size: 11px;
     letter-spacing: 0.15em;
+    display: flex;
+    justify-content: center;
   }
 
   .contact-eyebrow-line {
@@ -616,9 +617,12 @@
   }
 
   /* Info */
-
   .contact-info {
     padding: 35px 22px;
+  }
+
+  .contact-info-top {
+    text-align: center;
   }
 
   .contact-info-top h3 {
@@ -668,6 +672,8 @@
 
   .contact-form-header {
     padding-bottom: 22px;
+    text-align: center;
+    justify-content: center;
   }
 
   .contact-form-header h3 {
