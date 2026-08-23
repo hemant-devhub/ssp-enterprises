@@ -32,8 +32,7 @@ const ServicesSection = () => {
   return (
     <section className="services-section">
 
-      {/* Background */}
-
+      {/* Background */}s
       <div className="services-background">
         <div className="services-grid" />
         <div className="services-glow services-glow-left" />
@@ -51,16 +50,22 @@ const ServicesSection = () => {
             <span className="services-eyebrow-line"/>
           </div>
 
-          <h2>
-            Built For Demanding
-            <span>Industrial Environments.</span>
-          </h2>
+          <div className="service-heading-row">
 
-          <p>
-            From structural fabrication to complete industrial
-            erection, we provide practical engineering solutions
-            designed around quality, safety and reliable execution.
-          </p>
+           <div>
+              <h2>
+                Built For Demanding
+                <span>Industrial Environments.</span>
+              </h2>
+            </div>
+
+            <p>
+              From structural fabrication to complete industrial
+              erection, we provide practical engineering solutions
+              designed around quality, safety and reliable execution.
+            </p>
+
+          </div>
 
         </div>
 

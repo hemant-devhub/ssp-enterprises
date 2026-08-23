@@ -123,6 +123,7 @@
   font-size: clamp(44px, 5vw, 70px);
   line-height: 1.05;
   letter-spacing: -0.045em;
+  font-weight: 700;
 }
 
 .contact-heading h2 span {
