@@ -79,12 +79,12 @@
   margin-bottom: 80px;
   display: grid;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 
 .about-eyebrow {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
@@ -380,6 +380,7 @@
   padding: 42px 0;
   border-top: 1px solid #dbe3ea;
   border-bottom: 1px solid #dbe3ea;
+  text-align: center;
 }
 
 .about-stat {
@@ -504,21 +505,30 @@
   .about-eyebrow {
     font-size: 10px;
     letter-spacing: 0.16em;
+    display: flex;
+    justify-content: center;
   }
 
   .about-eyebrow-line {
     width: 28px;
   }
 
-  .about-heading h2 {
+  .about-heading-row {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .about-heading-row h2 {
     font-size: 38px;
     line-height: 1.08;
   }
 
-  .about-heading > p {
-    margin-top: 20px;
-
-    font-size: 15px;
+  .about-heading-row > p {
+    font-size: 14px;
     line-height: 1.75;
   }
 
