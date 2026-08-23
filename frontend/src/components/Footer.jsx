@@ -14,9 +14,10 @@ const services = [
   "Steel Plants",
   "Sugar Mill",
   "Paper Mill",
-  "Power House",
-  "Sheet Metal Fabrication",
-  "Customized Fabrication",
+  "Power Plant",
+  "Refinery",
+  "Fabrication",
+  "Erection",
 ];
 
 const quickLinks = [
@@ -132,9 +133,9 @@ const Footer = () => {
                   <div className="contact-content">
                     <a href="tel:+918700849865">+91-8700849865</a>
                     <a href="tel:+917668167061">+91-7668167061</a>
-                    <span className="contact-note">
-                      Mr. Sohanveer Singh Panchal
-                    </span>
+                    // <span className="contact-note">
+                    //   Mr. Sohanveer Singh Panchal
+                    // </span>
                   </div>
                 </div>
 
@@ -162,18 +163,6 @@ const Footer = () => {
             </section>
           </div>
 
-          {/* Clients */}
-          <section className="clients-section">
-            <h2 className="clients-title">Our Valued Clients</h2>
-
-            <div className="clients-list">
-              {clients.map((client) => (
-                <span className="client-name" key={client}>
-                  {client}
-                </span>
-              ))}
-            </div>
-          </section>
         </div>
       </div>
 
@@ -182,8 +171,8 @@ const Footer = () => {
         <div className="footer-container footer-bottom-inner">
           <p className="copyright">
             © {currentYear} SSP Enterprises. All rights reserved.
-            <span className="copyright-separator">|</span>
-            Proprietor: Mr. Sohanveer Singh Panchal
+            {/* <span className="copyright-separator">|</span>
+            Proprietor: Mr. Sohanveer Singh Panchal */}
           </p>
 
           <div className="footer-bottom-links">

@@ -1,4 +1,4 @@
-// Mock data for SSP Fabricators website
+// Mock data
 
 export const services = [
   {
