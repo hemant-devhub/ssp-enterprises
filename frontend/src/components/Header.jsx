@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
 import { useLocation } from "react-router-dom";
+import "./Header.css";
 
 const navItems = [
   {
@@ -54,77 +55,64 @@ export default function Header() {
   return (
     <>
       {/* NAVBAR */}
-      <header
-        className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${
-          showWhiteHeader
-            ? "py-1"
-            : "py-1"
-        }`}
-      >
-        <div className="max-w-8xl mx-auto px-8">
-
+      <header className="header">
+        <div className="header-container">
           <div
-            className={`transition-all duration-500 rounded-full px-8 h-20 flex items-center justify-between ${
+            className={`header-navbar ${
               showWhiteHeader
-                ? "bg-white/95 backdrop-blur-xl shadow-2xl border border-gray-200 text-black"
-                : "bg-white/20 backdrop-blur-xl border border-white/30 text-white"
+                ? "header-navbar-white"
+                : "header-navbar-transparent"
             }`}
           >
             {/* LOGO */}
-            <a href="/">
+            <a href="/" className="header-logo-link">
               <img
                 src={
                   showWhiteHeader
-                  ? "/ssp-logo-black.png"
-                  : "/ssp-logo-white.png"
+                    ? "/ssp-logo-black.png"
+                    : "/ssp-logo-white.png"
                 }
                 alt="Logo"
-                className="h-16 hover:scale-105 duration-300"
+                className="header-logo"
               />
             </a>
 
             {/* DESKTOP */}
-            <div className="hidden lg:flex items-center gap-12">
-
-              <nav className="flex gap-10">
-
+            <div className="desktop-navigation">
+              <nav className="navigation">
                 {navItems.map((item) => (
                   <motion.a
                     whileHover={{ y: -2 }}
                     key={item.title}
                     href={item.href}
-                    className={`relative text-[15px] font-semibold group transition-colors duration-300 ${
+                    className={`navigation-link ${
                       showWhiteHeader
-                        ? "text-black hover:text-orange-500"
-                        : "text-white hover:text-orange-300"
+                        ? "navigation-link-black"
+                        : "navigation-link-white"
                     }`}
                   >
                     {item.title}
 
-                    <span className="absolute left-0 -bottom-2 h-[3px] bg-orange-500 rounded-full w-0 transition-all duration-300 group-hover:w-full"></span>
-
+                    <span className="navigation-link-underline"></span>
                   </motion.a>
                 ))}
-
               </nav>
 
               <Button
                 onClick={() => (window.location.href = "/contact")}
-                className="rounded-full h-12 px-7 bg-gradient-to-r from-[#B28149] to-[#ca975c] hover:from-[#123654] hover:to-[#285075] transition-all shadow-xl hover:scale-105"
+                className="quote-button"
               >
                 Get Free Quote
 
-                <ArrowRight className="ml-2 h-4 w-4" />
-
+                <ArrowRight className="quote-button-icon" />
               </Button>
-
             </div>
 
             {/* MOBILE */}
-
             <button
               onClick={() => setMobile(true)}
-              className="lg:hidden"
+              className="mobile-menu-button"
+              aria-label="Open menu"
             >
               <Menu />
             </button>
@@ -134,14 +122,13 @@ export default function Header() {
 
       {/* MOBILE MENU */}
       <AnimatePresence>
-
         {mobile && (
           <>
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: .5 }}
+              animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black z-40"
+              className="mobile-overlay"
               onClick={() => setMobile(false)}
             />
 
@@ -150,25 +137,27 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{
-                duration: .35
+                duration: 0.35,
               }}
-              className="fixed right-0 top-0 w-[320px] h-screen bg-white z-50 shadow-2xl"
+              className="mobile-menu"
             >
-              <div className="flex justify-between items-center p-6 border-b">
-
+              <div className="mobile-menu-header">
                 <img
                   src="/ssp-logo-black.png"
-                  className="h-14"
+                  alt="Logo"
+                  className="mobile-logo"
                 />
 
-                <button onClick={() => setMobile(false)}>
+                <button
+                  onClick={() => setMobile(false)}
+                  className="mobile-close-button"
+                  aria-label="Close menu"
+                >
                   <X />
                 </button>
-
               </div>
 
-              <div className="p-6 space-y-7">
-
+              <div className="mobile-navigation">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item.title}
@@ -181,27 +170,25 @@ export default function Header() {
                       x: 0,
                     }}
                     transition={{
-                      delay: index * .08,
+                      delay: index * 0.08,
                     }}
                     href={item.href}
-                    className="block font-semibold text-lg text-slate-700 hover:text-orange-500"
+                    className="mobile-navigation-link"
                   >
                     {item.title}
                   </motion.a>
                 ))}
 
                 <Button
-                  className="w-full mt-8 rounded-full h-12 bg-orange-500 hover:bg-orange-600"
+                  onClick={() => (window.location.href = "/contact")}
+                  className="mobile-quote-button"
                 >
                   Get Free Quote
                 </Button>
-
               </div>
-
             </motion.div>
           </>
         )}
-
       </AnimatePresence>
     </>
   );
