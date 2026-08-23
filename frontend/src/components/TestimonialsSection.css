@@ -110,6 +110,7 @@
   font-size: clamp(44px, 5vw, 70px);
   line-height: 1.05;
   letter-spacing: -0.045em;
+  font-weight: 700;
 }
 
 .testimonials-heading h2 span {
@@ -355,7 +356,7 @@
   width: 420px;
   height: 420px;
   right: -150px;
-  top: -150px;
+  bottom: -150px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
 }
@@ -366,9 +367,14 @@
   width: 280px;
   height: 280px;
   right: -80px;
-  top: -80px;
+  bottom: -80px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transform: rotate(-0deg) !important;
+  -webkit-transform: rotate(-0deg) !important;
+  -moz-transform: rotate(-0deg) !important;
+  -ms-transform: rotate(-0deg) !important;
+  -o-transform: rotate(-0deg) !important;
 }
 
 .testimonial-visual-content {
@@ -413,8 +419,8 @@
 
 .testimonial-visual-mark {
   position: absolute;
-  bottom: 40px;
-  right: 45px;
+  bottom: 30px;
+  right: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,11 +429,6 @@
   color: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  transform: rotate(-8deg);
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  -ms-transform: rotate(-8deg);
-  -o-transform: rotate(-8deg);
 }
 
 /* =========================================================
@@ -717,8 +718,21 @@
 
   .testimonial-visual {
     min-height: 320px;
-
     padding: 32px 22px;
+  }
+
+  .testimonial-visual::before {
+    height: 350px;
+    width: 350px;
+    right: -165px;
+    bottom: -160px;
+  }
+
+  .testimonial-visual::after { 
+    height: 250px;
+    width: 250px;
+    right: -100px;
+    bottom: -110px;
   }
 
   .testimonial-visual-content h3 {
@@ -732,7 +746,7 @@
   .testimonial-visual-mark {
     width: 75px;
     height: 75px;
-    top: 25px;
+    bottom: 25px;
     right: 25px;
   }
 

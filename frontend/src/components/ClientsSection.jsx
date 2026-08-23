@@ -31,8 +31,8 @@ const ClientsSection = () => {
 
             <div>
               <h2>
-                Trusted relationships.
-                <span>Long-term partnerships.</span>
+                Trusted Relationships.
+                <span>Long-Term Partnerships.</span>
               </h2>
             </div>
 
@@ -84,43 +84,6 @@ const ClientsSection = () => {
           </div>
 
         </div>
-
-        {/* ================= TRUST MESSAGE ================= */}
-
-        {/* <div className="clients-bottom">
-
-          <div className="clients-bottom-mark">
-            <Building2 size={21} />
-          </div>
-
-          <div className="clients-bottom-content">
-
-            <span>
-              BUILT THROUGH COLLABORATION
-            </span>
-
-            <h3>
-              Your requirements.
-              <strong> Our responsibility.</strong>
-            </h3>
-
-            <p>
-              Whether you need structural fabrication, industrial
-              erection or a complete fabrication solution, our team
-              is ready to work alongside yours.
-            </p>
-
-          </div>
-
-          <a
-            href="/contact"
-            className="clients-button"
-          >
-            <span>Work With Us</span>
-            <ArrowUpRight size={18} />
-          </a>
-
-        </div> */}
 
       </div>
 

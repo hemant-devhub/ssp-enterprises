@@ -62,8 +62,8 @@ const ContactSection = () => {
           <div className="contact-heading-row">
 
             <h2>
-              Let's build
-              <span>something solid.</span>
+              Let's Build
+              <span>Something Solid.</span>
             </h2>
 
             <p>

@@ -80,7 +80,7 @@ export const projects = [
   {
     id: 4,
     title: "G.D.C.L Industrial Complex",
-    category: "Refinary",
+    category: "Refinery",
     type: "Industrial",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     client: "G.D.C.L"

@@ -96,62 +96,44 @@
 
 .contact-eyebrow {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   color: #B28149;
-
   font-size: 12px;
-
   font-weight: 700;
-
   letter-spacing: 0.2em;
 }
 
 .contact-eyebrow-line {
   width: 40px;
   height: 2px;
-
   background: #B28149;
 }
 
 .contact-heading-row {
   display: grid;
-
   grid-template-columns: 1.1fr 0.9fr;
-
   gap: 80px;
-
-  align-items: end;
-
+  align-items: center;
   margin-top: 22px;
 }
 
 .contact-heading h2 {
   margin: 0;
-
   font-size: clamp(44px, 5vw, 70px);
-
   line-height: 1.05;
-
   letter-spacing: -0.045em;
 }
 
 .contact-heading h2 span {
   display: block;
-
   color: #285075;
 }
 
 .contact-heading-row > p {
   margin: 0;
-
   color: #64748b;
-
   font-size: 17px;
-
   line-height: 1.85;
 }
 
@@ -536,6 +518,7 @@
 }
 
 .contact-submit:hover .contact-submit-icon {
+  background: #264E72;
   transform: rotate(-15deg);
 }
 

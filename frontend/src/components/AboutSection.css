@@ -100,7 +100,15 @@
   background: #B28149;
 }
 
-.about-heading h2 {
+.about-heading-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.about-heading-row h2 {
   margin: 0;
   font-size: clamp(42px, 5vw, 72px);
   line-height: 1.05;
@@ -108,17 +116,16 @@
   font-weight: 700;
 }
 
-.about-heading h2 span {
+.about-heading-row h2 span {
   display: block;
   color: #285075;
 }
 
-.about-heading > p {
-  max-width: 1100px;
-  margin-top: 28px;
+.clients-heading-row p {
+  margin: 0;
   color: #64748b;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.85;
 }
 
 /* =========================================================

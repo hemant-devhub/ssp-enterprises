@@ -187,7 +187,7 @@ const TestimonialsSection = () => {
 
               <h3>
                 Built on
-                <strong> trust.</strong>
+                <strong> trust.</strong>s
               </h3>
 
               <p>

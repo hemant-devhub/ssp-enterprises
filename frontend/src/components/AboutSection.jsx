@@ -73,16 +73,22 @@ const AboutSection = () => {
             <span className="about-eyebrow-line" />
           </div>
 
-          <h2>
-            Engineering Strength
-            <span>Built On Experience.</span>
-          </h2>
+          <div className="about-heading-row">
 
-          <p>
-            We deliver dependable fabrication and erection solutions
-            for demanding industrial environments - combining skilled
-            workmanship, modern processes and a commitment to safety.
-          </p>
+            <div>
+              <h2>
+                Engineering Strength
+                <span>Built On Experience.</span>
+              </h2>
+            </div>
+
+            <p>
+              We deliver dependable fabrication and erection solutions
+              for demanding industrial environments - combining skilled
+              workmanship, modern processes and a commitment to safety.
+            </p>
+
+          </div>
 
         </div>
 
