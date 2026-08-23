@@ -133,9 +133,6 @@ const Footer = () => {
                   <div className="contact-content">
                     <a href="tel:+918700849865">+91-8700849865</a>
                     <a href="tel:+917668167061">+91-7668167061</a>
-                    // <span className="contact-note">
-                    //   Mr. Sohanveer Singh Panchal
-                    // </span>
                   </div>
                 </div>
 
