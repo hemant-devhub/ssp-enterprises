@@ -96,7 +96,6 @@ const AboutSection = () => {
         <div className="about-main">
 
           {/* Image */}
-
           <div className="about-image-wrapper">
 
             <div className="about-image-frame">
@@ -129,11 +128,12 @@ const AboutSection = () => {
           </div>
 
           {/* Content */}
-
           <div className="about-content">
 
             <span className="about-content-label">
+            <span className="about-content-eyebrow-line" />
               WHO WE ARE
+            <span className="about-content-eyebrow-line" />
             </span>
 
             <h3>
