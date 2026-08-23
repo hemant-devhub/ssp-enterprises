@@ -441,7 +441,7 @@
   .clients-showcase-label {
     padding: 15px 0;
     font-size: 9px;
-    justify-content: center;
+    justify-content: left;
   }
 
   .clients-grid {
