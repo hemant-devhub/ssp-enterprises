@@ -89,7 +89,7 @@
 
 .services-eyebrow {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
@@ -112,7 +112,7 @@
   align-items: center;
 }
 
-.services-heading-row h2 {
+.service-heading-row h2 {
   margin: 0;
   font-size: clamp(42px, 5vw, 70px);
   line-height: 1.05;
@@ -120,12 +120,12 @@
   font-weight: 700;
 }
 
-.services-heading-row h2 span {
+.service-heading-row h2 span {
   display: block;
   color: #285075;
 }
 
-.services-heading-row p {
+.service-heading-row p {
   margin: 0;
   color: #64748b;
   font-size: 16px;
