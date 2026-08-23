@@ -544,7 +544,6 @@
   }
 
   /* Image */
-
   .about-image-frame {
     height: 400px;
 
@@ -602,7 +601,6 @@
   }
 
   /* Highlights */
-
   .about-highlights {
     grid-template-columns: 1fr;
 

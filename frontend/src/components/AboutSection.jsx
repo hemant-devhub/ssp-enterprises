@@ -130,11 +130,11 @@ const AboutSection = () => {
           {/* Content */}
           <div className="about-content">
 
-            <span className="about-content-label">
-            <span className="about-content-eyebrow-line" />
-              WHO WE ARE
-            <span className="about-content-eyebrow-line" />
-            </span>
+            <div className="about-content-label">
+              <span className="about-content-eyebrow-line" />
+                WHO WE ARE
+              <span className="about-content-eyebrow-line" />
+            </div>
 
             <h3>
               A Fabrication Partner
