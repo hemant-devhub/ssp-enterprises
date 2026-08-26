@@ -92,6 +92,65 @@ const AboutSection = () => {
 
         </div>
 
+        {/* ================= DIRECTOR MESSAGE ================= */}
+        <div className="director-message">
+
+          <div className="director-image-wrapper">
+            <img
+              src="/sohanveer-singh-panchal.png"
+              alt="Sohanveer Singh Panchal - Director, SSP Enterprises"
+              className="director-image"
+            />
+          </div>
+
+          <div className="director-content">
+
+            <div className="director-label">
+              <span className="director-label-line" />
+              MESSAGE FROM THE DIRECTOR
+            </div>
+
+            <div className="director-quote">
+              <span className="director-quote-mark">“</span>
+
+              <p>
+                With more than <strong>35 years of experience</strong> in the
+                industrial sector, I have always believed that a successful
+                project is built on quality of work, commitment to timelines,
+                and trust with the client.
+              </p>
+
+              <p>
+                At SSP Enterprises, our objective is not simply to complete
+                a job, but to become a dependable partner for our clients.
+                We believe in delivering work with integrity, maintaining
+                high standards of workmanship, and taking responsibility
+                for what we commit.
+              </p>
+            </div>
+
+            <div className="director-footer">
+
+              <div>
+                <h3>
+                  Sohanveer Singh Panchal
+                </h3>
+
+                <span>
+                  Director – Projects
+                </span>
+              </div>
+
+              <div className="director-signature">
+                SSP
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
         {/* ================= MAIN STORY ================= */}
         <div className="about-main">
 
@@ -202,7 +261,6 @@ const AboutSection = () => {
         </div>
 
         {/* ================= STATS ================= */}
-
         <div className="about-stats">
 
           {stats.map((stat, index) => (
@@ -227,7 +285,6 @@ const AboutSection = () => {
         </div>
 
         {/* ================= BOTTOM STATEMENT ================= */}
-
         <div className="about-bottom">
 
           <div className="about-bottom-mark">

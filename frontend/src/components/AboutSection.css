@@ -128,6 +128,254 @@
 }
 
 /* =========================================================
+   DIRECTOR MESSAGE
+========================================================= */
+
+.director-message {
+  display: grid;
+
+  grid-template-columns: 260px minmax(0, 1fr);
+
+  gap: 45px;
+
+  align-items: center;
+
+  margin-bottom: 90px;
+
+  padding: 38px 45px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.07);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   DIRECTOR IMAGE
+========================================================= */
+
+.director-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 300px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #e2e8f0;
+}
+
+.director-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(15, 23, 42, 0.25)
+    );
+
+  pointer-events: none;
+}
+
+.director-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.6s ease;
+}
+
+.director-message:hover .director-image {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   DIRECTOR CONTENT
+========================================================= */
+
+.director-content {
+  min-width: 0;
+}
+
+.director-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 17px;
+
+  color: #b28149;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.director-label-line {
+  width: 34px;
+
+  height: 2px;
+
+  background: #b28149;
+}
+
+
+/* =========================================================
+   DIRECTOR QUOTE
+========================================================= */
+
+.director-quote {
+  position: relative;
+
+  padding-left: 5px;
+}
+
+.director-quote-mark {
+  position: absolute;
+
+  left: -2px;
+
+  top: -20px;
+
+  color: rgba(40, 80, 117, 0.08);
+
+  font-family: Georgia, serif;
+
+  font-size: 100px;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.director-quote p {
+  position: relative;
+
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.director-quote p + p {
+  margin-top: 13px;
+}
+
+.director-quote strong {
+  color: #285075;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DIRECTOR FOOTER
+========================================================= */
+
+.director-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.director-footer h3 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.director-footer span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SIGNATURE MARK
+========================================================= */
+
+.director-signature {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 52px;
+
+  height: 52px;
+
+  flex-shrink: 0;
+
+  color: #285075;
+
+  border: 1px solid #dbe3ea;
+
+  border-radius: 50%;
+
+  font-family: Georgia, serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.05em;
+
+  background: #f8fafc;
+}
+
+/* =========================================================
    MAIN
 ========================================================= */
 
@@ -479,6 +727,24 @@
     right: -20px !important;
   }
 
+    /* Director */
+
+  .director-message {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 30px;
+    padding: 30px;
+    margin-bottom: 65px;
+  }
+
+  .director-image-wrapper {
+    height: 260px;
+  }
+
+  .director-quote p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
 }
 
 /* =========================================================
@@ -528,6 +794,77 @@
   .about-heading-row > p {
     font-size: 14px;
     line-height: 1.75;
+  }
+
+    /* =====================================================
+     DIRECTOR MESSAGE
+  ===================================================== */
+
+  .director-message {
+    display: block;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .director-image-wrapper {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+  }
+
+  .director-label {
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  .director-label-line {
+    width: 25px;
+  }
+
+  .director-quote {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .director-quote-mark {
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    font-size: 75px;
+  }
+
+  .director-quote p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .director-quote p + p {
+    margin-top: 12px;
+  }
+
+  .director-footer {
+    margin-top: 22px;
+    padding-top: 18px;
+    text-align: left;
+  }
+
+  .director-footer h3 {
+    font-size: 14px;
+  }
+
+  .director-footer span {
+    font-size: 10px;
+  }
+
+  .director-signature {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
   }
 
   /* Main */
@@ -662,6 +999,22 @@
 
   .about-stat-value {
     font-size: 30px;
+  }
+
+    .director-message {
+    padding: 17px;
+  }
+
+  .director-image-wrapper {
+    height: 260px;
+  }
+
+  .director-quote p {
+    font-size: 13px;
+  }
+
+  .director-footer h3 {
+    font-size: 13px;
   }
 
 }
