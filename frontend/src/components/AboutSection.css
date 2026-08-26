@@ -195,20 +195,15 @@
 .director-image {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
-  object-position: center;
-
+  object-position: top;
   transition: transform 0.6s ease;
 }
 
 .director-message:hover .director-image {
   transform: scale(1.04);
 }
-
 
 /* =========================================================
    DIRECTOR CONTENT
@@ -220,27 +215,18 @@
 
 .director-label {
   display: flex;
-
   align-items: center;
-
   gap: 11px;
-
   margin-bottom: 17px;
-
   color: #b28149;
-
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: 0.18em;
 }
 
 .director-label-line {
   width: 34px;
-
   height: 2px;
-
   background: #b28149;
 }
 
@@ -251,39 +237,25 @@
 
 .director-quote {
   position: relative;
-
   padding-left: 5px;
 }
 
 .director-quote-mark {
   position: absolute;
-
   left: -2px;
-
   top: -20px;
-
   color: rgba(40, 80, 117, 0.08);
-
   font-family: Georgia, serif;
-
   font-size: 100px;
-
   line-height: 1;
-
   pointer-events: none;
 }
 
 .director-quote p {
   position: relative;
-
-  max-width: 850px;
-
   margin: 0;
-
   color: #475569;
-
   font-size: 15px;
-
   line-height: 1.8;
 }
 
@@ -293,10 +265,8 @@
 
 .director-quote strong {
   color: #285075;
-
   font-weight: 700;
 }
-
 
 /* =========================================================
    DIRECTOR FOOTER
@@ -832,7 +802,7 @@
   }
 
   .director-quote-mark {
-    left: 50%;
+    left: 3%;
     top: -15px;
     transform: translateX(-50%);
     font-size: 75px;

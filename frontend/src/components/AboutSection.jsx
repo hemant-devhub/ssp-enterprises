@@ -107,7 +107,8 @@ const AboutSection = () => {
 
             <div className="director-label">
               <span className="director-label-line" />
-              MESSAGE FROM THE DIRECTOR
+              THE VISION BEHIND SSP
+              <span className="director-label-line" />
             </div>
 
             <div className="director-quote">
