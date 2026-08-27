@@ -168,9 +168,7 @@ const Footer = () => {
         <div className="footer-container footer-bottom-inner">
           <p className="copyright">
             © {currentYear} SSP Enterprises. All rights reserved.
-            {/* <span className="copyright-separator">|</span>
-            Proprietor: Mr. Sohanveer Singh Panchal */}
-          </p>
+           </p>
 
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
