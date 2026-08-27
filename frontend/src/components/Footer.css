@@ -488,6 +488,7 @@
 
   .footer-title::after {
     margin: 11px auto 0;
+    display: none;
   }
 
   .footer-description {
@@ -515,17 +516,25 @@
   }
 
   .contact-list {
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 20px;
   }
 
   .contact-item {
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: left;
   }
 
   .contact-content {
     font-size: 13.5px;
+    text-align: left;
+  }
+
+  .contact-item:nth-child(3) {
+    grid-column: 1/ -1;
   }
 
   /* =========================================
