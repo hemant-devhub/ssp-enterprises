@@ -162,25 +162,19 @@
 
 .client-icon {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-shrink: 0;
-
   width: 48px;
   height: 48px;
-
   color: #285075;
-
   background: #eaf1f6;
-
   border-radius: 12px;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+  transition:    background 0.3s ease,    color 0.3s ease;
+  -webkit-transition:    background 0.3s ease,    color 0.3s ease;
+  -moz-transition:    background 0.3s ease,    color 0.3s ease;
+  -ms-transition:    background 0.3s ease,    color 0.3s ease;
+  -o-transition:    background 0.3s ease,    color 0.3s ease;
 }
 
 .client-item:hover .client-icon {
@@ -195,13 +189,9 @@
 
 .client-name {
   max-width: 180px;
-
-  color: #334155;
-
+  color: #334155 !important;
   font-size: 15px;
-
   font-weight: 700;
-
   line-height: 1.4;
 }
 
@@ -460,6 +450,7 @@
 
   .client-name {
     font-size: 13px;
+    color: #334155;
   }
 
   .client-number {
