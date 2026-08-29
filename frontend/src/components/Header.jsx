@@ -31,23 +31,52 @@ const navItems = [
 export default function Header() {
   const [mobile, setMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
 
   const location = useLocation();
 
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const scroll = () => {
-      setScrolled(window.scrollY > 40);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Header is always visible at the top
+      if (currentScrollY <= 40) {
+        setHeaderVisible(true);
+        setScrolled(false);
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      // Keep your existing white header behavior
+      setScrolled(true);
+
+      // Scrolling down → hide header
+      if (currentScrollY > lastScrollY) {
+        setHeaderVisible(false);
+      }
+
+      // Scrolling up → show header
+      else if (currentScrollY < lastScrollY) {
+        setHeaderVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
     };
 
-    window.addEventListener("scroll", scroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", scroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
     setMobile(false);
+    setHeaderVisible(true);
   }, [location.pathname]);
 
   const showWhiteHeader = !isHome || scrolled;
@@ -55,7 +84,11 @@ export default function Header() {
   return (
     <>
       {/* NAVBAR */}
-      <header className="header">
+      <header
+        className={`header ${
+          headerVisible ? "header-visible" : "header-hidden"
+        }`}
+      >
         <div className="header-container">
           <div
             className={`header-navbar ${
