@@ -201,17 +201,11 @@
 
 .client-number {
   position: absolute;
-
   top: 20px;
-
   right: 22px;
-
   color: #cbd5e1;
-
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 0.1em;
 }
 
@@ -459,7 +453,6 @@
   }
 
   /* Bottom */
-
   .clients-bottom {
     display: block;
 
