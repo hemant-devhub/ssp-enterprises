@@ -155,14 +155,6 @@ const AboutSection = () => {
         {/* ================= FOUNDER MESSAGE ================= */}
         <div className="founder-message">
 
-          <div className="founder-image-wrapper">
-            <img
-              src="/shubham-singh-panchal.png"
-              alt="Shubham Singh Panchal - Founder, SSP Enterprises"
-              className="founder-image"
-            />
-          </div>
-
           <div className="founder-content">
 
             <div className="founder-label">
@@ -212,6 +204,14 @@ const AboutSection = () => {
 
             </div>
 
+          </div>
+
+          <div className="founder-image-wrapper">
+            <img
+              src="/shubham-singh-panchal.png"
+              alt="Shubham Singh Panchal - Founder, SSP Enterprises"
+              className="founder-image"
+            />
           </div>
 
         </div>
