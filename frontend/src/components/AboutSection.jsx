@@ -187,11 +187,11 @@ const AboutSection = () => {
                 approach to engineering, design, technology, and project execution.
               </p>
 
-              <P>
+              <p>
                 Our goal is to combine <strong>experience with innovation, traditional
                 workmanship with modern engineering, and practical knowledge with
                 technology</strong> to create reliable, long-term value for our clients.
-              </P>
+              </p>
             </div>
 
             <div className="founder-footer">
