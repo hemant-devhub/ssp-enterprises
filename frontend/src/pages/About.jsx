@@ -165,6 +165,7 @@ const About = () => {
               <div className="section-eyebrow">
                 <span />
                 WHO WE ARE
+                <span />
               </div>
 
               <h2>
@@ -303,7 +304,7 @@ const About = () => {
                 <p>
                   With more than <strong>35 years of experience</strong>{" "}
                   in the industrial sector, I have always believed that
-                  a successful project is built on three things —
+                  a successful project is built on three things -
                   <strong>
                     {" "}quality of work, commitment to timelines, and
                     trust with the client.
@@ -339,7 +340,7 @@ const About = () => {
                 </p>
 
                 <p>
-                  Our commitment remains simple —
+                  Our commitment remains simple -
                   <strong>
                     {" "}do the work right, stand behind our commitment,
                     and build relationships that last.
@@ -409,7 +410,7 @@ const About = () => {
                   from more than three decades of my father’s
                   experience has shaped the way I look at engineering
                   and business. I believe that good industrial
-                  solutions require more than technical knowledge —
+                  solutions require more than technical knowledge -
                   they require practical thinking, attention to detail,
                   responsible execution, and a clear understanding of
                   the client’s requirements.
@@ -556,9 +557,10 @@ const About = () => {
 
           <div className="capabilities-heading">
 
-            <div className="section-eyebrow">
+            <div className="capabilities-eyebrow section-eyebrow">
               <span />
               OUR CAPABILITIES
+              <span />
             </div>
 
             <div className="capabilities-heading-row">
@@ -647,7 +649,7 @@ const About = () => {
 
             <h2>
               Experience The SSP
-              <strong>Difference.</strong>
+              <strong> Difference.</strong>
             </h2>
 
             <p>
