@@ -110,7 +110,7 @@
 .about-page-hero-content h1 {
   max-width: 1000px;
   margin: 26px 0 0;
-  font-size: clamp(48px, 7vw, 88px);
+  font-size: clamp(48px, 7vw, 66px);
   line-height: 0.98;
   letter-spacing: -0.055em;
   font-weight: 700;
@@ -126,7 +126,7 @@
   max-width: 720px;
   margin: 32px 0 0;
   color: #64748b;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -835,11 +835,11 @@
 }
 
 .section-eyebrow.light {
-  color: #f4c894;
+  color: #f4a261;
 }
 
 .section-eyebrow.light span {
-  background: #f4c894;
+  background: #f4a261;
 }
 
 .about-final-cta h2 {
@@ -850,7 +850,7 @@
 }
 
 .about-final-cta h2 strong {
-  color: #b28149;
+  color: #f4a261;
 }
 
 .about-final-cta p {
@@ -904,9 +904,8 @@
 }
 
 .about-cta-secondary:hover {
-  background: #8D6639;
-  color: white;
-  border: 1px solid white;
+  background: white;
+  color: #264e72;
   transform: translateY(-2px);
 }
 
