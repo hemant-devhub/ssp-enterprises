@@ -152,6 +152,70 @@ const AboutSection = () => {
 
         </div>
 
+        {/* ================= FOUNDER MESSAGE ================= */}
+        <div className="founder-message">
+
+          <div className="founder-image-wrapper">
+            <img
+              src="/shubham-singh-panchal.png"
+              alt="Shubham Singh Panchal - Founder, SSP Enterprises"
+              className="founder-image"
+            />
+          </div>
+
+          <div className="founder-content">
+
+            <div className="founder-label">
+              <span className="founder-label-line" />
+              THE VISION BEHIND SSP
+              <span className="founder-label-line" />
+            </div>
+
+            <div className="founder-quote">
+              <span className="founder-quote-mark">“</span>
+
+              <p>
+                With more than <strong>10 years of experience</strong> in 
+                mechanical engineering, design, and industrial project work,
+                I have developed an understanding of both the, technical and
+                practical aspects of industrial requirements.
+              </p>
+
+              <p>
+                As the Founder of SSP Enterprises, my vision is to build on strong 
+                foundation of industrial experience while bringing a new-generation 
+                approach to engineering, design, technology, and project execution.
+              </p>
+
+              <P>
+                Our goal is to combine <strong>experience with innovation, traditional
+                workmanship with modern engineering, and practical knowledge with
+                technology</strong> to create reliable, long-term value for our clients.
+              </P>
+            </div>
+
+            <div className="founder-footer">
+
+              <div>
+                <h3>
+                  Shubham Singh Panchal
+                </h3>
+
+                <span>
+                  Founder
+                </span>
+              </div>
+
+              <div className="founder-signature">
+                SSP
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+ 
         {/* ================= MAIN STORY ================= */}
         <div className="about-main">
 

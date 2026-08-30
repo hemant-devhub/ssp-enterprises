@@ -108,7 +108,7 @@ export const testimonials = [
     id: 1,
     name: "Ravi Kumar",
     designation: "Project Manager, JMC Projects",
-    content: "SSP Fabricators provided exceptional heavy fabrication services for our steel plant. Their skilled workforce, on-time delivery, and quality workmanship exceeded our expectations. A trustworthy partner for all fabrication needs.",
+    content: "SSP Enterprises provided exceptional heavy fabrication services for our steel plant. Their skilled workforce, on-time delivery, and quality workmanship exceeded our expectations. A trustworthy partner for all fabrication needs.",
     rating: 5,
     company: "JMC Projects (INDIA) Ltd."
   },
@@ -116,7 +116,7 @@ export const testimonials = [
     id: 2,
     name: "Anil Sharma",
     designation: "Operations Head, B.E.C Ltd",
-    content: "SSP Fabricators excelled in our sugar mill fabrication project. Their expertise ensured precise, timely, and high-quality work with proper safety measures. A reliable source for all heavy fabrication requirements.",
+    content: "SSP Enterprises excelled in our sugar mill fabrication project. Their expertise ensured precise, timely, and high-quality work with proper safety measures. A reliable source for all heavy fabrication requirements.",
     rating: 5,
     company: "B.E.C Ltd."
   },
@@ -124,7 +124,7 @@ export const testimonials = [
     id: 3,
     name: "Priya Singh",
     designation: "Site Engineer, SEC Pvt. Ltd.",
-    content: "Outstanding work on our power house project. SSP Fabricators delivered timely, precise, and high-quality fabrication work. Their commitment to safety and client satisfaction makes them our go-to choice.",
+    content: "Outstanding work on our power house project. SSP Enterprises delivered timely, precise, and high-quality fabrication work. Their commitment to safety and client satisfaction makes them our go-to choice.",
     rating: 5,
     company: "SEC Pvt. Ltd."
   }
@@ -173,7 +173,7 @@ export const workProcess = [
   },
   {
     id: 2,
-    step: "02", 
+    step: "02",
     title: "Planning & Resource Allocation",
     description: "Detailed project planning with proper resource allocation and timeline development.",
     icon: "Calendar"
@@ -202,9 +202,9 @@ export const workProcess = [
 ];
 
 export const companyStats = [
-  { label: "Years Experience", value: "17+", icon: "Award" },
-  { label: "Projects Completed", value: "500+", icon: "Building" },
-  { label: "Happy Clients", value: "200+", icon: "Users" },
+  { label: "Years Experience", value: "35+", icon: "Award" },
+  { label: "Projects Completed", value: "250+", icon: "Building" },
+  { label: "Happy Clients", value: "250+", icon: "Users" },
   { label: "Expert Team", value: "50+", icon: "UserCheck" }
 ];
 
