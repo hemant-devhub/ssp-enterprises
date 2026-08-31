@@ -1009,13 +1009,14 @@
 
   .about-page-container {
     width: calc(100% - 32px);
-    padding: 8rem 1.25rem 4rem;;
+    padding: 9rem 1.25rem 4rem;;
   }
 
   /* Hero */
   .about-page-hero-content {
     padding: 0;
     text-align: center;
+    justify-content: center;
   }
 
   .about-page-eyebrow {
@@ -1044,6 +1045,7 @@
     justify-content: center;
     flex-direction: row;
     margin-top: 30px;
+    flex-wrap: nowrap;
   }
 
   .about-primary-btn,
@@ -1053,7 +1055,6 @@
     padding: 10px 0px;
     font-size: 11px;
   }
-
 
   /* Company */
   .company-story {
@@ -1115,12 +1116,13 @@
 
   .company-story-points {
     grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 13px;
+    gap: 10px;
     text-align: left;
   }
 
   .company-story-points div {
     font-size: 10px;
+    gap: 6px;
   }
 
   /* Leadership */
@@ -1352,8 +1354,10 @@
   }
 
   .about-final-cta-actions {
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 30px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
   .about-cta-primary,
