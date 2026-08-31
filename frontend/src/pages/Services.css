@@ -11,11 +11,11 @@
 
 .services-container {
   position: relative;
-  z-index: 2;
-  width: min(1520px, calc(100% - 48px));
+  z-index: 10;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
 }
-
 
 /* =========================================================
    HERO
@@ -23,7 +23,7 @@
 
 .services-hero {
   position: relative;
-  min-height: 620px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -90,7 +90,7 @@
   align-items: center;
   gap: 12px;
   color: #b28149;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -104,9 +104,9 @@
 }
 
 .services-hero-content h1 {
-  max-width: 900px;
-  margin: 27px 0 0;
-  font-size: clamp(50px, 7vw, 88px);
+  max-width: 1000px;
+  margin: 26px 0 0;
+  font-size: clamp(50px, 7vw, 66px);
   line-height: 0.98;
   letter-spacing: -0.055em;
   font-weight: 700;
@@ -122,7 +122,7 @@
   max-width: 720px;
   margin: 32px 0 0;
   color: #64748b;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
