@@ -80,8 +80,9 @@
 }
 
 .services-hero-content {
-  max-width: 1000px;
-  padding: 110px 0;
+  display: grid;
+  justify-items: center;
+  text-align: center;
 }
 
 .services-eyebrow,
