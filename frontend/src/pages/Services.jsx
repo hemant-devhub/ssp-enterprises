@@ -115,7 +115,6 @@ const Services = () => {
 
       </section>
 
-
       {/* =====================================================
           INTRO
       ===================================================== */}
@@ -129,6 +128,7 @@ const Services = () => {
             <div className="services-section-label">
               <span />
               OUR EXPERTISE
+              <span />
             </div>
 
             <div className="services-intro-content">
@@ -140,7 +140,7 @@ const Services = () => {
 
               <p>
                 Industrial projects often require different
-                capabilities to work together — fabrication,
+                capabilities to work together - fabrication,
                 engineering, equipment handling, erection and
                 on-site execution.
               </p>
@@ -245,10 +245,11 @@ const Services = () => {
                       <Icon size={25} />
                     </div>
 
-                    <div className="service-detail-label">
+                    {/* <div className="service-detail-label">
                       <span />
                       SSP ENTERPRISES
-                    </div>
+                      <span />
+                    </div> */}
 
                     <h3>
                       {service.title}
@@ -453,7 +454,7 @@ const Services = () => {
               </h2>
 
               <p>
-                We keep the project approach straightforward —
+                We keep the project approach straightforward -
                 understand the requirement, plan the work, execute
                 responsibly and deliver with attention to quality.
               </p>
@@ -563,7 +564,7 @@ const Services = () => {
 
             <h2>
               Let's Build
-              <strong>Something That Works.</strong>
+              <strong> Something That Works.</strong>
             </h2>
 
             <p>
