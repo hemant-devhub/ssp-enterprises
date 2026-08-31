@@ -128,7 +128,7 @@ const About = () => {
 
       <section className="company-story">
 
-        <div className="about-page-container">
+        <div className="company-story-container about-page-container">
 
           <div className="company-story-layout">
 
@@ -242,7 +242,7 @@ const About = () => {
           <div className="about-page-glow about-page-glow-two" />
         </div>
 
-        <div className="about-page-container">
+        <div className="leadership-page-container about-page-container">
 
           <div className="leadership-heading">
 
@@ -487,7 +487,7 @@ const About = () => {
 
       <section className="values-section">
 
-        <div className="about-page-container">
+        <div className="values-section-container about-page-container">
 
           <div className="values-heading">
 
@@ -553,7 +553,7 @@ const About = () => {
 
       <section className="capabilities-section">
 
-        <div className="about-page-container">
+        <div className="capabilities-section-container about-page-container">
 
           <div className="capabilities-heading">
 
@@ -637,7 +637,7 @@ const About = () => {
 
         <div className="about-final-cta-pattern" />
 
-        <div className="about-page-container">
+        <div className="about-final-cta-container about-page-container">
 
           <div className="about-final-cta-content">
 

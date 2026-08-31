@@ -672,7 +672,6 @@
 
 .capabilities-heading-row {
   display: grid;
-  /* grid-template-columns: 1fr 0.8fr; */
   gap: 25px;
   align-items: center;
   text-align: center;
@@ -783,7 +782,6 @@
 .capability-card:hover .capability-arrow {
   transform: rotate(45deg);
 }
-
 
 /* =========================================================
    FINAL CTA
@@ -917,7 +915,7 @@
 @media (max-width: 1100px) {
 
   .company-story-layout {
-    gap: 60px;
+    gap: 45px;
   }
 
   .director-message,
@@ -945,7 +943,6 @@
   }
 }
 
-
 /* =========================================================
    TABLET / SMALL LAPTOP
 ========================================================= */
@@ -957,7 +954,7 @@
   }
 
   .about-page-hero-content {
-    padding: 90px 0;
+    padding: 0;
   }
 
   .company-story-layout {
@@ -1004,7 +1001,6 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -1013,13 +1009,12 @@
 
   .about-page-container {
     width: calc(100% - 32px);
+    padding: 8rem 1.25rem 4rem;;
   }
 
-
   /* Hero */
-
   .about-page-hero-content {
-    padding: 65px 0 75px;
+    padding: 0;
     text-align: center;
   }
 
@@ -1047,30 +1042,35 @@
 
   .about-page-hero-actions {
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 30px;
   }
 
   .about-primary-btn,
   .about-secondary-btn {
-    width: 100%;
-    min-height: 52px;
+    width: 170px;
+    min-height: 45px;
+    padding: 10px 0px;
+    font-size: 11px;
   }
 
 
   /* Company */
-
   .company-story {
-    padding: 70px 0;
+    padding: 50px 0;
+  }
+
+  .company-story-container {
+    padding: 0;
   }
 
   .company-story-image-frame {
-    height: 370px;
+    height: 350px;
     border-radius: 22px;
   }
 
   .company-story-badge {
-    right: 12px;
+    right: -20px;
     bottom: 14px;
     gap: 12px;
     padding: 15px 17px;
@@ -1088,7 +1088,7 @@
   .section-eyebrow {
     justify-content: center;
     margin-bottom: 17px;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.15em;
   }
 
@@ -1104,26 +1104,32 @@
   .values-heading h2,
   .leadership-heading h2,
   .capabilities-heading h2 {
-    font-size: 35px;
+    font-size: 38px;
     line-height: 1.08;
   }
 
   .company-story-content > p {
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.75;
   }
 
   .company-story-points {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 13px;
     text-align: left;
   }
 
+  .company-story-points div {
+    font-size: 10px;
+  }
 
   /* Leadership */
-
   .leadership-section {
-    padding: 75px 0;
+    padding: 50px 0;
+  }
+
+  .leadership-page-container {
+    padding: 0;
   }
 
   .leadership-heading {
@@ -1147,6 +1153,7 @@
 
   .founder-message {
     flex-direction: column;
+    margin-bottom: 0px !important
   }
 
   .director-image-wrapper,
@@ -1170,7 +1177,7 @@
   .founder-label {
     justify-content: center;
     margin-bottom: 15px;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.13em;
   }
 
@@ -1192,8 +1199,8 @@
 
   .director-quote-mark,
   .founder-quote-mark {
-    left: 0;
-    top: -18px;
+    left: 12px;
+    top: -12px;
     font-size: 72px;
   }
 
@@ -1234,9 +1241,12 @@
 
 
   /* Values */
-
   .values-section {
-    padding: 75px 0;
+    padding: 50px 0;
+  }
+
+  .values-section-container {
+    padding: 0;
   }
 
   .values-heading {
@@ -1276,9 +1286,12 @@
 
 
   /* Capabilities */
-
   .capabilities-section {
-    padding: 75px 0;
+    padding: 50px 0;
+  }
+
+  .capabilities-section-container {
+    padding: 0;
   }
 
   .capabilities-heading {
@@ -1301,20 +1314,31 @@
   }
 
   .capability-card {
-    min-height: 255px;
+    min-height: 230px;
     padding: 23px;
   }
 
   .capability-card h3 {
-    margin-top: 48px;
+    margin-top: 20px;
     font-size: 19px;
   }
 
+  .capability-card:after {
+    height: 160px;
+  }
+
+  .capability-arrow {
+    right: 18px;
+    bottom: 10px;
+  }
 
   /* CTA */
-
   .about-final-cta {
-    padding: 75px 0;
+    padding: 50px 0;
+  }
+
+  .about-final-cta-container {
+    padding: 0;
   }
 
   .about-final-cta h2 {
@@ -1334,10 +1358,12 @@
 
   .about-cta-primary,
   .about-cta-secondary {
-    width: 100%;
+    width: 170px;
+    font-size: 11px;
+    padding: 10px 20px;
+    min-height: 45px;
   }
 }
-
 
 /* =========================================================
    VERY SMALL DEVICES
