@@ -97,6 +97,10 @@
   letter-spacing: 0.2em;
 }
 
+.services-eyebrow {
+  margin-bottom: 0px;
+}
+
 .services-eyebrow span,
 .services-section-label span {
   width: 38px;

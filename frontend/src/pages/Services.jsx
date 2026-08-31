@@ -444,6 +444,7 @@ const Services = () => {
             <div className="services-section-label">
               <span />
               HOW WE WORK
+              <span />
             </div>
 
             <div className="services-process-heading-row">
