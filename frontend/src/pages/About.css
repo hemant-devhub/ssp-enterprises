@@ -1123,6 +1123,7 @@
   .company-story-points div {
     font-size: 10px;
     gap: 6px;
+    flex-wrap: nowrap;
   }
 
   /* Leadership */
