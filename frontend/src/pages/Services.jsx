@@ -455,7 +455,7 @@ const Services = () => {
               </h2>
 
               <p>
-                We keep the project approach straightforward -
+                We keep the project approach straight forward -
                 understand the requirement, plan the work, execute
                 responsibly and deliver with attention to quality.
               </p>

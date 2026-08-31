@@ -610,12 +610,13 @@
 .services-process {
   padding: 100px 0;
   background: #fff;
+  padding: 100px 0;
   margin: 0;
-  padding: 0;
+  grid-template-columns: none;
 }
 
 .services-process-heading {
-  margin-bottom: 65px;
+  margin-bottom: 45px;
 }
 
 .services-process-heading-row {
