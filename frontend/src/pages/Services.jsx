@@ -1,189 +1,605 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ServicesSection from '../components/ServicesSection';
-import { Badge } from '../components/ui/badge';
-import { Card, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Factory, Settings, FileText, Zap, Layers, Wrench, CheckCircle } from 'lucide-react';
+import React from "react";
+import {
+  ArrowUpRight,
+  Building,
+  CheckCircle2,
+  Factory,
+  FileText,
+  Layers,
+  Settings,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
+  Zap,
+} from "lucide-react";
+
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { services } from "../mock/data";
+import "./Services.css";
+
+const iconMap = {
+  Factory,
+  Settings,
+  FileText,
+  Zap,
+  Layers,
+  Building,
+  Wrench,
+};
 
 const Services = () => {
-  const serviceDetails = [
-    {
-      id: 1,
-      title: "Steel Plants",
-      icon: <Factory size={32} />,
-      description: "Complete fabrication and erection services for steel manufacturing plants with precision engineering and safety standards.",
-      features: ["Heavy Steel Structures", "Plant Equipment Fabrication", "Installation & Commissioning", "Maintenance Services"],
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 2,
-      title: "Sugar Mill",
-      icon: <Settings size={32} />,
-      description: "Specialized fabrication services for sugar processing mills including equipment manufacturing and installation.",
-      features: ["Mill Equipment Fabrication", "Processing Line Setup", "Custom Components", "Technical Support"],
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 3,
-      title: "Paper Mill",
-      icon: <FileText size={32} />,
-      description: "Professional fabrication and installation services for paper manufacturing industries with modern technology.",
-      features: ["Paper Mill Machinery", "Conveyor Systems", "Processing Equipment", "Quality Assurance"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 4,
-      title: "Power House",
-      icon: <Zap size={32} />,
-      description: "Robust fabrication solutions for power generation facilities and electrical infrastructure projects.",
-      features: ["Power Plant Structures", "Electrical Enclosures", "Control Room Setup", "Safety Systems"],
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 5,
-      title: "Sheet Metal Component",
-      icon: <Layers size={32} />,
-      description: "Manufacturing and supplying high-quality sheet metal components for various engineering applications.",
-      features: ["Precision Sheet Metal", "Custom Components", "Laser Cutting", "Forming & Bending"],
-      image: "https://images.unsplash.com/photo-1565707057507-793e7237676f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 6,
-      title: "Customized Fabrication",
-      icon: <Wrench size={32} />,
-      description: "All types of customized fabrication and site works tailored to meet your specific project requirements.",
-      features: ["Custom Design", "Site Installation", "Project Management", "Quality Control"],
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    }
-  ];
+
+  const serviceIcons = {
+    "Steel Plants": Factory,
+    "Sugar Mill": Settings,
+    "Paper Mill": FileText,
+    "Power Plant": Zap,
+    "Refinery": Layers,
+    Fabrication: Building,
+    Erection: Wrench,
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="services-page">
+
       <Header />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-[#f5f9fc] py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 text-[#3d6d91] border-[#cce0ed]">
-              Our Services
-            </Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Comprehensive Fabrication Solutions
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section className="services-hero">
+
+        <div className="services-hero-grid" />
+
+        <div className="services-hero-glow services-hero-glow-one" />
+        <div className="services-hero-glow services-hero-glow-two" />
+
+        <div className="services-container">
+
+          <div className="services-hero-content">
+
+            <div className="services-eyebrow">
+              <span />
+              WHAT WE DO
+              <span />
+            </div>
+
+            <h1>
+              Industrial Solutions
+              <strong>Built To Perform.</strong>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              SSP Fabricators provides end-to-end fabrication services across multiple industrial sectors. 
-              From Steel Plants to Power Houses, we deliver precision, quality, and reliability in every project.
+
+            <p>
+              From industrial fabrication and structural work to
+              equipment erection and site execution, SSP Enterprises
+              provides practical solutions built around quality,
+              safety and dependable project delivery.
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Detailed Services */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="space-y-20">
-            {serviceDetails.map((service, index) => (
-              <div key={service.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                {/* Content */}
-                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-[#e6f0f7] text-[#3d6d91] p-4 rounded-xl">
-                      {service.icon}
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900">{service.title}</h2>
-                  </div>
-                  
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
+            <div className="services-hero-meta">
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle className="text-green-500 flex-shrink-0" size={16} />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                    Get Quote for {service.title}
-                  </Button>
-                </div>
-
-                {/* Image */}
-                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <Card className="overflow-hidden shadow-xl">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-96 object-cover"
-                    />
-                  </Card>
-                </div>
+              <div>
+                <strong>{services.length}</strong>
+                <span>
+                  Core
+                  <br />
+                  Services
+                </span>
               </div>
-            ))}
+
+              <div>
+                <strong>01</strong>
+                <span>
+                  Integrated
+                  <br />
+                  Approach
+                </span>
+              </div>
+
+              <div>
+                <strong>01</strong>
+                <span>
+                  Dependable
+                  <br />
+                  Partner
+                </span>
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* Services Overview */}
-      <ServicesSection />
 
-      {/* Why Choose Our Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose Our Services?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the SSP Fabricators advantage in every project we undertake
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
+      <section className="services-intro">
+
+        <div className="services-container">
+
+          <div className="services-intro-layout">
+
+            <div className="services-section-label">
+              <span />
+              OUR EXPERTISE
+            </div>
+
+            <div className="services-intro-content">
+
+              <h2>
+                One Partner.
+                <strong>Multiple Industrial Requirements.</strong>
+              </h2>
+
+              <p>
+                Industrial projects often require different
+                capabilities to work together — fabrication,
+                engineering, equipment handling, erection and
+                on-site execution.
+              </p>
+
+              <p>
+                Our service offering is designed to support these
+                requirements through a practical and coordinated
+                approach, helping clients move from project
+                requirements to reliable execution.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="services-list-section">
+
+        <div className="services-container">
+
+          <div className="services-list-heading">
+
+            <div className="services-section-label centered">
+              <span />
+              OUR SERVICES
+              <span />
+            </div>
+
+            <h2>
+              Industrial Capability
+              <strong>That Goes Beyond Fabrication.</strong>
+            </h2>
+
+            <p>
+              Explore the industrial sectors and project services
+              supported by SSP Enterprises.
             </p>
+
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 text-center">
-              <CardContent className="space-y-4 p-0">
-                <div className="bg-[#e6f0f7] w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-[#3d6d91]">✓</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Quality Assurance</h3>
-                <p className="text-gray-600">
-                  Rigorous quality control processes ensure every project meets international standards.
-                </p>
-              </CardContent>
-            </Card>
 
-            <Card className="p-6 text-center">
-              <CardContent className="space-y-4 p-0">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-orange-600">⚡</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Fast Delivery</h3>
-                <p className="text-gray-600">
-                  Efficient project management and skilled workforce ensure on-time delivery.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="services-list">
 
-            <Card className="p-6 text-center">
-              <CardContent className="space-y-4 p-0">
-                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-green-600">🛡️</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Safety First</h3>
-                <p className="text-gray-600">
-                  Comprehensive safety protocols protect our team and ensure secure installations.
-                </p>
-              </CardContent>
-            </Card>
+            {services.map((service, index) => {
+
+              const Icon =
+                serviceIcons[service.title] ||
+                iconMap[service.icon] ||
+                Wrench;
+
+              const isReversed = index % 2 === 1;
+
+              return (
+
+                <article
+                  className={`service-detail ${
+                    isReversed ? "service-detail-reversed" : ""
+                  }`}
+                  key={service.id}
+                >
+
+                  {/* -----------------------------------------
+                      IMAGE
+                  ----------------------------------------- */}
+
+                  <div className="service-detail-image">
+
+                    <div className="service-image-frame">
+
+                      <img
+                        src={service.image}
+                        alt={`${service.title} - SSP Enterprises`}
+                        loading={index > 1 ? "lazy" : "eager"}
+                      />
+
+                      <div className="service-image-overlay" />
+
+                      <div className="service-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  {/* -----------------------------------------
+                      CONTENT
+                  ----------------------------------------- */}
+
+                  <div className="service-detail-content">
+
+                    <div className="service-detail-icon">
+                      <Icon size={25} />
+                    </div>
+
+                    <div className="service-detail-label">
+                      <span />
+                      SSP ENTERPRISES
+                    </div>
+
+                    <h3>
+                      {service.title}
+                    </h3>
+
+                    <p>
+                      {service.description}
+                    </p>
+
+                    <div className="service-detail-divider" />
+
+                    <div className="service-detail-bottom">
+
+                      <div className="service-detail-check">
+                        <CheckCircle2 size={17} />
+                        <span>
+                          Professional Project Execution
+                        </span>
+                      </div>
+
+                      <a
+                        href={`/contact?service=${encodeURIComponent(
+                          service.title
+                        )}`}
+                        className="service-detail-link"
+                      >
+                        Discuss This Service
+                        <ArrowUpRight size={17} />
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </article>
+
+              );
+            })}
+
           </div>
+
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          WHY SSP
+      ===================================================== */}
+
+      <section className="services-advantage">
+
+        <div className="services-advantage-background">
+
+          <div className="services-advantage-grid" />
+
+          <div className="services-advantage-glow-one" />
+          <div className="services-advantage-glow-two" />
+
+        </div>
+
+        <div className="services-container">
+
+          <div className="services-advantage-heading">
+
+            <div className="services-section-label centered light">
+              <span />
+              THE SSP ADVANTAGE
+              <span />
+            </div>
+
+            <h2>
+              Why Clients Choose
+              <strong>Our Approach.</strong>
+            </h2>
+
+            <p>
+              Every project is different. Our approach remains focused
+              on the fundamentals that matter — quality, responsibility,
+              safety and dependable execution.
+            </p>
+
+          </div>
+
+
+          <div className="services-advantage-grid-cards">
+
+            <div className="service-advantage-card">
+
+              <div className="service-advantage-icon">
+                <ShieldCheck size={25} />
+              </div>
+
+              <span className="service-advantage-number">
+                01
+              </span>
+
+              <h3>
+                Safety First
+              </h3>
+
+              <p>
+                Safety is treated as an essential part of planning,
+                fabrication and site execution.
+              </p>
+
+            </div>
+
+
+            <div className="service-advantage-card">
+
+              <div className="service-advantage-icon">
+                <CheckCircle2 size={25} />
+              </div>
+
+              <span className="service-advantage-number">
+                02
+              </span>
+
+              <h3>
+                Quality Focus
+              </h3>
+
+              <p>
+                We maintain attention to workmanship, precision and
+                project requirements throughout execution.
+              </p>
+
+            </div>
+
+
+            <div className="service-advantage-card">
+
+              <div className="service-advantage-icon">
+                <Wrench size={25} />
+              </div>
+
+              <span className="service-advantage-number">
+                03
+              </span>
+
+              <h3>
+                Practical Execution
+              </h3>
+
+              <p>
+                Industrial experience helps us approach challenges
+                with practical and site-oriented solutions.
+              </p>
+
+            </div>
+
+
+            <div className="service-advantage-card">
+
+              <div className="service-advantage-icon">
+                <Sparkles size={25} />
+              </div>
+
+              <span className="service-advantage-number">
+                04
+              </span>
+
+              <h3>
+                Continuous Improvement
+              </h3>
+
+              <p>
+                We aim to combine established industrial knowledge
+                with modern engineering and technology.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
+
+      <section className="services-process">
+
+        <div className="services-container">
+
+          <div className="services-process-heading">
+
+            <div className="services-section-label">
+              <span />
+              HOW WE WORK
+            </div>
+
+            <div className="services-process-heading-row">
+
+              <h2>
+                From Requirement
+                <strong>To Execution.</strong>
+              </h2>
+
+              <p>
+                We keep the project approach straightforward —
+                understand the requirement, plan the work, execute
+                responsibly and deliver with attention to quality.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div className="services-process-steps">
+
+            <div className="services-process-step">
+
+              <span>01</span>
+
+              <div>
+                <h3>
+                  Understand
+                </h3>
+
+                <p>
+                  Understand the project requirement, specifications,
+                  site conditions and expected outcome.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="services-process-step">
+
+              <span>02</span>
+
+              <div>
+                <h3>
+                  Plan
+                </h3>
+
+                <p>
+                  Develop a practical execution approach considering
+                  manpower, materials, equipment and site requirements.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="services-process-step">
+
+              <span>03</span>
+
+              <div>
+                <h3>
+                  Execute
+                </h3>
+
+                <p>
+                  Carry out fabrication, erection or related work with
+                  focus on workmanship, coordination and safety.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="services-process-step">
+
+              <span>04</span>
+
+              <div>
+                <h3>
+                  Deliver
+                </h3>
+
+                <p>
+                  Complete the work responsibly while maintaining
+                  quality and the commitments made to the client.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section className="services-final-cta">
+
+        <div className="services-final-cta-pattern" />
+
+        <div className="services-container">
+
+          <div className="services-final-cta-content">
+
+            <div className="services-section-label centered light">
+              <span />
+              HAVE A PROJECT IN MIND?
+              <span />
+            </div>
+
+            <h2>
+              Let's Build
+              <strong>Something That Works.</strong>
+            </h2>
+
+            <p>
+              Tell us about your industrial fabrication, erection or
+              project requirement. Our team can discuss the scope and
+              help identify the right approach for your project.
+            </p>
+
+            <div className="services-final-actions">
+
+              <a
+                href="/quote"
+                className="services-cta-primary"
+              >
+                Request A Quote
+                <ArrowUpRight size={18} />
+              </a>
+
+              <a
+                href="/contact"
+                className="services-cta-secondary"
+              >
+                Contact Our Team
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
 
       <Footer />
+
     </div>
   );
 };
